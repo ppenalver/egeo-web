@@ -1,0 +1,50 @@
+#################
+## Misc
+#################
+**/.DS_Store
+node_modules
+*.log
+node
+coverage
+target
+.sass-cache
+
+#################
+## Project
+#################
+.github
+config
+web
+temp
+
+.editorconfig
+.gitignore
+.htmlhintrc
+.npmrc
+.sass-lint.yml
+Jenkinsfile
+karma.conf.js
+pom.xml
+tsconfig.*
+tslint.json
+webpack.config.js
+yarn.lock
+
+#################
+## IDEs
+#################
+.idea
+.project
+.settings
+.vscode
+
+############
+## Windows
+############
+Thumbs.db
+Desktop.ini
+
+############
+## Mac
+############
+.DS_Store
