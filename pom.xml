@@ -59,16 +59,6 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>replace version</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>generate-sources</phase>
-                  <configuration>
-                     <arguments>run-script replace -- this.version="${VERSION}"</arguments>
-                  </configuration>
-               </execution>
-               <execution>
                   <id>npm test</id>
                   <goals>
                      <goal>npm</goal>
@@ -80,24 +70,13 @@
                   </configuration>
                </execution>
                <execution>
-                  <id>generate declarations</id>
+                  <id>generate web</id>
                   <goals>
                      <goal>npm</goal>
                   </goals>
                   <phase>package</phase>
                   <configuration>
                      <arguments>run-script build</arguments>
-                  </configuration>
-               </execution>
-               <execution>
-                  <id>npm publish</id>
-                  <goals>
-                     <goal>npm</goal>
-                  </goals>
-                  <phase>deploy</phase>
-                  <configuration>
-                     <npmRegistryURL>http://sodio.stratio.com/repository/strationpmjs/</npmRegistryURL>
-                     <arguments>publish</arguments>
                   </configuration>
                </execution>
             </executions>
