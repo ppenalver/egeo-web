@@ -1,0 +1,182 @@
+import { TranslateableElement } from 'egeo';
+
+export interface EgeoMenu {
+   label: string;
+   link: string;
+   submenu?: Array<EgeoMenu>;
+   isMainMenu?: boolean;
+}
+
+export interface EgeoMenuSchema {
+   label: TranslateableElement;
+   link: string;
+   submenu?: Array<EgeoMenuSchema>;
+   isMainMenu?: boolean;
+}
+
+
+export const MENU: Array<EgeoMenuSchema> = [
+   {
+      label: { key: 'MENU.OVERVIEW', translate: true },
+      link: '/main',
+      isMainMenu: true
+   },
+   {
+      label: { key: 'MENU.BRANDING.LABEL', translate: true },
+      link: '/branding',
+      isMainMenu: true,
+      submenu: [
+         {
+            label: { key: 'MENU.BRANDING.LOGO', translate: true },
+            link: '/branding/logo'
+         }
+      ]
+   },
+   {
+      label: { key: 'MENU.STYLEGUIDE.LABEL', translate: true },
+      link: '/styleguide',
+      isMainMenu: true,
+      submenu: [
+         {
+            label: { key: 'MENU.STYLEGUIDE.COLORS', translate: true },
+            link: '/styleguide/colors'
+         },
+         {
+            label: { key: 'MENU.STYLEGUIDE.ICONS', translate: true },
+            link: '/styleguide/icons'
+         },
+         {
+            label: { key: 'MENU.STYLEGUIDE.TYPOGRAPHY', translate: true },
+            link: '/styleguide/typography'
+         },
+         {
+            label: { key: 'MENU.STYLEGUIDE.GRID', translate: true },
+            link: '/styleguide/grid'
+         }
+      ]
+   },
+   {
+      label: { key: 'MENU.COMPONENTS.LABEL', translate: true },
+      link: '/components',
+      isMainMenu: true,
+      submenu: [
+         {
+            label: { key: 'MENU.COMPONENTS.BUTTONS.LABEL', translate: true },
+            link: '/components/buttons',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.BUTTONS.BUTTON', translate: true },
+                  link: '/components/buttons/button'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.BUTTONS.TOGGLE_BUTTON', translate: true },
+                  link: '/components/buttons/toggle'
+               }
+            ]
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.FEEDBACK.LABEL', translate: true },
+            link: '/components/feedback',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.FEEDBACK.SPINNER', translate: true },
+                  link: '/components/feedback/spinner'
+               }
+            ]
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.FORMS.LABEL', translate: true },
+            link: '/components/forms',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.FORMS.INPUT', translate: true },
+                  link: '/components/forms/input'
+               }
+            ]
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.INFO.LABEL', translate: true },
+            link: '/components/info',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.INFO.BOX', translate: true },
+                  link: '/components/info/box'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.INFO.CARD', translate: true },
+                  link: '/components/info/card'
+               }
+            ]
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
+            link: '/components/modal'
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.NAVIGATION.LABEL', translate: true },
+            link: '/components/navigation',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.DROPDOWN', translate: true },
+                  link: '/components/navigation/dropdown'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.DROPDOWN_MENU', translate: true },
+                  link: '/components/navigation/dropdown-menu'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.FOOTER', translate: true },
+                  link: '/components/navigation/footer'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.HEADER', translate: true },
+                  link: '/components/navigation/header'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.PAGE_TITLE', translate: true },
+                  link: '/components/navigation/page-title'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.PAGINATION', translate: true },
+                  link: '/components/navigation/pagination'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.RADIO_MENU', translate: true },
+                  link: '/components/navigation/radio-menu'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.TABS_BOX', translate: true },
+                  link: '/components/navigation/tabs-box'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.TABS_HORIZONTAL', translate: true },
+                  link: '/components/navigation/tabs-horizontal'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.TABS_VERTICAL', translate: true },
+                  link: '/components/navigation/tabs-vertical'
+               }
+            ]
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.TOOLTIP', translate: true },
+            link: '/components/tooltip'
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.SEARCH', translate: true },
+            link: '/components/search'
+         }
+      ]
+   },
+   {
+      label: { key: 'MENU.SERVICES.LABEL', translate: true },
+      link: '/services',
+      isMainMenu: true
+   }
+   // {
+   //    label: { key: 'MENU.PIPES.LABEL', translate: true },
+   //    link: '/pipes',
+   //    isMainMenu: true
+   // }
+
+];

@@ -1,2 +1,49 @@
 @import '~egeo-ui-base/utils/typography';
 @import '~egeo-ui-base/utils/colors';
+.main {
+   height: 100vh;
+   max-width: 1336px;
+   margin: auto;
+   display: flex;
+   background-color: egeo-get-color(n0);
+   position: relative;
+}
+
+.sidebar {
+   background-color: egeo-get-color(n1);
+   flex-direction: column;
+   flex-grow: 1;
+   height: 100%;
+   width: 330px;
+   max-width: 330px;
+   position: absolute;
+   left: 0;
+   top: 0;
+   overflow: hidden;
+
+   &-intro {
+      margin-bottom: 30px;
+      text-align: center;
+      .logo {
+         max-width: 70%;
+      }
+      .version {
+         font-size: egeo-get-font-size(head_xxsmall);
+      }
+   }
+   .menu {
+      width: 100%;
+      padding: 0 50px 60px 30px;
+      max-height: 84vh;
+      overflow-y: auto;
+      position: absolute;
+      left: 0;
+      top: 120px;
+   }
+}
+
+.main-content {
+   margin-left: 330px;
+   padding: 50px 60px;
+   overflow-y: auto;
+}
