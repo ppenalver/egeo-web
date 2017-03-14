@@ -1,0 +1,28 @@
+<st-input
+   #input
+   label="Name"
+   isFocused="true"
+   placeholder="Project name"
+   [forceValidations]="forceValidations"
+   [errors]="errors"
+   name="name"
+   qaTag="name-input"
+   required
+   [minlength]="minLength"
+   [(ngModel)]="model.name"
+   [pattern]="textWithoutSpaces"
+   contextualHelp="This is the contextual help of the name"
+></st-input>
+
+<st-input
+   label="Components"
+   placeholder="Number of components"
+   [forceValidations]="forceValidations"
+   [errors]="errors"
+   name="components-template"
+   fieldType="number"
+   qaTag="components-input-template"
+   required
+   [(ngModel)]="model.components"
+   contextualHelp="This is the contextual help of the components"
+></st-input>

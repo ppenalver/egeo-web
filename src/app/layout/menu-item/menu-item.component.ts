@@ -1,5 +1,5 @@
-import { Component, Input, ViewChild, ViewContainerRef } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+
 
 import { MENU, EgeoMenu } from '../layout.model';
 
@@ -9,29 +9,42 @@ import { MENU, EgeoMenu } from '../layout.model';
    styleUrls: ['menu-item.component.scss']
 })
 
-export class LayoutMenuItemComponent {
+export class LayoutMenuItemComponent implements OnChanges, OnInit {
    @Input() menu: EgeoMenu;
    @Input() childOfMain: boolean = false;
+   @Input() activeRoute: string;
 
    isOpen: boolean = false;
 
-   @ViewChild('label', { read: ViewContainerRef }) label: ViewContainerRef;
+   ngOnInit(): void {
+      if (this.activeRoute === this.menu.link) {
+         this.isOpen = true;
+      }
+   }
 
-   constructor() { }
+   ngOnChanges(changes: SimpleChanges): void {
+      let routeParam: string = 'activeRoute';
+      if (changes[routeParam]) {
+         if (changes[routeParam].currentValue === this.menu.link) {
+            this.isOpen = true;
+         }
+      }
+   }
 
    hasSubmenu(): boolean {
       return this.menu && this.menu.submenu && this.menu.submenu.length > 0;
    }
 
    getTypeClass(): string {
+      let initialClass: string = this.isActive();
       if (this.menu.isMainMenu) {
-         return 'main-item';
+         return initialClass + ' main-item';
       } else {
          if (this.childOfMain) {
-            return 'section-item';
+            return initialClass + ' section-item';
          }
       }
-      return 'menu-item';
+      return initialClass + ' menu-item';
    }
 
    getIconClass(): string {
@@ -45,5 +58,16 @@ export class LayoutMenuItemComponent {
    changeOpen(event: MouseEvent): void {
       event.stopImmediatePropagation();
       this.isOpen = !this.isOpen;
+   }
+
+   getOpen(routerActive: boolean): boolean {
+      return this.isOpen;
+   }
+
+   isActive(): string {
+      if (this.activeRoute === this.menu.link) {
+         return 'item-active';
+      }
+      return '';
    }
 }

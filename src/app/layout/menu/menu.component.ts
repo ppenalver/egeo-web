@@ -10,6 +10,7 @@ import { MENU, EgeoMenu } from '../layout.model';
 export class LayoutMenuComponent {
    @Input() menuList: EgeoMenu;
    @Input() childOfMain: boolean = false;
+   @Input() activeRoute: string;
 
    constructor() { }
 }

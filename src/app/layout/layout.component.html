@@ -5,7 +5,7 @@
          <p class="version"><a routerLink="/changelog">Version {{version}}</a></p>
       </div>
       <nav class="menu">
-         <layout-menu [menuList]="(mainMenu | async) || []"></layout-menu>
+         <layout-menu [menuList]="(mainMenu | async) || []" [activeRoute]="activeRoute"></layout-menu>
       </nav>
    </aside>
    <div class="main-content">

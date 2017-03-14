@@ -1,0 +1,17 @@
+<st-button
+   text="With Icon Left"
+   qaTag="button16"
+   leftIcon="icon-circle-check"
+   (onClick)="test1()">
+</st-button>
+
+<st-button
+   text="btnLink subtype2"
+   typeClass="btnLink"
+   subtypeClass="subtype2"
+   themeClass="themeB"
+   qaTag="button16"
+   leftIcon="icon-circle-check"
+   inputType="submit"
+   (onClick)="test1()">
+</st-button>

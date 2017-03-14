@@ -16,7 +16,6 @@
    }
 }
 
-
 .item {
    @extend %remove-list-style;
    @extend %remove-link-style;
@@ -26,7 +25,7 @@
 .item-active {
    // font-family: egeo-get-font(body);
    // font-size: egeo-get-font-size(body_small);
-   background-color: egeo-get-color(n1, false, 0.1);
+   background-color: egeo-get-color(a1, false, 0.1);
    color: egeo-get-color(n10);
 }
 
@@ -37,8 +36,7 @@
    cursor: pointer;
    margin: 15px 0 5px 0;
    padding-left: 5px;
-
-   & .separator{
+   & .separator {
       border-bottom: 1px solid egeo-get-color(n9);
    }
 }
@@ -49,14 +47,12 @@
    color: egeo-get-color(n9);
    cursor: pointer;
    padding-left: 5px;
-
    & .box {
       height: 40px;
       line-height: 40px;
       padding-right: 40px;
    }
-
-   & .separator{
+   & .separator {
       border-bottom: 1px solid egeo-get-color(n3);
    }
 }
@@ -79,5 +75,4 @@
    text-overflow: ellipsis;
    overflow: hidden;
 }
-
 

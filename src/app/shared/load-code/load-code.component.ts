@@ -39,8 +39,7 @@ export class LoadCodeComponent implements OnInit {
    }
 
    private getCodeAsText(path: string): string {
-      // return require(`!!raw-loader!../../+examples/${path}`);
-      return '';
+      return require(`!!raw-loader!../../${path}`);
    }
 
    private getLanguaje(languaje: string): PrismJS.LanguageDefinition {
