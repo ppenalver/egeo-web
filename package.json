@@ -39,7 +39,6 @@
     "core-js": "2.4.1",
     "egeo": "1.2.0-SNAPSHOT",
     "egeo-theme": "0.3.0",
-    "flexboxgrid": "6.3.1",
     "lodash": "4.17.4",
     "markdown-to-html-pipe": "1.2.0",
     "ng2-translate": "5.0.0",
