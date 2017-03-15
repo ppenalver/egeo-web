@@ -18,6 +18,7 @@ body{
    margin: $body---margin;
    overflow-x: hidden;
    font-family: $body---font-family;
+   background-color: egeo-get-color(b1);
 }
 
 img {
@@ -25,20 +26,38 @@ img {
 }
 
 // TODO: Refactor to implement a better markdown loader
-.changelog h1 {
-   color: egeo-get-color(n9);
-   font-family: egeo-get-font(heading);
-   font-size: egeo-get-font-size(head_xxxlarge);
-   font-weight: egeo-get-font-weight(normal);
-   margin-bottom: 10px;
-   text-transform: uppercase;
+.changelog  {
 
-   &::after {
-      border-bottom: 2px solid;
-      border-color: egeo-get-color(a2);
-      content: ' ';
-      display: block;
-      height: 10px;
-      width: 100%;
-  }
+   & h1 {
+      color: egeo-get-color(n9);
+      font-family: egeo-get-font(heading);
+      font-size: egeo-get-font-size(head_xxxlarge);
+      font-weight: egeo-get-font-weight(normal);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+
+         &::after {
+            border-bottom: 2px solid;
+            border-color: egeo-get-color(a2);
+            content: ' ';
+            display: block;
+            height: 10px;
+            width: 100%;
+      }
+   }
+
+   & h2 {
+      font-family: egeo-get-font(heading);
+      font-weight: egeo-get-font-weight(bold);
+      margin: 25px 0 10px 0;
+   }
+
+   & ul {
+      margin-left: 30px;
+   }
+
+   & li {
+      font-family: egeo-get-font(body);
+      color: egeo-get-color(n7);
+   }
 }

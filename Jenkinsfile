@@ -18,8 +18,8 @@ hose {
             doStaticAnalysis(config)
         }, DEPLOY: {
             doDeploy(config)
-      //   }, DOC: {  // Waiting for final web that can replace old
-      //       doDoc(config)
+        }, DOC: {
+            doDoc(config)
         }, failFast: config.FAILFAST)
     }
 }

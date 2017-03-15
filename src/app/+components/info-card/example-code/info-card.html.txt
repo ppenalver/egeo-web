@@ -1,0 +1,5 @@
+<st-info-card
+   photo="assets/images/arangodb.png"
+   title="Arangodb3"
+   description="1.0.1">
+</st-info-card>

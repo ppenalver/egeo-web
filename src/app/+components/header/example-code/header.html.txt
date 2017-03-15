@@ -1,0 +1,12 @@
+<st-header
+   appName="Data Governance"
+   [menu]="headerMenu"
+   [userMenu]="userMenu"
+   (contentChangeOffset)="onContentChangeOffset($event)"
+   qaTag="st-header"
+   [maxWidth]="1700"
+   stHeaderBehavior>
+</st-header>
+
+<div [ngStyle]="{'padding-top': contentOffset + 'px'}">
+   <router-outlet></router-outlet>

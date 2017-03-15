@@ -1,0 +1,7 @@
+<st-tooltip 
+   text="Ports 5666, 9042 and 9160 must be accessible from the Stratio Admin." 
+   [showOnClick]="true" 
+   qaTag="example1-contextual-help">
+                  <!-- COMPONENT WITH TOOLTIP -->
+</st-tooltip>
+  

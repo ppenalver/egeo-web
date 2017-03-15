@@ -7,7 +7,13 @@
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "noImplicitAny": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "baseUrl": "./src",
+      "paths": {
+         "shared": [
+            "app/shared"
+         ]
+      }
    },
    "include": [
       "src/**/*.ts",

@@ -1,0 +1,6 @@
+<st-toggle-buttons
+   [tabs]="tabs"
+   [description]="description"
+   (select)="onSelectTab($event)"
+   qaTag="toggle-buttons">
+</st-toggle-buttons>

@@ -8,9 +8,12 @@ import { APP_LANGUAGE_PROVIDERS_OBJECT } from './app.config';
 
 /* Other modules Imports */
 import { LayoutComponent } from './layout/layout.component';
+import { LayoutMenuItemComponent } from './layout/menu-item/menu-item.component';
+import { LayoutMenuComponent } from './layout/menu/menu.component';
 import { Error404Component } from './errors/error.404.component';
 import { routing } from './app.routing';
-import { SharedModule } from './shared';
+import { SharedModule } from 'shared';
+import { VersionService } from './layout/layout.service';
 
 /* External libs */
 import { TranslateModule, TranslateService } from 'ng2-translate';
@@ -38,9 +41,11 @@ import 'lodash';
    declarations: [
       AppComponent,
       LayoutComponent,
+      LayoutMenuComponent,
+      LayoutMenuItemComponent,
       Error404Component
    ],
-   providers: [AppStore],
+   providers: [AppStore, VersionService],
    bootstrap: [AppComponent]
 })
 export class AppModule {

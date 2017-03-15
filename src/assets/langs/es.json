@@ -1,25 +1,85 @@
 {
-   "HELLO_WORLD": "HELLO WORLD",
    "MENU": {
-      "SERVICE": "Service",
-      "NODES": "Nodes",
-      "CASSANDRA": "Cassandra"
-   },
-   "HEADER_MENU": {
-      "IDENTITIES": {
-         "IDENTITIES": "IDENTITIES",
-         "USER": "USER",
-         "GROUP": "GROUP"
+      "OVERVIEW": "Overview",
+      "BRANDING": {
+         "LABEL": "Branding",
+         "LOGO": "Logo"
       },
-      "SERVICES": "SERVICES",
-      "POLICIES": "POLICIES",
-      "AUDITING": "AUDITING",
-      "SETTINGS": "SETTINGS"
+      "STYLEGUIDE": {
+         "LABEL": "Styleguide",
+         "COLORS": "Colors",
+         "ICONS": "Icons",
+         "TYPOGRAPHY": "Typography",
+         "GRID": "Grid"
+      },
+      "COMPONENTS": {
+         "LABEL": "Components",
+         "BUTTONS": {
+            "LABEL": "Buttons",
+            "BUTTON": "Button",
+            "TOGGLE_BUTTON": "Toggle button"
+         },
+         "FEEDBACK": {
+            "LABEL": "Feedback",
+            "SPINNER": "Spinner"
+         },
+         "FORMS": {
+            "LABEL": "Forms",
+            "INPUT": "Input"
+         },
+         "INFO": {
+            "LABEL": "Info",
+            "BOX": "Box",
+            "CARD": "Card"
+         },
+         "MODAL": "Modal",
+         "NAVIGATION": {
+            "LABEL": "Navigation",
+            "DROPDOWN": "Dropdown",
+            "DROPDOWN_MENU": "Dropdown menu",
+            "FOOTER": "Footer",
+            "HEADER": "Header",
+            "PAGE_TITLE": "Page title",
+            "PAGINATION": "Pagination",
+            "RADIO_MENU": "Radio menu",
+            "TABS_BOX": "Tab box",
+            "TABS_HORIZONTAL": "Tabs horizontal",
+            "TABS_VERTICAL": "Tabs vertical"
+         },
+         "TOOLTIP": "Tooltip",
+         "SEARCH": "Search"
+      },
+      "SERVICES": {
+         "LABEL": "Services",
+         "REGEXP": "Regexp"
+      },
+      "PIPES": {
+         "LABEL": "Pipes"
+      }
+
    },
-   "TWO_LIST": {
-      "ALL_ELEMENTS_TITLE": "All elements",
-      "ALL_ELEMENTS_PLACEHOLDER": "Search in all",
-      "SELECTED_ELEMENTS_TITLE": "Selected elements",
-      "SELECTED_ELEMENTS_PLACEHOLDER": "Search in selected"
+   "EXAMPLES": {
+      "MENU": {
+         "SERVICE": "Service",
+         "NODES": "Nodes",
+         "CASSANDRA": "Cassandra"
+      },
+      "HEADER_MENU": {
+         "IDENTITIES": {
+            "IDENTITIES": "IDENTITIES",
+            "USER": "USER",
+            "GROUP": "GROUP"
+         },
+         "SERVICES": "SERVICES",
+         "POLICIES": "POLICIES",
+         "AUDITING": "AUDITING",
+         "SETTINGS": "SETTINGS"
+      },
+      "TWO_LIST": {
+         "ALL_ELEMENTS_TITLE": "All elements",
+         "ALL_ELEMENTS_PLACEHOLDER": "Search in all",
+         "SELECTED_ELEMENTS_TITLE": "Selected elements",
+         "SELECTED_ELEMENTS_PLACEHOLDER": "Search in selected"
+      }
    }
 }

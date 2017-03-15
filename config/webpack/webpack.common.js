@@ -33,6 +33,9 @@ module.exports = function (options) {
         './src/main.ts'
     },
     resolve: {
+       alias: {
+        'shared': helpers.root('src', 'app', 'shared'),
+      },
       extensions: ['.ts', '.js', '.json'],
       modules: [helpers.root('src'), helpers.root('node_modules')],
 
@@ -143,7 +146,9 @@ module.exports = function (options) {
       ),
       new CopyWebpackPlugin([
         { from: 'src/assets', to: 'assets' },
-        { from: 'CHANGELOG.md', to: 'assets/CHANGELOG.md' }
+        { from: 'node_modules/egeo/CHANGELOG.md', to: 'assets/CHANGELOG.md' },
+        { from: 'pom.xml', to: 'assets/pom.xml' },
+        { from: 'node_modules/egeo-theme/egeo-theme-stratio.css', to: 'assets/theme-stratio.css' }
       ]),
 
       new HtmlWebpackPlugin({

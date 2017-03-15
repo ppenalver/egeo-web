@@ -1,0 +1,1 @@
+<st-info-box icon="icon-cassandra" title="CASSANDRA">
