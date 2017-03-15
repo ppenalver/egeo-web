@@ -1,6 +1,6 @@
 <li class="item" [ngClass]="getTypeClass()" (click)="changeOpen($event)" [routerLink]="menu.link" routerLinkActive="active"
    #rla="routerLinkActive">
-   <div class="box">{{menu.label}}<i [ngClass]="getIconClass()" class="open-icon" (click)="changeOpen($event)"></i></div>
+   <div class="box">{{menu.label}}<i [ngClass]="getIconClass()" class="open-icon"></i></div>
    <div class="separator"></div>
    <layout-menu [menuList]="menu.submenu" [childOfMain]="menu.isMainMenu" *ngIf="getOpen(rla.isActive)" [activeRoute]="activeRoute"></layout-menu>
 </li>

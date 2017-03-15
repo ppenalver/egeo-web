@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
+import * as _ from 'lodash';
 
 import { IconModel } from './icons.model';
 
@@ -24,11 +25,15 @@ export class IconsService {
          execResult = regex.exec(text);
          if (execResult) {
             result.push({
-             name: execResult[1] || '',
-             key: execResult[2] || ''
+               name: execResult[1] || '',
+               key: execResult[2] || ''
             });
          }
       } while (execResult);
-      return result;
+      return result.sort(this.strComparator);
+   }
+
+   private strComparator(item1: IconModel, item2: IconModel): number {
+      return item1.name.localeCompare(item2.name);
    }
 }

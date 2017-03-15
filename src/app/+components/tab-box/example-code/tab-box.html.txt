@@ -1,0 +1,3 @@
+<st-tab-box [tabs]="tabs" (select)="onSelectTab($event)" qaTag="tab-box">
+   <!-- CONTENT -->
+</st-tab-box>

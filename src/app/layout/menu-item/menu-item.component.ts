@@ -61,6 +61,7 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
    }
 
    getOpen(routerActive: boolean): boolean {
+      this.isOpen = routerActive;
       return this.isOpen;
    }
 

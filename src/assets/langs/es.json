@@ -50,7 +50,8 @@
          "SEARCH": "Search"
       },
       "SERVICES": {
-         "LABEL": "Services"
+         "LABEL": "Services",
+         "REGEXP": "Regexp"
       },
       "PIPES": {
          "LABEL": "Pipes"

@@ -1,0 +1,3 @@
+import { StRegEx } from 'egeo';
+
+emailRegExp: string = StRegEx.EMAIL;

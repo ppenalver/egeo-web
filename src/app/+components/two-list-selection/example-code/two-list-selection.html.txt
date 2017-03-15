@@ -1,0 +1,7 @@
+<st-two-list-selection
+   [allElements]="completeUserList"
+   [(selectedElements)]="selectedUserList"
+   [config]="(config | async)"
+   [editable]="true"
+   qaTag="container-list">
+</st-two-list-selection>

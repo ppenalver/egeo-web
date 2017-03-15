@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Buttons } from 'egeo';
 
-import { ApiDoc, TYPES } from '../../shared';
+import { ApiDoc, TYPES } from 'shared';
 
 @Component({
    selector: 'button-example',

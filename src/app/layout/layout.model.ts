@@ -22,17 +22,6 @@ export const MENU: Array<EgeoMenuSchema> = [
       isMainMenu: true
    },
    {
-      label: { key: 'MENU.BRANDING.LABEL', translate: true },
-      link: '/branding',
-      isMainMenu: true,
-      submenu: [
-         {
-            label: { key: 'MENU.BRANDING.LOGO', translate: true },
-            link: '/branding/logo'
-         }
-      ]
-   },
-   {
       label: { key: 'MENU.STYLEGUIDE.LABEL', translate: true },
       link: '/styleguide',
       isMainMenu: true,
@@ -108,10 +97,10 @@ export const MENU: Array<EgeoMenuSchema> = [
                }
             ]
          },
-         {
-            label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
-            link: '/components/modal'
-         },
+         // {
+         //    label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
+         //    link: '/components/modal'
+         // },
          {
             label: { key: 'MENU.COMPONENTS.NAVIGATION.LABEL', translate: true },
             link: '/components/navigation',
@@ -146,7 +135,7 @@ export const MENU: Array<EgeoMenuSchema> = [
                },
                {
                   label: { key: 'MENU.COMPONENTS.NAVIGATION.TABS_BOX', translate: true },
-                  link: '/components/navigation/tabs-box'
+                  link: '/components/navigation/tab-box'
                },
                {
                   label: { key: 'MENU.COMPONENTS.NAVIGATION.TABS_HORIZONTAL', translate: true },
@@ -171,7 +160,13 @@ export const MENU: Array<EgeoMenuSchema> = [
    {
       label: { key: 'MENU.SERVICES.LABEL', translate: true },
       link: '/services',
-      isMainMenu: true
+      isMainMenu: true,
+      submenu: [
+         {
+            label: { key: 'MENU.SERVICES.REGEXP', translate: true },
+            link: '/services/regexp'
+         }
+      ]
    }
    // {
    //    label: { key: 'MENU.PIPES.LABEL', translate: true },

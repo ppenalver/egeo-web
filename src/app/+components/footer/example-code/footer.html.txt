@@ -1,0 +1,6 @@
+<st-footer
+   [rightsText]="rightsText"
+   [links]="links"
+   [image]="image"
+   qaTag="footer">
+</st-footer>

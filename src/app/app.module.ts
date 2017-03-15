@@ -12,7 +12,7 @@ import { LayoutMenuItemComponent } from './layout/menu-item/menu-item.component'
 import { LayoutMenuComponent } from './layout/menu/menu.component';
 import { Error404Component } from './errors/error.404.component';
 import { routing } from './app.routing';
-import { SharedModule } from './shared';
+import { SharedModule } from 'shared';
 import { VersionService } from './layout/layout.service';
 
 /* External libs */
