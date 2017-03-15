@@ -33,8 +33,6 @@
    "exclude": [
       "node_modules",
       "target",
-      "components/**/*.spec.ts",
-      "components/**/*.e2e.ts",
       "src/**/*.spec.ts",
       "src/**/*.e2e.ts"
    ],

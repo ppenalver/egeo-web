@@ -23,11 +23,8 @@ import { EgeoModule } from 'egeo';
 import { AppStore, State } from './app.store';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
-// RxJS
-import 'rxjs';
-
 // Libs
-import 'lodash';
+import '../styles/global.scss';
 
 @NgModule({
    imports: [
