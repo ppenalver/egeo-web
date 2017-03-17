@@ -17,7 +17,7 @@ import { VersionService } from './layout/layout.service';
 
 /* External libs */
 import { TranslateModule, TranslateService } from 'ng2-translate';
-import { EgeoModule } from 'egeo';
+import { EgeoModule } from '@stratio/egeo';
 
 // Hot Loader
 import { AppStore, State } from './app.store';

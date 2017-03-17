@@ -19,6 +19,10 @@ body{
    overflow: hidden;
    font-family: $body---font-family;
    background-color: egeo-get-color(b1);
+
+   overflow-y: auto;
+   height: 100vh;
+   max-height: 100vh;
 }
 
 img {

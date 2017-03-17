@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
 import {ApiDoc, TYPES} from 'shared';
-import {StRadioMenuOption} from 'egeo';
+import {StRadioMenuOption} from '@stratio/egeo';
 
 @Component({
    selector: 'radio-menu-example',

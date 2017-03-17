@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Buttons } from 'egeo';
+import { Buttons } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from 'shared';
 

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { StHorizontalTab } from 'egeo';
+import { StHorizontalTab } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from 'shared';
 

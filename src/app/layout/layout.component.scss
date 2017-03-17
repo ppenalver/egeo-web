@@ -1,7 +1,6 @@
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
 .main {
-   height: 100vh;
    max-width: 1336px;
    margin: auto;
    display: flex;
@@ -9,41 +8,54 @@
    position: relative;
 }
 
-.sidebar {
-   background-color: egeo-get-color(n1);
-   flex-direction: column;
-   flex-grow: 1;
-   height: 100%;
-   width: 280px;
-   max-width: 280px;
-   position: absolute;
+.sidebar-container {
+   position: fixed;
    left: 0;
+   right: 0;
    top: 0;
-   overflow: hidden;
+   
+   height: 100vh;
+   width: 100%;
+   display: block;
+   margin: auto;
+   max-width: 1366px;
 
-   &-intro {
-      margin-bottom: 30px;
-      text-align: center;
-      .logo {
-         max-width: 70%;
-      }
-      .version {
-         font-size: egeo-get-font-size(head_xxsmall);
-      }
-   }
-   .menu {
-      width: 100%;
-      padding: 0 50px 60px 30px;
-      max-height: 86vh;
-      overflow-y: auto;
+
+   .sidebar {
+      background-color: egeo-get-color(n1);
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+      width: 280px;
+      max-width: 280px;
       position: absolute;
       left: 0;
-      top: 120px;
+      top: 0;
+      overflow: hidden;
+      &-intro {
+         margin-bottom: 30px;
+         text-align: center;
+         .logo {
+            max-width: 70%;
+         }
+         .version {
+            font-size: egeo-get-font-size(head_xxsmall);
+         }
+      }
+      .menu {
+         width: 100%;
+         padding: 0 50px 60px 30px;
+         max-height: 86vh;
+         overflow-y: auto;
+         position: absolute;
+         left: 0;
+         top: 120px;
+      }
    }
 }
 
 .main-content {
    margin-left: 280px;
    padding: 50px 60px;
-   overflow-y: auto;
+   z-index: 9999;
 }

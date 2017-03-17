@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { EgeoResolveService } from 'egeo';
+import { EgeoResolveService } from '@stratio/egeo';
 import { TranslateService } from 'ng2-translate';
 import { Observable } from 'rxjs';
 

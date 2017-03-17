@@ -138,7 +138,7 @@ module.exports = function (options) {
                to: 'assets'
             },
             {
-               from: 'node_modules/egeo/CHANGELOG.md',
+               from: 'node_modules/@stratio/egeo/CHANGELOG.md',
                to: 'assets/CHANGELOG.md'
             },
             {
@@ -146,7 +146,7 @@ module.exports = function (options) {
                to: 'assets/pom.xml'
             },
             {
-               from: 'node_modules/egeo-theme/egeo-theme-stratio.css',
+               from: 'node_modules/@stratio/egeo-theme/egeo-theme-stratio.css',
                to: 'assets/theme-stratio.css'
             }
          ]),
