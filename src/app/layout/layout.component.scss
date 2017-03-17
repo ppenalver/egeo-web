@@ -1,11 +1,17 @@
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
+
+$max-width: 1336px;
+$menu-width: 280px;
+$height: 100vh;
+
 .main {
-   max-width: 1336px;
+   max-width: $max-width;
    margin: auto;
    display: flex;
    background-color: egeo-get-color(n0);
    position: relative;
+   min-height: $height;
 }
 
 .sidebar-container {
@@ -14,11 +20,11 @@
    right: 0;
    top: 0;
    
-   height: 100vh;
+   height: $height;
    width: 100%;
-   display: block;
+   display: flex;
    margin: auto;
-   max-width: 1366px;
+   max-width: $max-width;
 
 
    .sidebar {
@@ -26,12 +32,13 @@
       flex-direction: column;
       flex-grow: 1;
       height: 100%;
-      width: 280px;
-      max-width: 280px;
+      width: $menu-width;
+      max-width: $menu-width;
       position: absolute;
       left: 0;
       top: 0;
       overflow: hidden;
+
       &-intro {
          margin-bottom: 30px;
          text-align: center;
@@ -55,7 +62,8 @@
 }
 
 .main-content {
-   margin-left: 280px;
+   margin-left: $menu-width;
    padding: 50px 60px;
-   z-index: 9999;
+   z-index: 1;
+   overflow: hidden;
 }
