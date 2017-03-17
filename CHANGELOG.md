@@ -2,4 +2,4 @@
 
 ## 1.2.0 (upcoming)
 
-* Pending changelog
+* See egeo (https://github.com/Stratio/egeo) changelog
