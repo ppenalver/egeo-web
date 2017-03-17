@@ -23,7 +23,8 @@ import { EgeoModule } from 'egeo';
 import { AppStore, State } from './app.store';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
-// Libs
+// Libs and external dependencies
+import 'rxjs';
 import '../styles/global.scss';
 
 @NgModule({
