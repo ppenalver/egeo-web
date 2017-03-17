@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StRegEx, StInputError } from 'egeo';
+import { StRegEx, StInputError } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from 'shared';
 

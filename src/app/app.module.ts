@@ -17,13 +17,14 @@ import { VersionService } from './layout/layout.service';
 
 /* External libs */
 import { TranslateModule, TranslateService } from 'ng2-translate';
-import { EgeoModule } from 'egeo';
+import { EgeoModule } from '@stratio/egeo';
 
 // Hot Loader
 import { AppStore, State } from './app.store';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
-// Libs
+// Libs and external dependencies
+import 'rxjs';
 import '../styles/global.scss';
 
 @NgModule({

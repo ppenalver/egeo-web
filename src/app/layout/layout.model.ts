@@ -1,4 +1,4 @@
-import { TranslateableElement } from 'egeo';
+import { TranslateableElement } from '@stratio/egeo';
 
 export interface EgeoMenu {
    label: string;

@@ -57,7 +57,6 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
 
    changeOpen(event: MouseEvent): void {
       event.stopImmediatePropagation();
-      this.isOpen = !this.isOpen;
    }
 
    getOpen(routerActive: boolean): boolean {

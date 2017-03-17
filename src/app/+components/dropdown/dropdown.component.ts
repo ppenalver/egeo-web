@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StDropDownMenuItem, StDropDownMenuGroup } from 'egeo';
+import { StDropDownMenuItem, StDropDownMenuGroup } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from 'shared';
 

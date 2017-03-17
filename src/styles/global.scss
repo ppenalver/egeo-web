@@ -1,6 +1,6 @@
 $egeo-sanitize: true;
-@import '~egeo-ui-base/vendors/sanitize';
+@import '~@stratio/egeo-ui-base/vendors/sanitize';
 
-@import '~egeo-theme/egeo-theme-stratio.css';
-@import '~egeo-theme/egeo-grid.css';
+@import '~@stratio/egeo-theme/egeo-theme-stratio.css';
+@import '~@stratio/egeo-theme/egeo-grid.css';
 @import '~prismjs/themes/prism-coy.css';

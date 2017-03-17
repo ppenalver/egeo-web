@@ -8,7 +8,7 @@ import {
    StTwoListSelectionConfigSchema,
    StTwoListSelectionConfig,
    EgeoResolveService
-} from 'egeo';
+} from '@stratio/egeo';
 
 @Component({
    selector: 'two-list-selection-example',

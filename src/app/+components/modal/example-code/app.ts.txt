@@ -1,5 +1,5 @@
 ....
-import { StModalService } from 'egeo';
+import { StModalService } from '@stratio/egeo';
 
 ....
 export class AppComponent implements OnInit {

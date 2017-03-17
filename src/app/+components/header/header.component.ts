@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { Observable } from 'rxjs';
-import { StHeaderModel, StHeaderUserMenuModel, EgeoResolveService } from 'egeo';
+import { StHeaderModel, StHeaderUserMenuModel, EgeoResolveService } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from 'shared';
 

@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Component1Module } from './component1/component1.module';
 import { Component2Module } from './component2/component2.module';
 
-import { StModalModule } from 'egeo';
+import { StModalModule } from '@stratio/egeo';
 
 
 @NgModule({
