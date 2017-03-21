@@ -7,8 +7,6 @@ import { Observable } from 'rxjs';
 import { MENU, EgeoMenu } from './layout.model';
 import { VersionService } from './layout.service';
 
-import * as parser from 'xml2json-light';
-
 @Component({
    selector: 'layout',
    templateUrl: 'layout.component.html',
@@ -31,9 +29,8 @@ export class LayoutComponent {
       router.events.subscribe(change => this.changeRoute(change));
    }
 
-   private parseVersion(xml: string): void {
-      let result: any = parser.xml2json(xml);
-      this.version = result.project.version;
+   private parseVersion(version: string): void {
+      this.version = version;
    }
 
    private changeRoute(event: any): void {
