@@ -6,9 +6,8 @@ node_js:
   - '6.9.5'
 
 before_script:
- - npm install -g yarn
- - yarn
+ - npm install
 
 script:
- - yarn test
- - yarn build
+ - npm run test
+ - npm run build
