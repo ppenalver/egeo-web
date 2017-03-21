@@ -142,8 +142,8 @@ module.exports = function (options) {
                to: 'assets/CHANGELOG.md'
             },
             {
-               from: 'pom.xml',
-               to: 'assets/pom.xml'
+               from: 'package.json',
+               to: 'assets/package.json'
             },
             {
                from: 'node_modules/@stratio/egeo-theme/egeo-theme-stratio.css',
