@@ -1,10 +1,33 @@
 language: node_js
-sudo: true
-dist: trusty
 
 node_js:
-  - '6.9.5'
+  - '7'
+  - '6'
+  - '4'
+
+before_install:
+  - rvm use 1.9.3
+  - gem install github_changelog_generator
+
+notifications:
+  email: false
 
 script:
- - npm run test
- - npm run build
+  - npm run test
+  - npm run build
+
+after_success:
+  - ./scripts/deploy.sh
+
+# before_script:
+#   - npm prune
+
+# script:
+#  - npm run test
+# #  - ./scripts/deploy.sh
+
+# after_success:
+#   - npm run semantic-release
+# branches:
+#   except:
+#     - /^v\d+\.\d+\.\d+$/
