@@ -22,20 +22,8 @@ if [[ ${TRAVIS_PULL_REQUEST} != "false" ]]; then
 fi
 
 if [[ ${TRAVIS_TAG} != "" ]]; then
-   echo "[INFO]: Skipping deploy because this is git tag build."
-   ${thisDir}/deploy-generate-branch.sh
-   exit 0
-fi
-
-# Release a new version in npm and add to github
-if [[ ${TRAVIS_BRANCH} == ${WORK_BRANCH} ]]; then
-  echo "[INFO]: Skipping release because this isn't over master branch."
+  echo "=====> GENERATING GH-PAGES"
+  ${thisDir}/deploy-gh-pages.sh
+  echo "[INFO]: Skipping publish because this is git tag build."
   exit 0
 fi
-
-echo "********************** RELEASING NEW VERSION ***************************"
-echo "=====> GENERATING GH-PAGES"
-# ${thisDir}/deploy-gh-pages.sh
-
-echo "=====> GENERATING NPM VERSION"
-# npm run semantic-release
