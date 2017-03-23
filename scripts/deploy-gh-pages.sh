@@ -8,12 +8,7 @@ COMMIT_AUTHOR_EMAIL="travis@travis-ci.org"
 GH_PAGES_FOLDER="gh-pages"
 REPO="https://$GITHUB_TOKEN@github.com/$GITHUB_REPO.git"
 
-EGEO_JSON="node_modules/@stratio/egeo/package.json"
-VERSION=$(cat $EGEO_JSON \
-  | grep version \
-  | head -1 \
-  | awk -F: '{ print $2 }' \
-  | sed 's/[",]//g')
+VERSION=`cat node_modules/@stratio/egeo/package.json | jq -r '.version'`
 
 
 # Didn't check anything because only launch gh-pages and its caller script responsability
@@ -27,8 +22,10 @@ rm -rf $GH_PAGES_FOLDER/$VERSION || exit 0
 # 3º Generate source and copy to destination
 
 # npm run build  # Generate
-mkdir $GH_PAGES_FOLDER/$VERSION
-rsync -r $GH_PAGES_SOURCE_FOLDER/ $GH_PAGES_FOLDER/$VERSION/ # Copy
+DESTINATION=$GH_PAGES_FOLDER/$VERSION
+echo $DESTINATION
+mkdir $DESTINATION
+rsync -r $GH_PAGES_SOURCE_FOLDER/ $DESTINATION # Copy
 
 # 4º Add user info
 cd $GH_PAGES_FOLDER/$VERSION
