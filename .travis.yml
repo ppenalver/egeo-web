@@ -1,10 +1,16 @@
 language: node_js
-sudo: true
-dist: trusty
 
 node_js:
-  - '6.9.5'
+  - '7'
+  - '6'
+  - '4'
+
+notifications:
+  email: false
 
 script:
- - npm run test
- - npm run build
+  - npm run test
+  - npm run build
+
+after_success:
+  - ./scripts/deploy.sh
