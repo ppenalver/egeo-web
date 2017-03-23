@@ -11,8 +11,7 @@ function fillList(versionList) {
 }
 
 function selectDoc(option) {
-   var path = './' + option;
-   $('iframe')[0].src = path;
+   document.getElementById('egeo-doc').src = './' + option;
 }
 
 function getFolders() {
