@@ -27,7 +27,8 @@ rm -rf $GH_PAGES_FOLDER/$VERSION || exit 0
 # 3º Generate source and copy to destination
 
 # npm run build  # Generate
-cp -r $GH_PAGES_SOURCE_FOLDER $GH_PAGES_FOLDER/$VERSION # Copy
+mkdir $GH_PAGES_FOLDER/$VERSION
+rsync -r $GH_PAGES_SOURCE_FOLDER/ $GH_PAGES_FOLDER/$VERSION/ # Copy
 
 # 4º Add user info
 cd $GH_PAGES_FOLDER/$VERSION
