@@ -27,7 +27,7 @@ export const routes: Routes = [
          { path: 'changelog', loadChildren: './+others/changelog/changelog.module#ChangelogModule' },
 
          // themes
-         { path: 'themes/stratio', loadChildren: './+themes/stratio/colors/colors.module#ColorsModule' },
+         { path: 'themes/stratio', redirectTo: 'themes/stratio/colors' },
          { path: 'themes/stratio/colors', loadChildren: './+themes/stratio/colors/colors.module#ColorsModule' },
          { path: 'themes/stratio/grid', loadChildren: './+themes/stratio/grid/grid.module#GridModule' },
          { path: 'themes/stratio/icons', loadChildren: './+themes/stratio/icons/icons.module#IconsModule' },
