@@ -22,26 +22,32 @@ export const MENU: Array<EgeoMenuSchema> = [
       isMainMenu: true
    },
    {
-      label: { key: 'MENU.STYLEGUIDE.LABEL', translate: true },
-      link: '/styleguide',
+      label: { key: 'MENU.THEMES.LABEL', translate: true },
+      link: '/themes',
       isMainMenu: true,
       submenu: [
          {
-            label: { key: 'MENU.STYLEGUIDE.COLORS', translate: true },
-            link: '/styleguide/colors'
+            label: { key: 'MENU.THEMES.STRATIO.LABEL', translate: true },
+            link: '/themes/stratio',
+            submenu: [
+                {
+                    label: { key: 'MENU.THEMES.STRATIO.COLORS', translate: true },
+                    link: '/themes/stratio/colors'
+                },
+                {
+                    label: { key: 'MENU.THEMES.STRATIO.ICONS', translate: true },
+                    link: '/themes/stratio/icons'
+                },
+                {
+                    label: { key: 'MENU.THEMES.STRATIO.TYPOGRAPHY', translate: true },
+                    link: '/themes/stratio/typography'
+                },
+                {
+                    label: { key: 'MENU.THEMES.STRATIO.GRID', translate: true },
+                    link: '/themes/stratio/grid'
+                }
+            ]
          },
-         {
-            label: { key: 'MENU.STYLEGUIDE.ICONS', translate: true },
-            link: '/styleguide/icons'
-         },
-         {
-            label: { key: 'MENU.STYLEGUIDE.TYPOGRAPHY', translate: true },
-            link: '/styleguide/typography'
-         },
-         {
-            label: { key: 'MENU.STYLEGUIDE.GRID', translate: true },
-            link: '/styleguide/grid'
-         }
       ]
    },
    {

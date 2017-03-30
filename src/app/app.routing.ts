@@ -10,7 +10,7 @@ export const routes: Routes = [
          // Main redirection
          { path: '', redirectTo: 'main', pathMatch: 'full' },
          // Redirections of main sections
-         { path: 'styleguide', redirectTo: 'styleguide/colors', pathMatch: 'full' },
+         { path: 'themes', redirectTo: 'themes/stratio/colors', pathMatch: 'full' },
          { path: 'components', redirectTo: 'components/buttons/button', pathMatch: 'full' },
          { path: 'services', redirectTo: 'services/regexp', pathMatch: 'full' },
          // { path: 'pipes', redirectTo: 'pipes/filter', pathMatch: 'full' },
@@ -26,11 +26,13 @@ export const routes: Routes = [
          { path: 'main', loadChildren: './+others/main/main.module#MainModule' },
          { path: 'changelog', loadChildren: './+others/changelog/changelog.module#ChangelogModule' },
 
-         // styleguide
-         { path: 'styleguide/colors', loadChildren: './+styleguide/colors/colors.module#ColorsModule' },
-         { path: 'styleguide/grid', loadChildren: './+styleguide/grid/grid.module#GridModule' },
-         { path: 'styleguide/icons', loadChildren: './+styleguide/icons/icons.module#IconsModule' },
-         { path: 'styleguide/typography', loadChildren: './+styleguide/typography/typography.module#TypographyModule' },
+         // themes
+         { path: 'themes/stratio', loadChildren: './+themes/stratio/colors/colors.module#ColorsModule' },
+         { path: 'themes/stratio/colors', loadChildren: './+themes/stratio/colors/colors.module#ColorsModule' },
+         { path: 'themes/stratio/grid', loadChildren: './+themes/stratio/grid/grid.module#GridModule' },
+         { path: 'themes/stratio/icons', loadChildren: './+themes/stratio/icons/icons.module#IconsModule' },
+         { path: 'themes/stratio/typography', loadChildren: './+themes/stratio/typography/typography.module#TypographyModule' },
+         // { path: 'themes/build-your-own', loadChildren: './+themes/build-your-own/buildyourown.module#BuildYourOwnModule' },
 
 
          // Components modules

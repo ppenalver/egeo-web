@@ -5,12 +5,19 @@
          "LABEL": "Branding",
          "LOGO": "Logo"
       },
-      "STYLEGUIDE": {
-         "LABEL": "Styleguide",
-         "COLORS": "Colors",
-         "ICONS": "Icons",
-         "TYPOGRAPHY": "Typography",
-         "GRID": "Grid"
+      "THEMES": {
+         "LABEL": "Themes",
+         "STRATIO": {
+            "LABEL": "Stratio Theme",
+            "COLORS": "Colors",
+            "ICONS": "Icons",
+            "TYPOGRAPHY": "Typography",
+            "GRID": "Grid"
+         },
+         "BUILD": {
+             "LABEL": "Build your own",
+             "UIBASE": "Work with ui-base"
+         }
       },
       "COMPONENTS": {
          "LABEL": "Components",
