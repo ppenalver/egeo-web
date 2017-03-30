@@ -2,7 +2,7 @@
 
 ## 1.3.0 (upcoming)
 
-* Pending changelog
+* Change the naming of the Sidbar navigation menu
 
 ## 1.2.0 (March 17, 2017)
 
