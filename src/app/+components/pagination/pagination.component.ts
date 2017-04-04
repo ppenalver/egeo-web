@@ -33,9 +33,9 @@ export class PaginationComponent implements OnInit {
                 { paramName: 'perPageOptions', type: TYPES.ARRAY_NUM, required: false, details: 'Define number of items per page. By default is [20, 50, 100]' },
                 { paramName: 'currentPage', type: TYPES.NUM, required: false, details: 'Current paging page. By default is 1' },
                 { paramName: 'label', type: TYPES.OBJ, required: false, details: 'Translation tags or component texts' },
-                { paramName: 'showPerPage', type: TYPES.BOOL, required: true, details: 'Show dropdown of number elements per page. By default false' },
-                { paramName: 'hidePerPage', type: TYPES.BOOL, required: true, details: 'Hide dropdown of number elements per page. By default false' },
-                { paramName: 'theme', type: TYPES.STR, required: true, details: '. By default themeA' },
+                { paramName: 'showPerPage', type: TYPES.BOOL, required: false, details: 'Show dropdown of number elements per page. By default false' },
+                { paramName: 'hidePerPage', type: TYPES.BOOL, required: false, details: 'Hide dropdown of number elements per page. By default false' },
+                { paramName: 'theme', type: TYPES.STR, required: false, details: '. By default themeA' },
                 { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id value for qa test.' }
             ],
             outputs: [
