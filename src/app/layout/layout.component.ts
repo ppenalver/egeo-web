@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { EgeoResolveService } from '@stratio/egeo';
 import { TranslateService } from 'ng2-translate';
@@ -18,6 +18,8 @@ export class LayoutComponent {
    public version: string = 'undefined';
    public activeRoute: string = '';
 
+   @ViewChild('mainContent', { read: ViewContainerRef }) target: ViewContainerRef;
+
    constructor(
       private egeoTranslate: EgeoResolveService,
       private translate: TranslateService,
@@ -36,6 +38,12 @@ export class LayoutComponent {
    private changeRoute(event: any): void {
       if (event instanceof NavigationEnd) {
          this.activeRoute = event.urlAfterRedirects;
+         this.scrollTop();
       }
+   }
+
+   private scrollTop(): void {
+      this.target.element.nativeElement.scrollTop = 0;
+
    }
 }
