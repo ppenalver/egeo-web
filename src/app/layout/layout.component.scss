@@ -1,6 +1,5 @@
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
-
 $max-width: 1336px;
 $menu-width: 280px;
 $height: 100vh;
@@ -11,34 +10,23 @@ $height: 100vh;
    display: flex;
    background-color: egeo-get-color(n0);
    position: relative;
-   min-height: $height;
+   height: $height;
 }
 
 .sidebar-container {
-   position: fixed;
-   left: 0;
-   right: 0;
-   top: 0;
-   
    height: $height;
-   width: 100%;
-   display: flex;
-   margin: auto;
-   max-width: $max-width;
-
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: $menu-width;
+   max-width: $menu-width;
+   overflow-y: auto;
 
    .sidebar {
       background-color: egeo-get-color(n1);
       flex-direction: column;
       flex-grow: 1;
       height: 100%;
-      width: $menu-width;
-      max-width: $menu-width;
-      position: absolute;
-      left: 0;
-      top: 0;
-      overflow: hidden;
-
       &-intro {
          margin-bottom: 30px;
          text-align: center;
@@ -64,6 +52,7 @@ $height: 100vh;
 .main-content {
    margin-left: $menu-width;
    padding: 50px 60px;
+   height: 100%;
    z-index: 1;
-   overflow: hidden;
+   overflow-y: auto;
 }
