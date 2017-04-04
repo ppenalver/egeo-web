@@ -1,0 +1,39 @@
+export enum StModalType {
+   INFO,       // icon-info1, color: a1
+   WARNING,    // icon-alert, color: s2
+   NEUTRAL     // without icon, color: n7
+};
+export enum StModalWidth {
+   COMPACT,    // { min-width: 700px, max-width: 700px, max-heigth: 500px }
+   REGULAR,    // { min-width: 950px, max-width: 950px, max-heigth: 500px }
+   LARGE       // { min-width: 1240px, max-width: 1240px,
+               //   min-heigth: 600px, max-heigth: 600px }
+};
+export enum StModalMainTextSize {
+   BIG,     // font-size: body_xxlarge
+   MEDIUM   // font-size: body_medium
+};
+export enum StModalResponse { YES, NO, CLOSE }
+
+export interface StModalButton {
+   icon?: string;
+   iconLeft?: boolean;
+   primary?: boolean;
+   label: string;
+   response: StModalResponse;
+}
+
+export interface StModalConfig {
+   contextualTitle?: string;        // Default: undefined
+   modalTitle?: string;             // Default: DEFAULT TITLE
+   message?: string;                // Default: undefined
+   html?: string;                   // Default: undefined
+   mainText?: StModalMainTextSize;  // Default: StModalMainTextSize.MEDIUM
+   modalType?: StModalType;         // Default: StModalType.NEUTRAL
+   modalWidth?: StModalWidth;       // Default: StModalWidth.COMPACT
+   inputs?: Object;                 // Default: {}
+   outputs?: Object;                // Default: {}
+   buttons?: StModalButton[];       // Default: []
+   closeOnAccept?: boolean;         // Default: true
+   qaTag: string;                   // REQUIRED
+}

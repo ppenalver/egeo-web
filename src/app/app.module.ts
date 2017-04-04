@@ -14,10 +14,11 @@ import { Error404Component } from './errors/error.404.component';
 import { routing } from './app.routing';
 import { SharedModule } from 'shared';
 import { VersionService } from './layout/layout.service';
+import { ModalTestComponent } from './+components/modal/modal-test.component';
 
 /* External libs */
 import { TranslateModule, TranslateService } from 'ng2-translate';
-import { EgeoModule } from '@stratio/egeo';
+import { EgeoModule, StModalModule } from '@stratio/egeo';
 
 // Hot Loader
 import { AppStore, State } from './app.store';
@@ -34,14 +35,16 @@ import '../styles/global.scss';
       EgeoModule.forRoot(),
       routing,
       TranslateModule.forRoot(APP_LANGUAGE_PROVIDERS_OBJECT),
-      SharedModule
+      SharedModule,
+      StModalModule.withComponents([ModalTestComponent])
    ],
    declarations: [
       AppComponent,
       LayoutComponent,
       LayoutMenuComponent,
       LayoutMenuItemComponent,
-      Error404Component
+      Error404Component,
+      ModalTestComponent
    ],
    providers: [AppStore, VersionService],
    bootstrap: [AppComponent]

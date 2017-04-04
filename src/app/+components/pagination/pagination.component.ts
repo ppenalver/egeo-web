@@ -21,6 +21,7 @@ export class PaginationComponent implements OnInit {
 
    ngOnInit(): void {
 
+      // tslint:disable:max-line-length
       this.apiDoc = {
          title: 'Pagination',
          description: 'Paging component for use in tables and lists.',
@@ -29,8 +30,12 @@ export class PaginationComponent implements OnInit {
             inputs: [
                 { paramName: 'total', type: TYPES.NUM, required: true, details: 'Total number of items to page' },
                 { paramName: 'perPage', type: TYPES.NUM, required: false, details: 'Number of items to show per page. By default there are 20' },
+                { paramName: 'perPageOptions', type: TYPES.ARRAY_NUM, required: false, details: 'Define number of items per page. By default is [20, 50, 100]' },
                 { paramName: 'currentPage', type: TYPES.NUM, required: false, details: 'Current paging page. By default is 1' },
                 { paramName: 'label', type: TYPES.OBJ, required: false, details: 'Translation tags or component texts' },
+                { paramName: 'showPerPage', type: TYPES.BOOL, required: true, details: 'Show dropdown of number elements per page. By default false' },
+                { paramName: 'hidePerPage', type: TYPES.BOOL, required: true, details: 'Hide dropdown of number elements per page. By default false' },
+                { paramName: 'theme', type: TYPES.STR, required: true, details: '. By default themeA' },
                 { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id value for qa test.' }
             ],
             outputs: [
@@ -39,6 +44,7 @@ export class PaginationComponent implements OnInit {
          },
          exampleDesc: ``
       };
+      // tslint:enable
 
       this.items = this.generateItems(100);
       this.items2 = this.generateItems(50);

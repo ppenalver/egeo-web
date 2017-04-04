@@ -1,25 +1,30 @@
+<st-api-doc [doc]="apiDoc">
+   <div class="example-run">
+      <section class="container-fluid col-md-24">
+         <div class="st-live-example">
+            <h1 class="st-live-example-title">Modals by type of content:</h1>
+            <st-button (onClick)="showModal()" text="Simple Message Modal" qaTag="modal-button-1"></st-button>
+            <st-button (onClick)="showModalWithHtml()" text="Modal with HTML" qaTag="modal-button-2"></st-button>
+            <st-button (onClick)="showModalWithComponent()" text="Modal with component" qaTag="modal-button-3"></st-button>
 
-<!--show simple confirmation modal-->
-<p>Important: Main component must be the first in the array</p>
-<st-button (onClick)="showModal()" text="Show Modal" qaTag="modal-button-1"></st-button>
-<br><br>
-<st-button (onClick)="showModalMultipleComponents()" text="Show Modal complex component" qaTag="modal-button-2"></st-button>
-<br><br>
-<st-button (onClick)="showModalMultipleComponentsWithModules()" text="Show Modal complex component With module load" qaTag="modal-button-3"></st-button>
-<br><br>
-<st-button (onClick)="showModalOnlyModal()" text="Show Modal complex with module load" qaTag="modal-button-4"></st-button>
-
-<!--<button class="btn btn-default" (click)="showModal()">Show Modal</button>
-<button class="btn btn-default" (click)="showModalMultipleComponents()">Show Modal complex component</button>
-<button class="btn btn-default" (click)="showModalMultipleComponentsWithModules()">Show Modal complex component With module load</button>
-<button class="btn btn-default" (click)="showModalOnlyModal()">Show Modal complex with module load</button>-->
-<!--end-->
-
-
-<!--show code examples-->
-<!--<p>Main App: </p>
-<st-load-code file="modal/example-code/app.ts.txt"></st-load-code>
-<st-load-code file="modal/example-code/app.html.txt"></st-load-code>
-<p>Component that launch modal: </p>
-<st-load-code file="modal/example-code/modal.ts.txt"></st-load-code>
-<st-load-code file="modal/example-code/modal.html.txt"></st-load-code>-->
+            <br><br>
+            <h1 class="st-live-example-title">Modals by size:</h1>
+            <st-button (onClick)="showModalBySize('compact')" text="Compact Modal" qaTag="modal-button-4"></st-button>
+            <st-button (onClick)="showModalBySize('regular')" text="Regular Modal" qaTag="modal-button-5"></st-button>
+            <st-button (onClick)="showModalBySize('large')" text="Large Modal" qaTag="modal-button-6"></st-button>
+         </div>
+      </section>
+   </div>
+   <div class="example-model">
+      <st-load-code class="col-sm-24" file="+components/modal/example-code/modal.interface.ts.txt"></st-load-code>
+   </div>
+   <div class="example-code">
+      <!--{{code}}-->
+      <h1>MODAL CONTAINER</h1>
+      <st-load-code class="col-sm-24" file="+components/modal/example-code/app.html.txt"></st-load-code>
+      <h1>NOTIFY CONTAINER TO SERVICE</h1>
+      <st-load-code class="col-sm-24" file="+components/modal/example-code/app.ts.txt"></st-load-code>
+      <h1>MODAL SHOW CODE</h1>
+      <st-load-code class="col-sm-24" file="+components/modal/example-code/modal.ts.txt"></st-load-code>
+   </div>
+</st-api-doc>

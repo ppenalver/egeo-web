@@ -103,10 +103,10 @@ export const MENU: Array<EgeoMenuSchema> = [
                }
             ]
          },
-         // {
-         //    label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
-         //    link: '/components/modal'
-         // },
+         {
+            label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
+            link: '/components/modal'
+         },
          {
             label: { key: 'MENU.COMPONENTS.NAVIGATION.LABEL', translate: true },
             link: '/components/navigation',

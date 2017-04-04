@@ -50,7 +50,8 @@ export class InputComponent implements OnInit {
             { paramName: 'errors', type: 'StInputError', required: false, details: 'Error to show in every error case, if you don\'t provide this parameter, default behaivor is change color only without message' },
             { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id for QA test' },
             { paramName: 'forceValidations', type: TYPES.BOOL, required: false, details: 'If you provide this, and put a true value the input check errors before modify by first time' },
-            { paramName: 'contextualHelp', type: TYPES.STR, required: false, details: 'Contextual help button, you can see more info about it in contextual help component' }
+            { paramName: 'contextualHelp', type: TYPES.STR, required: false, details: 'Contextual help button, you can see more info about it in contextual help component' },
+            { paramName: 'maxLength', type: TYPES.NUM, required: false, details: 'Define a max-length for input field' }
          ],
          outputs: []
       },
