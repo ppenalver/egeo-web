@@ -1,62 +1,88 @@
+@import '~@stratio/egeo-ui-base/vendors/sanitize';
+@import '~@stratio/egeo-ui-base/utils/grid';
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
 
-
-$body---font-family: egeo-get-font(body) !default;
-$body---margin: 0 !default;
-
-$base-separation: 30px;
-$double-separation: 2 * $base-separation;
-
-html{
-   font-size: 16px;
-   overflow: hidden;
+body {
+   color: egeo-get-color(n8);
+   font-family: egeo-get-font(body);
+   line-height: 1.5;
 }
 
-body{
-   margin: $body---margin;
-   overflow: hidden;
-   font-family: $body---font-family;
-   background-color: egeo-get-color(b1);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: egeo-get-font(heading);
+   padding: 0 0 25px;
+}
+
+p,
+ol,
+ul {
+   color: egeo-get-color(n8);
+}
+
+main {
+   .page-title:first-child {
+      font-size: egeo-get-font-size(head_xlarge);
+      margin-top: 0;
+      padding-top: 0;
+   }
+}
+
+section {
+   ul {
+      list-style: none;
+      padding: 0 0 15px 25px;
+   }
+
+   li {
+      &:before {
+         content: '-';
+         margin-right: .5em;
+      }
+   }
+
+   p {
+      font-size: egeo-get-font-size(body_large);
+      padding: 0 0 15px;
+   }
+}
+
+pre,
+code {
+   font-family: egeo-get-font(code);
 }
 
 img {
    max-width: 100%;
 }
 
-// TODO: Refactor to implement a better markdown loader
-.changelog  {
+a {
+   color: egeo-get-color(a1);
 
-   & h1 {
-      color: egeo-get-color(n9);
-      font-family: egeo-get-font(heading);
-      font-size: egeo-get-font-size(head_xxxlarge);
-      font-weight: egeo-get-font-weight(normal);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-
-         &::after {
-            border-bottom: 2px solid;
-            border-color: egeo-get-color(a2);
-            content: ' ';
-            display: block;
-            height: 10px;
-            width: 100%;
-      }
+   &:hover {
+      text-decoration: underline;
    }
+}
 
-   & h2 {
-      font-family: egeo-get-font(heading);
-      font-weight: egeo-get-font-weight(bold);
-      margin: 25px 0 10px 0;
-   }
+.page-title {
+   color: egeo-get-color(n9);
+   font-family: egeo-get-font(heading);
+   font-size: egeo-get-font-size(head_xxxlarge);
+   font-weight: egeo-get-font-weight(normal);
+   margin-bottom: 10px;
+   text-transform: uppercase;
 
-   & ul {
-      margin-left: 30px;
-   }
-
-   & li {
-      font-family: egeo-get-font(body);
-      color: egeo-get-color(n7);
-   }
+   &::after {
+      border-bottom: 2px solid;
+      border-color: egeo-get-color(a2);
+      content: ' ';
+      display: block;
+      height: 10px;
+      width: 100%;
+  }
 }

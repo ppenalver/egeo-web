@@ -25,16 +25,16 @@
 .item-active {
    // font-family: egeo-get-font(body);
    // font-size: egeo-get-font-size(body_small);
-   background-color: egeo-get-color(a1, false, 0.1);
+   background-color: egeo-get-color(n1);
    color: egeo-get-color(n10);
 }
 
 .main-item {
    font-family: egeo-get-font(heading);
    font-size: egeo-get-font-size(head_xxsmall);
-   color: egeo-get-color(n6);
+   color: egeo-get-color(n7);
    cursor: pointer;
-   margin: 15px 0 5px 0;
+   margin: 0 0 10px 0;
    padding-left: 5px;
    & .separator {
       border-bottom: 1px solid egeo-get-color(n9);
