@@ -1,6 +1,11 @@
 {
    "MENU": {
-      "OVERVIEW": "Overview",
+      "OVERVIEW": {
+         "LABEL": "Overview",
+         "ABOUT": "About Egeo",
+         "GETTINGSTARTED": "Getting Started",
+         "CHANGELOG": "Changelog"
+      },
       "BRANDING": {
          "LABEL": "Branding",
          "LOGO": "Logo"
