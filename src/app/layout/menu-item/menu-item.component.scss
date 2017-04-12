@@ -23,61 +23,75 @@
 }
 
 .item-active {
-   // font-family: egeo-get-font(body);
-   // font-size: egeo-get-font-size(body_small);
    background-color: egeo-get-color(n1);
    color: egeo-get-color(n10);
 }
 
-.main-item {
-   font-family: egeo-get-font(heading);
-   font-size: egeo-get-font-size(head_xxsmall);
-   color: egeo-get-color(n7);
-   cursor: pointer;
+.first-level {
+   color: egeo-get-color(a3_dark);
+   cursor: initial;
+   font-family: egeo-get-font(body);
+   font-size: egeo-get-font-size(body_small);
+   font-weight: egeo-get-font-weight(bold);
    margin: 0 0 10px 0;
    padding-left: 5px;
-   & .separator {
+   text-transform: uppercase;
+
+   .menu-item__label {
       border-bottom: 1px solid egeo-get-color(n9);
-      margin-left: -5px;
-      padding-left: 5px;
+      display: block;
+      padding: 16px 5px 7px 10px;
    }
 }
 
-.section-item {
-   font-family: egeo-get-font(heading);
-   font-size: egeo-get-font-size(head_xsmall);
-   color: egeo-get-color(n9);
+.second-level {
+   font-family: egeo-get-font(body);
+   font-size: egeo-get-font-size(body_medium);
+   font-weight: egeo-get-font-weight(normal);
+   color: egeo-get-color(a3);
    cursor: pointer;
    padding-left: 5px;
-   & .box {
-      height: 40px;
-      line-height: 40px;
-      padding-right: 40px;
+   text-transform: none;
+
+   .menu-item__label {
+      border-color: egeo-get-color(n3);
+      padding: 10px 0 12px 2px;
    }
-   & .separator {
-      border-bottom: 1px solid egeo-get-color(n3);
+}
+
+.third-level {
+   background: transparent;
+
+   .menu-item__label {
+      border-bottom: 0;
+      padding: 10px 0 0;
+   }
+
+   &.item-active {
+      &:before {
+         content: ' ';
+         border-left: 3px egeo-get-color(a1) solid;
+         display: inline-block;
+         height: 16px;
+         margin-left: -5px;
+         margin-top: 12px;
+         padding-left: 5px;
+         vertical-align: top;
+      }
+
+      .menu-item__label {
+         display: inline-block;
+      }
    }
 }
 
 .menu-item {
    padding: 5px 0 0 10px;
-   & .separator {
-      margin-left: -10px;
-   }
 }
 
 .open-icon {
    position: absolute;
    right: 12px;
-   top: 15px;
+   top: 20px;
    font-size: egeo-get-font-size(icon_xxsmall);
 }
-
-.box {
-   height: 35px;
-   line-height: 35px;
-   white-space: nowrap;
-   text-overflow: ellipsis;
-   overflow: hidden;
-}
-
