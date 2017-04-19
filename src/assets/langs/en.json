@@ -51,6 +51,7 @@
          },
          "MODAL": "Modal",
          "NAVIGATION": {
+            "BREADCRUMBS": "Breadcrumbs",
             "LABEL": "Navigation",
             "DROPDOWN": "Dropdown",
             "DROPDOWN_MENU": "Dropdown menu",

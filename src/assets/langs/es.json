@@ -48,6 +48,7 @@
          "MODAL": "Modal",
          "NAVIGATION": {
             "LABEL": "Navigation",
+            "BREADCRUMBS": "Breadcrumbs",
             "DROPDOWN": "Dropdown",
             "DROPDOWN_MENU": "Dropdown menu",
             "FOOTER": "Footer",
