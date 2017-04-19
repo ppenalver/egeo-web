@@ -178,21 +178,31 @@
             tag according to the HTML table specifications.
             Moreover, <strong>st-table-row</strong> attribute is needed in order to call to our row component.
          </p>
+         <p>
+            On the other hand, you can specify the content to show when user puts the mouse over a row. This is
+            specified
+            with the selector <strong>st-table-row-hover</strong>.
+         </p>
 
          <st-load-code file="+components/table/example-code/table-row.html.txt"></st-load-code>
 
          <p>
-            Each created row will be a cell container. Cells are created using <strong>td</strong> tag and  <strong>st-table-cell</strong> attribute.
-            In order to row knows what cells it has to render, you have to add <strong>st-table-row-content</strong> to
-            all its children cell.
+            Each created row will be a cell container. Cells are created using <strong>td</strong> tag and <strong>st-table-cell</strong>
+            attribute.
+         </p>
+         <p>
+            In order to row knows where cells have to be rendered at, you have to add:
+            <strong>st-table-row-content</strong> if you want to add a normal cell or
+            <strong>st-table-row-hover</strong> if you want to show cell when user puts mouse over the row.
+         </p>
+         <p>
             Moreover, you can specify if row is displayed <strong>compacted</strong> or not.
-
+         </p>
+         <p>
             Next you can see how a cell has to be defined.
-
          </p>
 
          <st-load-code file="+components/table/example-code/table-cell.html.txt"></st-load-code>
-
 
 
       </section>
