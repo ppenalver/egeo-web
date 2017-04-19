@@ -63,7 +63,7 @@ export const routes: Routes = [
          { path: 'components/tooltip', loadChildren: './+components/tooltip/tooltip.module#TooltipModule' },
          // **** search
          { path: 'components/search', loadChildren: './+components/search/search.module#SearchModule' },
-
+         { path: 'components/table', loadChildren: './+components/table/table.module#TableModule'},
          // Services modules
          { path: 'services/regexp', loadChildren: './+services/regexp/regexp.module#RegexpModule' },
 

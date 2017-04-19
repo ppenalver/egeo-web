@@ -172,6 +172,10 @@ export const MENU: Array<EgeoMenuSchema> = [
             ]
          },
          {
+            label: { key: 'MENU.COMPONENTS.TABLE.LABEL', translate: true },
+            link: '/components/table'
+         },
+         {
             label: { key: 'MENU.COMPONENTS.TOOLTIP', translate: true },
             link: '/components/tooltip'
          },

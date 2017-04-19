@@ -1,0 +1,3 @@
+ <tr st-table-row [compacted]="false">
+   <!-- CELL LIST WILL BE HERE -->
+ </tr>
