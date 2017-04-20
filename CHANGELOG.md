@@ -1,6 +1,10 @@
 # Changelog
 
-## 1.3.0 (upcoming)
+## 1.4.0 (upcoming)
+
+* St-radio doc
+
+## 1.3.0 (Abril 4, 2017)
 
 * Change the naming of the Sidbar navigation menu
 * Update overview description
