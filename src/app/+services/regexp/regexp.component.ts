@@ -22,8 +22,6 @@ export class RegexpComponent {
    errors: StInputError = {
       generic: 'Error',
       required: 'This field is required',
-      min: 'The min for this field is: 10',
-      max: 'The max for this field is: 10',
       minLength: 'The field min length is: 10',
       pattern: 'Invalid value'
    };

@@ -30,22 +30,22 @@ export const MENU: Array<EgeoMenuSchema> = [
             label: { key: 'MENU.THEMES.STRATIO.LABEL', translate: true },
             link: '/themes/stratio',
             submenu: [
-                {
-                    label: { key: 'MENU.THEMES.STRATIO.COLORS', translate: true },
-                    link: '/themes/stratio/colors'
-                },
-                {
-                    label: { key: 'MENU.THEMES.STRATIO.ICONS', translate: true },
-                    link: '/themes/stratio/icons'
-                },
-                {
-                    label: { key: 'MENU.THEMES.STRATIO.TYPOGRAPHY', translate: true },
-                    link: '/themes/stratio/typography'
-                },
-                {
-                    label: { key: 'MENU.THEMES.STRATIO.GRID', translate: true },
-                    link: '/themes/stratio/grid'
-                }
+               {
+                  label: { key: 'MENU.THEMES.STRATIO.COLORS', translate: true },
+                  link: '/themes/stratio/colors'
+               },
+               {
+                  label: { key: 'MENU.THEMES.STRATIO.ICONS', translate: true },
+                  link: '/themes/stratio/icons'
+               },
+               {
+                  label: { key: 'MENU.THEMES.STRATIO.TYPOGRAPHY', translate: true },
+                  link: '/themes/stratio/typography'
+               },
+               {
+                  label: { key: 'MENU.THEMES.STRATIO.GRID', translate: true },
+                  link: '/themes/stratio/grid'
+               }
             ]
          },
       ]
@@ -86,6 +86,10 @@ export const MENU: Array<EgeoMenuSchema> = [
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.INPUT', translate: true },
                   link: '/components/forms/input'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.FORMS.RADIO', translate: true },
+                  link: '/components/forms/radio'
                }
             ]
          },

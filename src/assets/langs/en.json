@@ -15,8 +15,8 @@
             "GRID": "Grid"
          },
          "BUILD": {
-             "LABEL": "Build your own",
-             "UIBASE": "Work with ui-base"
+            "LABEL": "Build your own",
+            "UIBASE": "Work with ui-base"
          }
       },
       "COMPONENTS": {
@@ -32,7 +32,8 @@
          },
          "FORMS": {
             "LABEL": "Forms",
-            "INPUT": "Input"
+            "INPUT": "Input",
+            "RADIO": "Radio"
          },
          "INFO": {
             "LABEL": "Info",
@@ -63,7 +64,6 @@
       "PIPES": {
          "LABEL": "Pipes"
       }
-
    },
    "EXAMPLES": {
       "MENU": {

@@ -43,6 +43,7 @@ export const routes: Routes = [
          { path: 'components/feedback/spinner', loadChildren: './+components/spinner/spinner.module#SpinnerModule' },
          // **** form
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
+         { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },

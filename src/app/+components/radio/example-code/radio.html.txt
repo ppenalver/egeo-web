@@ -1,0 +1,4 @@
+<st-radio-group>
+   <st-radio value="1">Option 1</st-radio>
+   <st-radio value="2">Option 2</st-radio>
+</st-radio-group>
