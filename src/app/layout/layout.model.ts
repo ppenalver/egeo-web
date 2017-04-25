@@ -109,6 +109,10 @@ export const MENU: Array<EgeoMenuSchema> = [
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.RADIO', translate: true },
                   link: '/components/forms/radio'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.FORMS.SWITCH', translate: true },
+                  link: '/components/forms/switch'
                }
             ]
          },

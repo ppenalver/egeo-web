@@ -1,0 +1,33 @@
+<st-api-doc [doc]="apiDoc">
+   <div class="example-run">
+      <section class="container-liquid">
+
+         <h3>Enabled switch</h3>
+         <st-switch label="Enabled switch" contextualHelp="This is an example of tooltip" [stModel]="model"></st-switch>
+
+         <h3>Disabled on switch</h3>
+         <st-switch label="Disabled on switch" contextualHelp="This is an example of tooltip" [stModel]="true"
+                    [disabled]="true"></st-switch>
+
+         <st-switch label="Disabled off switch" contextualHelp="This is an example of tooltip" [stModel]="false"
+                    [disabled]="true"></st-switch>
+
+         <h3>Required switch</h3>
+         <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmitForm()">
+            <st-switch label="Disabled switch" contextualHelp="This is an example of tooltip" [(stModel)]="model" formControlName="requiredSwitch" required
+                       [disabled]="disabled" ngDefaultControl></st-switch>
+         </form>
+         <button (click)="disabled = false; model = undefined">SET ENABLED</button>
+         <button (click)="disabled = true">SET DISABLED</button>
+
+        Form validation: {{form.valid}}
+      </section>
+   </div>
+
+   <div class="example-code">
+      <!--{{code}}-->
+      <st-load-code file="+components/switch/example-code/switch.html.txt"></st-load-code>
+   </div>
+
+
+</st-api-doc>
