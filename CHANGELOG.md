@@ -8,6 +8,7 @@
 
 * Change the naming of the Sidbar navigation menu
 * Update overview description
+* Apply new general design
 
 ## 1.2.0 (March 17, 2017)
 

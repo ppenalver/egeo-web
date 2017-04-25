@@ -20,13 +20,22 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
       if (this.activeRoute === this.menu.link) {
          this.isOpen = true;
       }
+
+      if (!this.childOfMain && this.menu) {
+         this.isOpen = true;
+      }
    }
 
    ngOnChanges(changes: SimpleChanges): void {
       let routeParam: string = 'activeRoute';
+
       if (changes[routeParam]) {
-         if (changes[routeParam].currentValue === this.menu.link) {
+         if (changes[routeParam].currentValue.includes(this.menu.link)) {
             this.isOpen = true;
+         } else {
+            if (this.childOfMain && this.menu) {
+               this.isOpen = false;
+            }
          }
       }
    }
@@ -37,14 +46,19 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
 
    getTypeClass(): string {
       let initialClass: string = this.isActive();
+      let returnedClass: string = initialClass + ' menu-item';
+
       if (this.menu.isMainMenu) {
-         return initialClass + ' main-item';
+         returnedClass = returnedClass + ' first-level';
       } else {
          if (this.childOfMain) {
-            return initialClass + ' section-item';
+            returnedClass = returnedClass + ' second-level';
+         } else {
+            returnedClass = returnedClass + ' third-level';
          }
       }
-      return initialClass + ' menu-item';
+
+      return returnedClass;
    }
 
    getIconClass(): string {
@@ -60,7 +74,12 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
    }
 
    getOpen(routerActive: boolean): boolean {
-      this.isOpen = routerActive;
+      if (this.menu.link.includes(this.activeRoute)) {
+         this.isOpen = true;
+      } else {
+         this.isOpen = false;
+      }
+
       return this.isOpen;
    }
 
@@ -68,6 +87,7 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
       if (this.activeRoute === this.menu.link) {
          return 'item-active';
       }
+
       return '';
    }
 }

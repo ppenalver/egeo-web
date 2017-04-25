@@ -23,8 +23,9 @@ export const routes: Routes = [
          { path: 'components/navigation', redirectTo: 'components/navigation/dropdown', pathMatch: 'full' },
 
          // ************** LAZY LOAD MODULES ********************
-         { path: 'main', loadChildren: './+others/main/main.module#MainModule' },
-         { path: 'changelog', loadChildren: './+others/changelog/changelog.module#ChangelogModule' },
+         { path: 'main', loadChildren: './+overview/main/main.module#MainModule' },
+         { path: 'changelog', loadChildren: './+overview/changelog/changelog.module#ChangelogModule' },
+         { path: 'gettingstarted', loadChildren: './+overview/start/start.module#StartModule' },
 
          // themes
          { path: 'themes/stratio', redirectTo: 'themes/stratio/colors' },

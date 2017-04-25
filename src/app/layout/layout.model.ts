@@ -17,9 +17,23 @@ export interface EgeoMenuSchema {
 
 export const MENU: Array<EgeoMenuSchema> = [
    {
-      label: { key: 'MENU.OVERVIEW', translate: true },
-      link: '/main',
-      isMainMenu: true
+      label: { key: 'MENU.OVERVIEW.LABEL', translate: true },
+      link: '/',
+      isMainMenu: true,
+      submenu: [
+         {
+            label: { key: 'MENU.OVERVIEW.ABOUT', translate: true },
+            link: '/main'
+         },
+         {
+            label: { key: 'MENU.OVERVIEW.GETTINGSTARTED', translate: true },
+            link: '/gettingstarted'
+         },
+         {
+            label: { key: 'MENU.OVERVIEW.CHANGELOG', translate: true },
+            link: '/changelog'
+         }
+      ]
    },
    {
       label: { key: 'MENU.THEMES.LABEL', translate: true },

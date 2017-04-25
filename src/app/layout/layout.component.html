@@ -1,16 +1,28 @@
-<section class="main">
-   <aside class="sidebar-container">
-      <div class="sidebar">
-         <div class="sidebar-intro">
-            <a routerLink="/"><img class="text-center logo" src="assets/images/egeo_logo_c.png"></a>
-            <p class="version"><a routerLink="/changelog">Version {{version}}</a></p>
-         </div>
-         <nav class="menu">
-            <layout-menu [menuList]="(mainMenu | async) || []" [activeRoute]="activeRoute"></layout-menu>
-         </nav>
+<header class="row">
+   <div class="header-stratio col-xs-24 col-sm-24 col-md-24 col-lg-24">
+      <div class="web-content">
+         <a routerLink="/"><img src="assets/images/egeo_logo.png"></a>
+         <h1 class="header-title">Stratio's open framework for UI development</h1>
       </div>
-   </aside>
-   <div class="main-content" #mainContent>
-      <router-outlet></router-outlet>
    </div>
-</section>
+
+   <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24">
+      <div class="web-content row">
+         <select class="version-selector" name="version-selector">
+            <option value="test">test</option>
+         </select>
+      </div>
+   </nav>
+</header>
+
+<main class="web-content row">
+   <aside class="sidebar">
+      <nav class="menu">
+         <layout-menu [menuList]="(mainMenu | async) || []" [activeRoute]="activeRoute"></layout-menu>
+      </nav>
+   </aside>
+
+   <section class="page-content" #mainContent>
+      <router-outlet></router-outlet>
+   </section>
+</main>
