@@ -57,7 +57,7 @@ export class TableComponent {
    // tslint:enable:max-line-length
 
 
-   public data: Array<{id: string, name: string, phone: number, company: string, completedProfile: string}> = [
+   public data: Array<{id: string, name: string, lastName: string, phone: number, company: string, completedProfile: string}> = [
       {
          id: '4545-df56-s345',
          name: 'Antonio',
