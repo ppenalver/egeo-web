@@ -1,4 +1,4 @@
-<header class="row">
+<header class="row main-header-stratio">
    <div class="header-stratio col-xs-24 col-sm-24 col-md-24 col-lg-24">
       <div class="web-content">
          <a routerLink="/"><img src="assets/images/egeo_logo.png"></a>
@@ -8,8 +8,8 @@
 
    <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24">
       <div class="web-content row">
-         <select class="version-selector" name="version-selector">
-            <option value="test">test</option>
+         <select class="version-selector" name="version-selector" (change)="onChangeVersion($event.target.value)">
+            <option *ngFor="let version of versions" [value]="version">{{version}}</option>
          </select>
       </div>
    </nav>

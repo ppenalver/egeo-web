@@ -14,6 +14,11 @@ export interface EgeoMenuSchema {
    isMainMenu?: boolean;
 }
 
+export interface VersionComparationOptions {
+   lexicographical: boolean;
+   zeroExtend: boolean
+}
+
 
 export const MENU: Array<EgeoMenuSchema> = [
    {

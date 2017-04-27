@@ -18,6 +18,8 @@ export class LayoutComponent {
    public version: string = 'undefined';
    public activeRoute: string = '';
 
+   public versions: number[] = [];
+
    @ViewChild('mainContent', { read: ViewContainerRef }) target: ViewContainerRef;
 
    constructor(
@@ -28,7 +30,12 @@ export class LayoutComponent {
    ) {
       this.mainMenu = this.egeoTranslate.translate(MENU, this.translate);
       this.serviceVersion.getPom().subscribe(xml => this.parseVersion(xml));
+      this.serviceVersion.getVersions().subscribe((versionList) => this.versions = versionList);
       router.events.subscribe(change => this.changeRoute(change));
+   }
+
+   onChangeVersion(version: number) {
+      window.location.href= `http://egeo.stratio.com/${version}`;
    }
 
    private parseVersion(version: string): void {
@@ -44,6 +51,5 @@ export class LayoutComponent {
 
    private scrollTop(): void {
       this.target.element.nativeElement.scrollTop = 0;
-
    }
 }
