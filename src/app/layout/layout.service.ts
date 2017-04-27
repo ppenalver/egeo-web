@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable, Observer } from 'rxjs';
 
 import { VersionComparationOptions } from './layout.model';
 
@@ -14,9 +14,16 @@ export class VersionService {
          .map(response => this.parseJson(response.json()));
    }
 
-   getVersions(): Observable<number[]> {
+   getVersions(): Observable<string[]> {
+      if (ENV === 'development') {
+         return Observable.create((observer: Observer<string[]>) => {
+            observer.next(['development']);
+            observer.complete();
+         });
+      }
       return this.http.get('https://api.github.com/repos/stratio/egeo-web/contents/?ref=gh-pages')
-      .map(response => this.parseVersionResponse(response.json()))
+      .map(response => this.parseVersionResponse(response.json()));
+
    }
 
    private parseJson(pack: { [key: string]: any }): string {
@@ -24,13 +31,13 @@ export class VersionService {
       return pack[key];
    }
 
-   private parseVersionResponse(versions: { [key: string]: any }[]): number[] {
+   private parseVersionResponse(versions: { [key: string]: any }[]): string[] {
       return versions.filter((version) => version && version['type'] && version['type'] === 'dir')
       .map((version) => version['name'])
       .sort(this.reverseCompare.bind(this));
    }
 
-   private reverseCompare(v1: string, v2: string) {
+   private reverseCompare(v1: string, v2: string): number {
       return this.versionCompare(v1, v2) * -1;
    }
 

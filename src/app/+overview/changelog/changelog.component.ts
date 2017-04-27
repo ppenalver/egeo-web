@@ -4,7 +4,8 @@ import { ChangelogService } from './changelog.service';
 
 @Component({
   selector: 'changelog',
-  templateUrl: './changelog.component.html'
+  templateUrl: './changelog.component.html',
+  styleUrls: ['./changelog.component.scss']
 })
 
 export class ChangelogComponent implements OnInit, OnDestroy {

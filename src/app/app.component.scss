@@ -2,7 +2,6 @@
 @import '~@stratio/egeo-ui-base/utils/grid';
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
-
 body {
    color: egeo-get-color(n8);
    font-family: egeo-get-font(body);
@@ -38,14 +37,12 @@ section {
       list-style: none;
       padding: 0 0 15px 25px;
    }
-
-   li {
+   changelog li {
       &:before {
          content: '-';
          margin-right: .5em;
       }
    }
-
    p {
       font-size: egeo-get-font-size(body_large);
       padding: 0 0 15px;
@@ -63,7 +60,6 @@ img {
 
 a {
    color: egeo-get-color(a1);
-
    &:hover {
       text-decoration: underline;
    }
@@ -76,7 +72,6 @@ a {
    font-weight: egeo-get-font-weight(normal);
    margin-bottom: 10px;
    text-transform: uppercase;
-
    &::after {
       border-bottom: 2px solid;
       border-color: egeo-get-color(a2);
@@ -84,5 +79,5 @@ a {
       display: block;
       height: 10px;
       width: 100%;
-  }
+   }
 }
