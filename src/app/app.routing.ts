@@ -20,7 +20,7 @@ export const routes: Routes = [
          { path: 'components/feedback', redirectTo: 'components/feedback/spinner', pathMatch: 'full' },
          { path: 'components/forms', redirectTo: 'components/forms/input', pathMatch: 'full' },
          { path: 'components/info', redirectTo: 'components/info/box', pathMatch: 'full' },
-         { path: 'components/navigation', redirectTo: 'components/navigation/dropdown', pathMatch: 'full' },
+         { path: 'components/navigation', redirectTo: 'components/navigation/breadcrumbs', pathMatch: 'full' },
 
          // ************** LAZY LOAD MODULES ********************
          { path: 'main', loadChildren: './+overview/main/main.module#MainModule' },

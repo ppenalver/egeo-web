@@ -65,6 +65,15 @@ module.exports = function (options) {
 
             }
          }),
+         new DefinePlugin({
+            'ENV': JSON.stringify(ENV),
+            'HMR': HMR,
+            'process.env': {
+               'ENV': JSON.stringify(ENV),
+               'NODE_ENV': JSON.stringify(ENV),
+               'HMR': HMR,
+            }
+         }),
          new DllBundlesPlugin({
             bundles: {
                polyfills: [

@@ -18,7 +18,7 @@ export class LayoutComponent {
    public version: string = 'undefined';
    public activeRoute: string = '';
 
-   public versions: number[] = [];
+   public versions: string[] = [];
 
    @ViewChild('mainContent', { read: ViewContainerRef }) target: ViewContainerRef;
 
@@ -34,8 +34,8 @@ export class LayoutComponent {
       router.events.subscribe(change => this.changeRoute(change));
    }
 
-   onChangeVersion(version: number) {
-      window.location.href= `http://egeo.stratio.com/${version}`;
+   onChangeVersion(version: string): void {
+      window.location.href = `http://egeo.stratio.com/${version}`;
    }
 
    private parseVersion(version: string): void {
