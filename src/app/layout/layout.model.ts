@@ -66,7 +66,7 @@ export const MENU: Array<EgeoMenuSchema> = [
                   link: '/themes/stratio/grid'
                }
             ]
-         },
+         }
       ]
    },
    {
@@ -134,6 +134,10 @@ export const MENU: Array<EgeoMenuSchema> = [
             label: { key: 'MENU.COMPONENTS.NAVIGATION.LABEL', translate: true },
             link: '/components/navigation',
             submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.NAVIGATION.BREADCRUMBS', translate: true },
+                  link: '/components/navigation/breadcrumbs'
+               },
                {
                   label: { key: 'MENU.COMPONENTS.NAVIGATION.DROPDOWN', translate: true },
                   link: '/components/navigation/dropdown'
