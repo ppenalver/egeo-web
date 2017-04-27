@@ -15,6 +15,10 @@ header {
    width: 100%;
 }
 
+.main-header-stratio {
+   z-index: 10;
+}
+
 .header {
    &-stratio {
       background-color: egeo-get-color(b2);
