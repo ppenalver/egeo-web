@@ -49,6 +49,7 @@ export const routes: Routes = [
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },
          // **** navigation
+         { path: 'components/navigation/breadcrumbs', loadChildren: './+components/breadcrumbs/breadcrumbs.module#BreadCrumbsModule' },
          { path: 'components/navigation/dropdown', loadChildren: './+components/dropdown/dropdown.module#DropdownModule' },
          { path: 'components/navigation/dropdown-menu', loadChildren: './+components/dropdown-menu/dropdown-menu.module#DropdownMenuModule' },
          { path: 'components/navigation/footer', loadChildren: './+components/footer/footer.module#FooterModule' },
