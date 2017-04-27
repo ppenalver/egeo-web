@@ -1,0 +1,2 @@
+<st-table [fields]="fields" [sortable]="true" (changeOrder)="yourFunctionToOrder($event)" qaTag="table-qa-tag">
+</st-table>

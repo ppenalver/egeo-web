@@ -3,10 +3,11 @@
 ## 1.4.0 (upcoming)
 
 * St-radio doc
+* Add table component example
 
 ## 1.3.0 (Abril 4, 2017)
 
-* Change the naming of the Sidbar navigation menu
+* Change the naming of the Sidebar navigation menu
 * Update overview description
 * Apply new general design
 

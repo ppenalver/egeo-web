@@ -31,6 +31,10 @@
             "BUTTON": "Button",
             "TOGGLE_BUTTON": "Toggle button"
          },
+         "TABLE": {
+            "LABEL": "Table",
+            "TABLE": "Table"
+         },
          "FEEDBACK": {
             "LABEL": "Feedback",
             "SPINNER": "Spinner"
