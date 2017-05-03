@@ -4,6 +4,7 @@
 
 * St-radio doc
 * Add table component example
+* Fix #212: Change type to header item
 
 ## 1.3.0 (Abril 4, 2017)
 
