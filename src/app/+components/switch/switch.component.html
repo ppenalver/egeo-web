@@ -1,26 +1,26 @@
 <st-api-doc [doc]="apiDoc">
    <div class="example-run">
       <section class="container-liquid">
-
-         <h3>Enabled switch</h3>
-         <st-switch label="Enabled switch" contextualHelp="This is an example of tooltip" [stModel]="model"></st-switch>
-
-         <h3>Disabled on switch</h3>
-         <st-switch label="Disabled on switch" contextualHelp="This is an example of tooltip" [stModel]="true"
-                    [disabled]="true"></st-switch>
-
-         <st-switch label="Disabled off switch" contextualHelp="This is an example of tooltip" [stModel]="false"
-                    [disabled]="true"></st-switch>
-
-         <h3>Required switch</h3>
-         <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmitForm()">
-            <st-switch label="Disabled switch" contextualHelp="This is an example of tooltip" [(stModel)]="model" formControlName="requiredSwitch" required
-                       [disabled]="disabled" ngDefaultControl></st-switch>
+         <form [formGroup]="form" novalidate autocomplete="off">
+            <h1>Switch with label at top</h1>
+            <st-switch label="Enabled switch" labelPosition="top" contextualHelp="This is an example of tooltip"
+                       [stModel]="model" formControlName="switch" qaTag="enabled-switch-1"></st-switch>
+<br>
+            <h1>Switch with label at left</h1>
+            <st-switch label="Enabled switch" labelPosition="left" contextualHelp="This is an example of tooltip"
+                       [stModel]="model" formControlName="switch" qaTag="enabled-switch-2"></st-switch>
+            <br>
+            <h1>Switch with label at right</h1>
+            <st-switch label="Enabled switch" labelPosition="right" contextualHelp="This is an example of tooltip"
+                       [stModel]="model" formControlName="switch" qaTag="enabled-switch-3"></st-switch>
+            <br>
          </form>
-         <button (click)="disabled = false; model = undefined">SET ENABLED</button>
-         <button (click)="disabled = true">SET DISABLED</button>
 
-        Form validation: {{form.valid}}
+
+         <st-button text="ENABLE SWITCH" qaTag="enable-button" inputType="button"
+                    (click)="form.controls['switch'].enable()"></st-button>
+         <st-button text="DISABLE SWITCH" qaTag="disable-button" inputType="button" subtypeClass="subtype2"
+                    (click)="form.controls['switch'].disable()"></st-button>
       </section>
    </div>
 
