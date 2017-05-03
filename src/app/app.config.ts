@@ -1,13 +1,16 @@
 import { Http } from '@angular/http';
-import { TranslateStaticLoader, TranslateLoader } from 'ng2-translate';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
-export function TranslateLoaderFunction(http: Http): TranslateStaticLoader {
-   return new TranslateStaticLoader(http, 'assets/langs', '.json');
+export function createTranslateLoader(http: Http): TranslateHttpLoader {
+   return new TranslateHttpLoader(http, 'assets/langs/', '.json');
 }
 
 export const APP_LANGUAGE_PROVIDERS_OBJECT = {
-   provide: TranslateLoader,
-   useFactory: (TranslateLoaderFunction),
-   deps: [Http]
+   loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+   }
 };

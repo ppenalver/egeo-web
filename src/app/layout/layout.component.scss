@@ -77,3 +77,11 @@ main.web-content {
 .page-content {
    margin-left: 300px;
 }
+
+
+a {
+   color: egeo-get-color(a1);
+   &:hover {
+      text-decoration: underline;
+   }
+}

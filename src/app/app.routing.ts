@@ -4,6 +4,8 @@ import { Error404Component } from './errors/error.404.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AppComponent } from './app.component';
 
+import { HeaderDemoComponent } from './header-demo';
+
 export const routes: Routes = [
    {
       path: '', component: LayoutComponent, children: [
@@ -76,7 +78,6 @@ export const routes: Routes = [
 
       ]
    },
-
    { path: '**', component: Error404Component }
 ];
 

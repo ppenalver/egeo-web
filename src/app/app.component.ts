@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 import { StModalService } from '@stratio/egeo';
 
 @Component({
@@ -14,10 +14,10 @@ export class AppComponent implements OnInit {
 
    constructor(translate: TranslateService, private _modalService: StModalService) {
       let userLang = navigator.language.split('-')[0];
-    userLang = /(es|en)/gi.test(userLang) ? userLang : 'en';
+      userLang = /(es|en)/gi.test(userLang) ? userLang : 'en';
 
-    translate.setDefaultLang('en');
-    translate.use(userLang);
+      translate.setDefaultLang('en');
+      translate.use('en');
    }
 
    ngOnInit(): void {

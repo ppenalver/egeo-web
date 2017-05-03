@@ -1,6 +1,17 @@
-   li {
-      &:before {
-         content: '-';
-         margin-right: .5em;
-      }
+@import '~@stratio/egeo-ui-base/utils/typography';
+@import '~@stratio/egeo-ui-base/utils/colors';
+
+
+li {
+   &:before {
+      content: '-';
+      margin-right: .5em;
    }
+}
+
+a {
+   color: egeo-get-color(a1);
+   &:hover {
+      text-decoration: underline;
+   }
+}

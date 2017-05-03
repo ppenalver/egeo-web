@@ -15,9 +15,10 @@ import { routing } from './app.routing';
 import { SharedModule } from 'shared';
 import { VersionService } from './layout/layout.service';
 import { ModalTestComponent } from './+components/modal/modal-test.component';
+import { HeaderDemoModule } from './header-demo/header-demo.module';
 
 /* External libs */
-import { TranslateModule, TranslateService } from 'ng2-translate';
+import {TranslateModule} from '@ngx-translate/core';
 import { EgeoModule, StModalModule } from '@stratio/egeo';
 
 // Hot Loader
@@ -35,8 +36,8 @@ import '../styles/global.scss';
       EgeoModule.forRoot(),
       routing,
       TranslateModule.forRoot(APP_LANGUAGE_PROVIDERS_OBJECT),
-      SharedModule,
-      StModalModule.withComponents([ModalTestComponent])
+      StModalModule.withComponents([ModalTestComponent]),
+      HeaderDemoModule
    ],
    declarations: [
       AppComponent,

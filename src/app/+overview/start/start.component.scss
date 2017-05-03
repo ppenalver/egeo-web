@@ -1,0 +1,9 @@
+@import '~@stratio/egeo-ui-base/utils/typography';
+@import '~@stratio/egeo-ui-base/utils/colors';
+
+a {
+   color: egeo-get-color(a1);
+   &:hover {
+      text-decoration: underline;
+   }
+}

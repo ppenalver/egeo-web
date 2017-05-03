@@ -4,35 +4,33 @@
          {{doc.title | uppercase}}
       </div>
    </div>
-   <div class="col-xs-24 col-md-24 col-lg-24 description" [innerHTML]="doc.description">
+   <div class="col-xs-24 col-md-24 col-lg-24 description" [innerHTML]="doc.description"></div>
+   <div class="col-xs-24 col-md-24 col-lg-24">
+      <div class="subtitle">Demo</div>
+      <!--<div class="secondary-text">{{doc.exampleDesc}}</div>-->
+      <egeo-demo-code>
+         <div class="demo">
+            <ng-content select=".example-run"></ng-content>
+         </div>
+         <div class="code">
+            <ng-content select=".example-code"></ng-content>
+         </div>
+      </egeo-demo-code>
    </div>
    <div class="col-xs-24 col-md-24 col-lg-24" *ngIf="hasParameters()">
       <div class="subtitle">Parameters</div>
       <div *ngIf="doc.apiSection.description !== undefined && doc.apiSection.description !== ''" class="secondary-text">{{doc.apiSection.description}}</div>
       <div *ngIf="doc.apiSection.inputs && doc.apiSection.inputs.length > 0">
-         <st-parameters-table title="Input" [data]="doc.apiSection.inputs"></st-parameters-table>
+         <st-parameters-table title="Inputs" [data]="doc.apiSection.inputs" [isInput]="true"></st-parameters-table>
       </div>
       <div *ngIf="doc.apiSection.outputs && doc.apiSection.outputs.length > 0">
-         <st-parameters-table title="Output" [data]="doc.apiSection.outputs"></st-parameters-table>
+         <st-parameters-table title="Outputs" [data]="doc.apiSection.outputs" [isInput]="false"></st-parameters-table>
       </div>
    </div>
    <div class="col-xs-24 col-md-24 col-lg-24" *ngIf="doc.haveModel">
       <div class="subtitle">Models</div>
       <div class="example">
          <ng-content select=".example-model"></ng-content>
-      </div>
-   </div>
-   <div class="col-xs-24 col-md-24 col-lg-24">
-      <div class="subtitle">Example</div>
-      <div class="secondary-text">{{doc.exampleDesc}}</div>
-      <div class="example">
-         <ng-content select=".example-run"></ng-content>
-      </div>
-   </div>
-   <div class="col-xs-24 col-md-24 col-lg-24">
-      <div class="subtitle">Code</div>
-      <div class="example">
-         <ng-content select=".example-code"></ng-content>
       </div>
    </div>
 </section>

@@ -9,7 +9,7 @@ import { routing } from './changelog.routing';
 
 
 @NgModule({
-   imports: [CommonModule, routing, SharedModule, MarkdownToHtmlModule],
+   imports: [routing, SharedModule, MarkdownToHtmlModule],
    declarations: [ChangelogComponent],
    providers: [ChangelogService]
 })

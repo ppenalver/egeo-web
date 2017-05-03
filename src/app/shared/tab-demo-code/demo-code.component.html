@@ -1,0 +1,14 @@
+<div class="demo-code">
+   <nav class="demo-code-nav">
+      <a (click)="changeShowCode(false)" class="tab" [ngClass]="{active: !showCode}" >{{'TAB_DEMO_CODE.COMPONENT' | translate}}</a>
+      <a (click)="changeShowCode(true)" class="tab" [ngClass]="{active: showCode}">{{'TAB_DEMO_CODE.CODE' | translate}}</a>
+   </nav>
+   <div class="container">
+      <div *ngIf="!showCode">
+         <ng-content select=".demo"></ng-content>
+      </div>
+      <div *ngIf="showCode">
+         <ng-content select=".code"></ng-content>
+      </div>
+   </div>
+</div>

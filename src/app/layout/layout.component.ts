@@ -1,8 +1,8 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { EgeoResolveService } from '@stratio/egeo';
-import { TranslateService } from 'ng2-translate';
-import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
 
 import { MENU, EgeoMenu } from './layout.model';
 import { VersionService } from './layout.service';

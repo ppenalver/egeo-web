@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TranslateService } from 'ng2-translate';
+import { Observable } from 'rxjs/Observable';
+import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
 
 import {
