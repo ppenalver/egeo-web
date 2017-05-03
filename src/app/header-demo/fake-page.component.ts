@@ -3,7 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'fake-page',
-   template: '<div>YOU NAVIGATE TO PAGE: {{pageName}}  <router-outlet></router-outlet> </div>',
+   template: `
+      <div>
+         <h1>YOU NAVIGATE TO PAGE</h1>
+           <p [innerHTML]="pageName"></p>
+         <br><br>
+         <router-outlet></router-outlet>
+      </div>`,
+   styles: [' div { max-width: 1700px; margin: auto; } '],
    changeDetection: ChangeDetectionStrategy.OnPush
 })
 

@@ -10,16 +10,21 @@ import { ApiRow, TYPES } from './../api-doc.model';
 export class ParametersTableComponent {
    @Input() title: string;
    @Input() data: Array<ApiRow>;
+   @Input() isInput: boolean = false;
 
    getRequired(value: boolean): string {
       return value ? 'icon-check' : '';
+   }
+
+   getIconType(): string {
+      return this.isInput ? 'icon-login' : 'icon-exit';
    }
 
    getType(value: TYPES | string): string {
       if (typeof value !== 'string') {
          switch (value) {
             case TYPES.OBJ:
-               return 'Object';
+               return 'object';
             case TYPES.NUM:
                return 'number';
             case TYPES.STR:
@@ -29,19 +34,19 @@ export class ParametersTableComponent {
             case TYPES.ANY:
                return 'any';
             case TYPES.ARRAY_NUM:
-               return 'Array<number>';
+               return 'number[]';
             case TYPES.ARRAY_STR:
-               return 'Array<string>';
+               return 'string[]';
             case TYPES.ARRAY_OBJ:
-               return 'Array<Object>';
+               return 'object[]';
             case TYPES.ARRAY_BOOL:
-               return 'Array<boolean>';
+               return 'boolean[]';
             case TYPES.ARRAY_ANY:
-               return 'Array<any>';
+               return 'any[]';
             case TYPES.FUNC:
                return 'Function';
             default:
-               return 'String';
+               return 'string';
          }
       } else {
          return value;

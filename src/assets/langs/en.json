@@ -98,5 +98,9 @@
          "SELECTED_ELEMENTS_TITLE": "Selected elements",
          "SELECTED_ELEMENTS_PLACEHOLDER": "Search in selected"
       }
+   },
+   "TAB_DEMO_CODE": {
+      "COMPONENT": "COMPONENT",
+      "CODE": "CODE"
    }
 }

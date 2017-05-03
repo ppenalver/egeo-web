@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Observable, Observer } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { Observer } from 'rxjs/Observer';
 
 import { VersionComparationOptions } from './layout.model';
 
@@ -22,7 +24,7 @@ export class VersionService {
          });
       }
       return this.http.get('https://api.github.com/repos/stratio/egeo-web/contents/?ref=gh-pages')
-      .map(response => this.parseVersionResponse(response.json()));
+         .map(response => this.parseVersionResponse(response.json()));
 
    }
 
@@ -31,10 +33,10 @@ export class VersionService {
       return pack[key];
    }
 
-   private parseVersionResponse(versions: { [key: string]: any }[]): string[] {
-      return versions.filter((version) => version && version['type'] && version['type'] === 'dir')
-      .map((version) => version['name'])
-      .sort(this.reverseCompare.bind(this));
+   private parseVersionResponse(versions: any[]): string[] {
+      return versions.filter((version) => version && version.type && version.type === 'dir')
+         .map((version: any) => version.name)
+         .sort(this.reverseCompare.bind(this));
    }
 
    private reverseCompare(v1: string, v2: string): number {
@@ -59,8 +61,8 @@ export class VersionService {
       }
 
       if (zeroExtend) {
-         while (v1parts.length < v2parts.length) v1parts.push("0");
-         while (v2parts.length < v1parts.length) v2parts.push("0");
+         while (v1parts.length < v2parts.length) v1parts.push('0');
+         while (v2parts.length < v1parts.length) v2parts.push('0');
       }
 
       if (!lexicographical) {
@@ -68,18 +70,16 @@ export class VersionService {
          v2PartsNumeric = v2parts.map(Number);
       }
 
-      for (var i = 0; i < v1parts.length; ++i) {
+      for (let i = 0; i < v1parts.length; ++i) {
          if (v2parts.length === i) {
             return 1;
          }
 
          if (v1parts[i] === v2parts[i]) {
             continue;
-         }
-         else if (v1parts[i] > v2parts[i]) {
+         } else if (v1parts[i] > v2parts[i]) {
             return 1;
-         }
-         else {
+         } else {
             return -1;
          }
       }

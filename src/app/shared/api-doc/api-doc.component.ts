@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ApiDoc } from 'shared';
+import { ApiDoc } from './shared/api-doc.model';
 
 @Component({
   selector: 'st-api-doc',
