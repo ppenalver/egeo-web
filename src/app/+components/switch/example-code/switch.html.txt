@@ -1,0 +1,3 @@
+<st-switch label="Enabled switch" labelPosition="top" contextualHelp="This is an example of tooltip"
+   [stModel]="model" formControlName="switch" qaTag="enabled-switch-1">
+</st-switch>

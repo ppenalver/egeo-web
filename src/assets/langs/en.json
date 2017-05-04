@@ -42,7 +42,8 @@
          "FORMS": {
             "LABEL": "Forms",
             "INPUT": "Input",
-            "RADIO": "Radio"
+            "RADIO": "Radio",
+            "SWITCH": "Switch"
          },
          "INFO": {
             "LABEL": "Info",
