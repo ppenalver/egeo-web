@@ -113,6 +113,10 @@ export const MENU: Array<EgeoMenuSchema> = [
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.SWITCH', translate: true },
                   link: '/components/forms/switch'
+               },
+		{
+                  label: { key: 'MENU.COMPONENTS.FORMS.TEXTAREA', translate: true },
+                  link: '/components/forms/textarea'
                }
             ]
          },

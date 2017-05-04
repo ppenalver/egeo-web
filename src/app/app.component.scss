@@ -84,25 +84,32 @@ st-load-code pre[class*="language-"] {
    border: none;
 }
 
-pre code.markup {
+pre code[class*="language-"] {
    padding: 20px 20px 20px 0;
    background-color: egeo-get-color(a3_dark);
+   color: #e9e9e9;
 
    .token {
-      color: #e9e9e9;
       font-size: 14px;
 
       &.attr-name {
-         color: #fc7408
+         color: #fc7408;
       }
       &.attr-value {
-         color: #76a34e
+         color: #76a34e;
       }
-      &.puntuaction {
-         color: #e9e9e9
+      &.keyword {
+         color: #76a34e;
+      }
+      &.punctuation {
+         color: #e9e9e9;
+      }
+      &.operator {
+         color: #e9e9e9;
+         background: none;
       }
       &.tag {
-         color: #d82421
+         color: #d82421;
       }
    }
    .line-numbers-rows {

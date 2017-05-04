@@ -7,9 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class DemoCodeComponent {
 
-   public showCode: boolean = false;
+   public activeTab: string = 'demo';
 
-   changeShowCode(show: boolean): void {
-      this.showCode = show;
-   }
+   @Input() hasModel: boolean = false;
 }

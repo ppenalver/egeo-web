@@ -1,14 +1,18 @@
 <div class="demo-code">
    <nav class="demo-code-nav">
-      <a (click)="changeShowCode(false)" class="tab" [ngClass]="{active: !showCode}" >{{'TAB_DEMO_CODE.COMPONENT' | translate}}</a>
-      <a (click)="changeShowCode(true)" class="tab" [ngClass]="{active: showCode}">{{'TAB_DEMO_CODE.CODE' | translate}}</a>
+      <a (click)="activeTab = 'demo'" class="tab" [ngClass]="{active: activeTab === 'demo'}" >{{'TAB_DEMO_CODE.COMPONENT' | translate}}</a>
+      <a (click)="activeTab = 'code'" class="tab" [ngClass]="{active: activeTab === 'code'}">{{'TAB_DEMO_CODE.CODE' | translate}}</a>
+      <a *ngIf="hasModel" (click)="activeTab = 'model'" class="tab" [ngClass]="{active: activeTab === 'model'}">{{'TAB_DEMO_CODE.MODEL' | translate}}</a>
    </nav>
    <div class="container">
-      <div *ngIf="!showCode">
+      <div *ngIf="activeTab === 'demo'">
          <ng-content select=".demo"></ng-content>
       </div>
-      <div *ngIf="showCode">
+      <div *ngIf="activeTab === 'code'">
          <ng-content select=".code"></ng-content>
+      </div>
+      <div *ngIf="hasModel && activeTab === 'model'">
+         <ng-content select=".model"></ng-content>
       </div>
    </div>
 </div>
