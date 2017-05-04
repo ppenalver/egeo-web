@@ -7,13 +7,18 @@
    <div class="col-xs-24 col-md-24 col-lg-24 description" [innerHTML]="doc.description"></div>
    <div class="col-xs-24 col-md-24 col-lg-24">
       <div class="subtitle">Demo</div>
-      <!--<div class="secondary-text">{{doc.exampleDesc}}</div>-->
-      <egeo-demo-code>
+      <egeo-demo-code [hasModel]="doc.haveModel">
+         <!--DEMO-->
          <div class="demo">
             <ng-content select=".example-run"></ng-content>
          </div>
+         <!--CODE-->
          <div class="code">
             <ng-content select=".example-code"></ng-content>
+         </div>
+         <!--MODEL-->
+         <div class="model">
+            <ng-content select=".example-model"></ng-content>
          </div>
       </egeo-demo-code>
    </div>
@@ -25,12 +30,6 @@
       </div>
       <div *ngIf="doc.apiSection.outputs && doc.apiSection.outputs.length > 0">
          <st-parameters-table title="Outputs" [data]="doc.apiSection.outputs" [isInput]="false"></st-parameters-table>
-      </div>
-   </div>
-   <div class="col-xs-24 col-md-24 col-lg-24" *ngIf="doc.haveModel">
-      <div class="subtitle">Models</div>
-      <div class="example">
-         <ng-content select=".example-model"></ng-content>
       </div>
    </div>
 </section>

@@ -43,7 +43,8 @@
             "LABEL": "Forms",
             "INPUT": "Input",
             "RADIO": "Radio",
-            "SWITCH": "Switch"
+            "SWITCH": "Switch",
+	    "TEXTAREA": "Textarea"
          },
          "INFO": {
             "LABEL": "Info",
@@ -102,6 +103,7 @@
    },
    "TAB_DEMO_CODE": {
       "COMPONENT": "COMPONENT",
-      "CODE": "CODE"
+      "CODE": "CODE",
+      "MODEL": "MODEL"
    }
 }
