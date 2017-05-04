@@ -27,7 +27,7 @@ export const routes: Routes = [
          // ************** LAZY LOAD MODULES ********************
          { path: 'main', loadChildren: './+overview/main/main.module#MainModule' },
          { path: 'changelog', loadChildren: './+overview/changelog/changelog.module#ChangelogModule' },
-         { path: 'gettingstarted', loadChildren: './+overview/start/start.module#StartModule' },
+        { path: 'gettingstarted', loadChildren: './+overview/start/start.module#StartModule' },
 
          // themes
          { path: 'themes/stratio', redirectTo: 'themes/stratio/colors' },
@@ -47,7 +47,9 @@ export const routes: Routes = [
          // **** form
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
-         // **** info
+         { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
+
+      // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },
          // **** navigation
