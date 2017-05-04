@@ -1,15 +1,18 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiDoc, TYPES } from "../../shared/api-doc/shared/api-doc.model";
-
+import { StTableHeader }  from '@stratio/egeo';
 @Component({
    selector: 'st-table-example',
    templateUrl: './table.component.html'
 })
 
 export class TableComponent {
-   fields: string[] = ['id', 'name', 'last name', 'phone', 'company', 'completed profile'];
-   header: boolean = true;
+   public fields: StTableHeader[] = [
+      { id: 'id', label: 'Id' }, { id: 'name', label: 'Name' }, { id: 'lastName', label: 'Last Name' },
+      { id: 'phone', label: 'Phone' }, { id: 'company', label: 'Company' },
+      { id: 'completedProfile', label: 'Completed profile' }];
 
+   public header: boolean = true;
 
    // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
