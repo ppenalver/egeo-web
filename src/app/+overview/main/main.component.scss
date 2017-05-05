@@ -1,7 +1,6 @@
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
 
-
 li {
    &:before {
       content: '-';
@@ -14,4 +13,14 @@ a {
    &:hover {
       text-decoration: underline;
    }
+}
+
+ul {
+   list-style: none;
+   padding: 0 0 15px 25px;
+}
+
+p {
+   font-size: egeo-get-font-size(body_large);
+   padding: 0 0 15px;
 }

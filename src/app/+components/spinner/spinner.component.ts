@@ -27,7 +27,7 @@ export class SpinnerComponent {
      this.apiDoc = {
         title: 'Spinner',
         description: 'Spinner component is displayed when content is pending to be loaded.',
-        haveModel: true,
+        haveModel: false,
         apiSection: {
            inputs: [
               { paramName: 'imageUrl', type: TYPES.STR, required: true, details: 'Url of image that will be displayed until content is being loaded' }

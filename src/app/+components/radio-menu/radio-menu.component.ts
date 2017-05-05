@@ -23,7 +23,7 @@ export class RadioMenuComponent {
          description: 'Radio Menu is composed of options with radios. Generally, It is used in forms in order to change' +
          ' a certain part of form. You must keep in mind radio menu adapts its design according to his parent\'s theme.' +
          ' By default, if parent does not have any theme, it will be designed according to the gray 2 theme.',
-         haveModel: true,
+         haveModel: false,
          apiSection: {
             description: 'This table gives you a quick overview of the inputs and outputs of a radio menu.',
             inputs: [

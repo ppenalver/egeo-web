@@ -19,7 +19,7 @@ export class BreadCrumsComponent implements OnInit {
    public apiDoc: ApiDoc = {
       title: 'BreadCrumbs',
       description: 'This is a kind of navigation component, Is normally used to help the user to go back in a navigation by steps ',
-      haveModel: true,
+      haveModel: false,
       apiSection: {
          inputs: [
             { paramName: 'options', type: TYPES.STR, required: true, details: 'An array of String that defines the links that will be displayed' }
