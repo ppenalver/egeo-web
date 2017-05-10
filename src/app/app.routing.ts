@@ -47,7 +47,7 @@ export const routes: Routes = [
          // **** form
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
-	 { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
+         { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
          { path: 'components/forms/textarea', loadChildren: './+components/textarea/textarea.module#TextareaModule' },
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
@@ -68,7 +68,7 @@ export const routes: Routes = [
          { path: 'components/tooltip', loadChildren: './+components/tooltip/tooltip.module#TooltipModule' },
          // **** search
          { path: 'components/search', loadChildren: './+components/search/search.module#SearchModule' },
-         { path: 'components/table', loadChildren: './+components/table/table.module#TableModule'},
+         { path: 'components/table', loadChildren: './+components/table/table.module#TableModule' },
          // Services modules
          { path: 'services/regexp', loadChildren: './+services/regexp/regexp.module#RegexpModule' },
 

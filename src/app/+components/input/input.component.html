@@ -4,7 +4,7 @@
    </div>
    <div class="example-run">
       <section class="container-liquid">
-         <div>TEMPLATE DRIVEN EXAMPLE</div>
+         <h2>TEMPLATE DRIVEN EXAMPLE</h2>
          <form #templateDrivenForm="ngForm" novalidate autocomplete="off" (ngSubmit)="onSubmitTemplateBased()" class="col-md-6">
             <div class="form-group">
                <st-input
@@ -39,16 +39,16 @@
             <st-button inputType="submit" text="Submit" qaTag="button-submit" leftIcon="icon-circle-check"></st-button>
             <br><br>
             <div *ngIf="templateDrivenForm.valid">
-               Form status: VALID
+               <h2>Form status: VALID</h2>
             </div>
             <div *ngIf="!templateDrivenForm.valid">
-               Form status: INVALID
+               <h2>Form status: INVALID</h2>
             </div>
          </form>
 
          <br><br>
 
-         <div>MODEL DRIVEN / REACTIVE EXAMPLE</div>
+         <h2>MODEL DRIVEN / REACTIVE EXAMPLE</h2>
          <form [formGroup]="reactiveForm" novalidate autocomplete="off" (ngSubmit)="onSubmitReactiveForm()" class="col-md-6">
             <div class="form-group">
                <st-input
@@ -76,10 +76,10 @@
             <st-button inputType="submit" text="Submit" qaTag="button-submit" leftIcon="icon-circle-check"></st-button>
             <br><br>
             <div *ngIf="reactiveForm.valid">
-               Form status: VALID
+               <h2>Form status: VALID</h2>
             </div>
             <div *ngIf="!reactiveForm.valid">
-               Form status: INVALID
+               <h2>Form status: INVALID</h2>
             </div>
          </form>
 

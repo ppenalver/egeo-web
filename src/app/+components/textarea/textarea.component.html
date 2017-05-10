@@ -22,7 +22,6 @@
                   [pattern]="textWithoutSpaces"
                   contextualHelp="This is the contextual help of the name"
                ></st-input>
-               <br>
                <st-textarea
                   label="Components"
                   placeholder="Number of components"
@@ -41,10 +40,10 @@
             <st-button inputType="submit" text="Submit" qaTag="button-submit" leftIcon="icon-circle-check"></st-button>
             <br><br>
             <div *ngIf="templateDrivenForm.valid">
-               Form status: VALID
+               <h2>Form status: VALID</h2>
             </div>
             <div *ngIf="!templateDrivenForm.valid">
-               Form status: INVALID
+               <h2>Form status: INVALID</h2>
             </div>
          </form>
 
@@ -63,8 +62,6 @@
                   contextualHelp="This is the contextual help of the description"
                   formControlName="description"
                ></st-textarea>
-               <br>
-
                <st-textarea
                   label="Components"
                   placeholder="Number of components"
@@ -79,10 +76,10 @@
             <st-button inputType="submit" text="Submit" qaTag="button-submit" leftIcon="icon-circle-check"></st-button>
             <br><br>
             <div *ngIf="reactiveForm.valid">
-               Form status: VALID
+               <h2>Form status: VALID</h2>
             </div>
             <div *ngIf="!reactiveForm.valid">
-               Form status: INVALID
+               <h2>Form status: INVALID</h2>
             </div>
          </form>
 

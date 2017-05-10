@@ -16,6 +16,7 @@ import { SharedModule } from 'shared';
 import { VersionService } from './layout/layout.service';
 import { ModalTestComponent } from './+components/modal/modal-test.component';
 import { HeaderDemoModule } from './header-demo/header-demo.module';
+import { GridDemoModule } from './grid-demo/grid-demo.module';
 
 /* External libs */
 import {TranslateModule} from '@ngx-translate/core';
@@ -37,7 +38,8 @@ import '../styles/global.scss';
       routing,
       TranslateModule.forRoot(APP_LANGUAGE_PROVIDERS_OBJECT),
       StModalModule.withComponents([ModalTestComponent]),
-      HeaderDemoModule
+      HeaderDemoModule,
+      GridDemoModule
    ],
    declarations: [
       AppComponent,

@@ -18,11 +18,11 @@ h6 {
    padding: 0 0 25px;
 }
 
-p,
-ol,
-ul {
-   color: egeo-get-color(n8);
-}
+// p,
+// ol,
+// ul {
+//    color: egeo-get-color(n8);
+// }
 
 main {
    .page-title:first-child {
@@ -32,12 +32,12 @@ main {
    }
 }
 
-section {
+changelog {
    ul {
       list-style: none;
       padding: 0 0 15px 25px;
    }
-   changelog li {
+   li {
       &:before {
          content: '-';
          margin-right: .5em;
@@ -47,11 +47,6 @@ section {
       font-size: egeo-get-font-size(body_large);
       padding: 0 0 15px;
    }
-}
-
-pre,
-code {
-   font-family: egeo-get-font(code);
 }
 
 img {
@@ -86,12 +81,11 @@ st-load-code pre[class*="language-"] {
 
 pre code[class*="language-"] {
    padding: 20px 20px 20px 0;
+   font-family: egeo-get-font(code);
    background-color: egeo-get-color(a3_dark);
    color: #e9e9e9;
-
    .token {
       font-size: 14px;
-
       &.attr-name {
          color: #fc7408;
       }

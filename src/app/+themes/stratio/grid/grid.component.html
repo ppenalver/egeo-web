@@ -1,50 +1,22 @@
-<st-api-doc [doc]="apiDoc">
-   <div class="example-run">
-      <section class="container-fluid">
-         <div class="row">
-            <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24" style="background-color: #eff2f3;">
-               <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
-                  <div class="box box-container">
-                     <div class="row">
-                        <div class="col-lg-24, col-md-24 col-sm-24 col-xs-24">
-                           <p style="background-color: #A4EDFF;">24 columns</p>
-                        </div>
-                     </div>
-                  </div>
+<section>
+   <h1 class="page-title">Grid</h1>
 
-                  <div class="box box-container">
-                     <div class="row">
-                        <div class="col-lg-12, col-md-12 col-sm-12 col-xs-12">
-                           <p class="box" style="background-color: #F60">12 columns</p>
-                        </div>
-                        <div class="col-lg-12, col-md-12 col-sm-12 col-xs-12">
-                           <p class="box" style="background-color: #F60">12 columns</p>
-                        </div>
-                     </div>
-                  </div>
+   <p>
+      The Egeo Grid is a 24 columns grid based in the implementation of flexboxgrid fully rewritten in Sass for add 24 columns
+      support. For that, the way of build a grid in an application is exactly the same can be checked in the samples of flexboxgrid.
+      Keep in mind that, unlike Bootstrap, with the Egeo Grid is needed to define explicitly the whole MQ classes (lg, md,
+      sm and xs) to ensure the expected behavior. If you plan to use @stratio/egeo-theme, the grid will be included in the
+      package under the name egeo-grid.css or egeo-grid.min.css if you want the minified version. However, is perfectly possible
+      to import the grid in your own code using the @stratio/egeo-ui-base library. Check the piece of Sass code included
+      in the sample.
+   </p>
+   <p>
+      You can see a example of page with grid <a [href]="gridDemoUrl">here</a>
+   </p>
 
-                  <div class="box box-container">
-                     <div class="row">
-                        <div class="col-lg-8, col-md-8 col-sm-8 col-xs-8">
-                           <p class="box" style="background-color: #9C0">8 columns</p>
-                        </div>
-                        <div class="col-lg-8, col-md-8 col-sm-8 col-xs-8">
-                           <p class="box" style="background-color: #9C0">8 columns</p>
-                        </div>
-                        <div class="col-lg-8, col-md-8 col-sm-8 col-xs-8">
-                           <p class="box" style="background-color: #9C0">8 columns</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-   </div>
+   <h2 class="subtitle">Code example</h2>
 
-   <div class="example-code">
-      <!--{{code}}-->
-      <st-load-code file="+themes/stratio/grid/example-code/sass.html.txt"></st-load-code>
-      <st-load-code file="+themes/stratio/grid/example-code/grid.html.txt"></st-load-code>
-   </div>
-</st-api-doc>
+   <st-load-code file="+themes/stratio/grid/example-code/sass.html.txt"></st-load-code>
+   <st-load-code file="+themes/stratio/grid/example-code/grid.html.txt"></st-load-code>
+
+</section>

@@ -1,6 +1,5 @@
 @import '~@stratio/egeo-ui-base/utils/typography';
 @import '~@stratio/egeo-ui-base/utils/colors';
-
 .title {
    color: egeo-get-color(a3_dark);
    font-family: egeo-get-font(body);
@@ -23,11 +22,16 @@
    color: egeo-get-color(n6);
 }
 
-.param-type{
+.param-type {
    color: #2fa6dd;
    margin-right: 16px;
 }
+
 .required {
    color: #fc7408;
    margin-right: 10px;
+}
+
+p {
+   padding: 0 0 15px;
 }
