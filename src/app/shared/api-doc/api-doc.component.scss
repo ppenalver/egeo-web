@@ -4,40 +4,35 @@
 $brandon: egeo-get-font(heading) !default;
 $opensans: egeo-get-font(body) !default;
 $opensans-normal-font-weight: egeo-get-font-weight(normal) !default;
-$titles-color: egeo-get-color(n6) !default;
 $text-color: egeo-get-color(n8) !default;
 
 $header---font-weight: egeo-get-font-weight(normal) !default;
 $header---font-size: egeo-get-font-size(head_xxlarge) !default;
-$header-underline: 1px solid $titles-color;
 
 $description---font-size: egeo-get-font-size(body_large) !default;
 $secundary-text-size: egeo-get-font-size(body_small) !default;
 
 .title {
-   font-family: $brandon;
-   font-size: $header---font-size;
-   font-weight: $header---font-weight;
-   color: $titles-color;
-   margin-bottom: 10px;
-
-   &::after {
-      border-bottom: 2px solid;
-      border-color: egeo-get-color(a2);
-      content: ' ';
-      display: block;
-      height: 10px;
-      width: 100%;
-   }
+   border-bottom: 2px solid;
+   border-color: egeo-get-color(a1);
+   color: egeo-get-color(a3);
+   display: inline-block;
+   font-family: egeo-get-font(heading);
+   font-size: egeo-get-font-size(head_xxlarge);
+   font-weight: egeo-get-font-weight(normal);
+   margin: 0 0 25px;
+   padding: 0 0 8px;
+   text-transform: uppercase;
 }
 
 .subtitle {
    font-family: $opensans;
-   font-size: egeo-get-font-size(head_xxxlarge);
-   font-weight: $opensans-normal-font-weight;
-   color: $titles-color;
-   margin-top: 30px;
-   margin-bottom: 15px;
+   font-size: egeo-get-font-size(head_xlarge);
+   font-weight: egeo-get-font-weight(normal);
+   color: egeo-get-color(a3);
+   margin-top: 50px;
+   margin-bottom: 20px;
+   padding: 0;
    letter-spacing: -1px;
 }
 

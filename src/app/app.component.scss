@@ -26,7 +26,6 @@ h6 {
 
 main {
    .page-title:first-child {
-      font-size: egeo-get-font-size(head_xlarge);
       margin-top: 0;
       padding-top: 0;
    }
@@ -54,20 +53,27 @@ img {
 }
 
 .page-title {
-   color: egeo-get-color(n9);
+   border-bottom: 2px solid;
+   border-color: egeo-get-color(a1);
+   color: egeo-get-color(a3);
+   display: inline-block;
    font-family: egeo-get-font(heading);
-   font-size: egeo-get-font-size(head_xxxlarge);
+   font-size: egeo-get-font-size(head_xxlarge);
    font-weight: egeo-get-font-weight(normal);
-   margin-bottom: 10px;
+   margin: 0 0 25px;
+   padding: 0 0 8px;
    text-transform: uppercase;
-   &::after {
-      border-bottom: 2px solid;
-      border-color: egeo-get-color(a2);
-      content: ' ';
-      display: block;
-      height: 10px;
-      width: 100%;
-   }
+}
+
+.page-subtitle {
+   font-family: egeo-get-font(body);
+   font-size: egeo-get-font-size(head_xlarge);
+   font-weight: egeo-get-font-weight(normal);
+   color: egeo-get-color(a3);
+   margin-top: 50px;
+   margin-bottom: 20px;
+   padding: 0;
+   letter-spacing: -1px;
 }
 
 st-load-code pre[class*="language-"]:before,
