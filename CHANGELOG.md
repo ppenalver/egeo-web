@@ -7,6 +7,7 @@
 * Fix #212: Change type to header item
 * Add switch component example
 * Fix table header example 
+* Fix #84: Apply new colors, font-sizes and separations to titles
 
 ## 1.3.0 (Abril 4, 2017)
 
