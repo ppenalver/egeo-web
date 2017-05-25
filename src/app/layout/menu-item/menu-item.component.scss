@@ -24,8 +24,16 @@
 }
 
 .item-active {
-   background-color: egeo-get-color(n1);
-   color: egeo-get-color(n10);
+   &:before {
+      content: ' ';
+      border-left: 3px egeo-get-color(a1) solid;
+      display: inline-block;
+      height: 16px;
+      margin-left: -5px;
+      margin-top: 12px;
+      padding-left: 5px;
+      vertical-align: top;
+   }
 }
 
 .first-level {
@@ -56,7 +64,9 @@
 
    .menu-item__label {
       border-color: egeo-get-color(n3);
+      display: inline-block;
       padding: 10px 0 12px 2px;
+      width: calc(100% - 10px);
    }
 }
 
