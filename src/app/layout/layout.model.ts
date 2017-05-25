@@ -16,7 +16,7 @@ export interface EgeoMenuSchema {
 
 export interface VersionComparationOptions {
    lexicographical: boolean;
-   zeroExtend: boolean
+   zeroExtend: boolean;
 }
 
 
@@ -114,7 +114,7 @@ export const MENU: Array<EgeoMenuSchema> = [
                   label: { key: 'MENU.COMPONENTS.FORMS.SWITCH', translate: true },
                   link: '/components/forms/switch'
                },
-		{
+               {
                   label: { key: 'MENU.COMPONENTS.FORMS.TEXTAREA', translate: true },
                   link: '/components/forms/textarea'
                }
@@ -195,6 +195,10 @@ export const MENU: Array<EgeoMenuSchema> = [
          {
             label: { key: 'MENU.COMPONENTS.TOOLTIP', translate: true },
             link: '/components/tooltip'
+         },
+         {
+            label: { key: 'MENU.COMPONENTS.TWO_LIST', translate: true },
+            link: '/components/two-list'
          },
          {
             label: { key: 'MENU.COMPONENTS.SEARCH', translate: true },

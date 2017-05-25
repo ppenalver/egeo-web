@@ -1,7 +1,27 @@
 <st-two-list-selection
    [allElements]="completeUserList"
    [(selectedElements)]="selectedUserList"
+   (selectExtraLabelAll)="selectExtraLabel($event)"
+   (selectExtraLabelSelected)="selectExtraLabel($event)"
    [config]="(config | async)"
    [editable]="true"
-   qaTag="container-list">
-</st-two-list-selection>
+   qaTag="container-list"
+></st-two-list-selection>
+
+<st-two-list-selection-view
+   [allElements]="completeUserList"
+   [selectedElements]="selectedUserList"
+   [config]="(config | async)"
+   [editable]="true"
+   qaTag="example-two-list"
+   [orderSelectedOptions]="orderOptions"
+   (changeOrderSelected)="changeOrder($event)"
+></st-two-list-selection-view>
+
+<st-two-list-selection-view
+   [selectedElements]="selectedUserList"
+   [config]="(config | async)"
+   [editable]="false"
+   qaTag="example-two-list-disable"
+   mode="compact"
+></st-two-list-selection-view>

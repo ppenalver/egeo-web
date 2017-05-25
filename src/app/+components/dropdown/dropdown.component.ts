@@ -137,7 +137,7 @@ export class DropdownComponent {
                paramName: 'click', type: TYPES.BOOL, required: false, details: 'This event is triggered when the button is clicked on the dropdown, it tells you if it is active or not'
             },
             {
-               paramName: 'change', type: TYPES.BOOL, required: false, details: 'This event fires when the selected value changes in the dropdown, returns the value of the element'
+               paramName: 'change', type: 'StDropDownMenuItem', required: false, details: 'This event fires when the selected value changes in the dropdown, returns the element'
             }
          ]
       },

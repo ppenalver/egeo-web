@@ -52,6 +52,8 @@ export const routes: Routes = [
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },
+         // **** modals
+         { path: 'components/modal', loadChildren: './+components/modal/modal.module#ModalModule' },
          // **** navigation
          { path: 'components/navigation/breadcrumbs', loadChildren: './+components/breadcrumbs/breadcrumbs.module#BreadCrumbsModule' },
          { path: 'components/navigation/dropdown', loadChildren: './+components/dropdown/dropdown.module#DropdownModule' },
@@ -64,20 +66,16 @@ export const routes: Routes = [
          { path: 'components/navigation/tab-box', loadChildren: './+components/tab-box/tab-box.module#TabBoxModule' },
          { path: 'components/navigation/tabs-horizontal', loadChildren: './+components/tabs-horizontal/tabs-horizontal.module#TabsHorizontalModule' },
          { path: 'components/navigation/tabs-vertical', loadChildren: './+components/tabs-vertical/tabs-vertical.module#TabsVerticalModule' },
+         // **** Table
+         { path: 'components/table', loadChildren: './+components/table/table.module#TableModule' },
          // **** tooltip
          { path: 'components/tooltip', loadChildren: './+components/tooltip/tooltip.module#TooltipModule' },
-         // **** search
-         { path: 'components/search', loadChildren: './+components/search/search.module#SearchModule' },
-         { path: 'components/table', loadChildren: './+components/table/table.module#TableModule' },
-         // Services modules
-         { path: 'services/regexp', loadChildren: './+services/regexp/regexp.module#RegexpModule' },
-
-         // ********** PENDING OF REFACTOR AND HIDE *****
          // **** two-list-selection
          { path: 'components/two-list', loadChildren: './+components/two-list-selection/two-list-selection.module#TwoListSelectionModule' },
-         // **** modals
-         { path: 'components/modal', loadChildren: './+components/modal/modal.module#ModalModule' }
-
+         // **** search
+         { path: 'components/search', loadChildren: './+components/search/search.module#SearchModule' },
+         // Services modules
+         { path: 'services/regexp', loadChildren: './+services/regexp/regexp.module#RegexpModule' }
       ]
    },
    { path: '**', component: Error404Component }
