@@ -1,0 +1,30 @@
+interface StTwoListSelectionElement {
+   id: string | number;
+   name: string;
+   selected?: boolean;
+   extraLabel?: string;
+}
+
+interface StTwoListSelectExtraLabelAction {
+   element: StTwoListSelectionElement;
+   event: Event;
+}
+
+interface StTwoListSelectionAction {
+   element: StTwoListSelectionElement;
+   position: number;
+}
+
+interface StTwoListSelectionConfig {
+   allElementsListTitle: string;
+   allElementsSearchPlaceholder: string;
+   selectedElementsListTitle: string;
+   selectedElementsSearchPlaceholder: string;
+}
+
+interface StTwoListSelectionConfigSchema {
+   allElementsListTitle: TranslateableElement;
+   allElementsSearchPlaceholder: TranslateableElement;
+   selectedElementsListTitle: TranslateableElement;
+   selectedElementsSearchPlaceholder: TranslateableElement;
+}

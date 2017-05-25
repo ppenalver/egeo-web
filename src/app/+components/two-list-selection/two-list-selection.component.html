@@ -1,42 +1,53 @@
-<section>
-   <st-button qaTag="showButton" (onClick)="showSelectedElements()" text="SHOW ELEMENTS"></st-button>
+<st-api-doc [doc]="apiDoc">
+   <div class="example-run">
+      <section>
+         <h2>Show selected elements in console</h2>
+         <st-button qaTag="showButton" (onClick)="showSelectedElements()" text="Show"></st-button>
+         <br><br><br><br>
 
-   <br>
-   <br>
+         <h2>Full component, view plus behaivor</h2>
+         <div style="width: 100%; height: 500px">
+            <st-two-list-selection
+               [allElements]="completeUserList"
+               [(selectedElements)]="selectedUserList"
+               (selectExtraLabelAll)="selectExtraLabel($event)"
+               (selectExtraLabelSelected)="selectExtraLabel($event)"
+               [config]="(config | async)"
+               [editable]="true"
+               qaTag="container-list"
+            ></st-two-list-selection>
+         </div>
+         <br><br><br>
+         <h2>Only view component</h2>
+         <div style="width: 100%; height: 500px">
+            <st-two-list-selection-view
+               [allElements]="completeUserList"
+               [selectedElements]="selectedUserList"
+               [config]="(config | async)"
+               [editable]="true"
+               qaTag="example-two-list"
+               [orderSelectedOptions]="orderOptions"
+               (changeOrderSelected)="changeOrder($event)"
+            ></st-two-list-selection-view>
+         </div>
 
-   <div style="width: 100%; height: 500px">
-      <st-two-list-selection
-         [allElements]="completeUserList"
-         [(selectedElements)]="selectedUserList"
-         [config]="(config | async)"
-         [editable]="true"
-         qaTag="container-list">
-      </st-two-list-selection>
+         <br><br><br>
+         <h2>Only view component in no edition mode</h2>
+         <div style="width: 50%; height: 500px">
+            <st-two-list-selection-view
+               [selectedElements]="selectedUserList"
+               [config]="(config | async)"
+               [editable]="false"
+               qaTag="example-two-list-disable"
+               mode="compact"
+            ></st-two-list-selection-view>
+         </div>
+      </section>
    </div>
-   <br><br><br>
-   <h2>Only view element without interaction</h2>
-   <br><br>
-
-   <div style="width: 100%; height: 500px">
-      <st-two-list-selection-view
-         [allElements]="completeUserList"
-         [selectedElements]="selectedUserList"
-         [config]="(config | async)"
-         [editable]="true"
-         qaTag="example-two-list"
-      ></st-two-list-selection-view>
+   <div class="example-model">
+      <st-load-code file="+components/two-list-selection/example-code/two-list-selection.model.ts.txt"></st-load-code>
    </div>
-
-   <br><br><br>
-   <h2>Only view element without interaction</h2>
-   <br><br>
-
-   <div style="width: 50%; height: 500px">
-      <st-two-list-selection-view
-         [selectedElements]="selectedUserList"
-         [config]="(config | async)"
-         [editable]="false"
-         qaTag="example-two-list-disable"
-      ></st-two-list-selection-view>
+   <div class="example-code">
+      <st-load-code file="+components/two-list-selection/example-code/two-list-selection.html.txt"></st-load-code>
    </div>
-</section>
+</st-api-doc>
