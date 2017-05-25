@@ -23,7 +23,7 @@ export class TableComponent {
          inputs: [
             {
                paramName: 'fields',
-               type: 'Array<string>',
+               type: 'Array<StTableHeader>',
                required: true,
                details: 'List of field displayed in its header'
             },
