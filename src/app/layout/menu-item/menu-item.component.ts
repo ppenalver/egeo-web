@@ -74,7 +74,7 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
    }
 
    getOpen(routerActive: boolean): boolean {
-      if (this.menu.link.includes(this.activeRoute)) {
+      if (this.menu.link.indexOf(this.activeRoute) > -1) {
          this.isOpen = true;
       } else {
          this.isOpen = false;
