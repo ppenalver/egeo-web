@@ -47,6 +47,7 @@ export const routes: Routes = [
          // **** form
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
+         { path: 'components/forms/checkbox', loadChildren: './+components/checkbox/checkbox.module#CheckboxModule' },
          { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
          { path: 'components/forms/textarea', loadChildren: './+components/textarea/textarea.module#TextareaModule' },
          // **** info
