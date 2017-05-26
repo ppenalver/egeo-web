@@ -43,8 +43,9 @@
             "LABEL": "Forms",
             "INPUT": "Input",
             "RADIO": "Radio",
+            "CHECKBOX": "Checkbox",
             "SWITCH": "Switch",
-	    "TEXTAREA": "Textarea"
+            "TEXTAREA": "Textarea"
          },
          "INFO": {
             "LABEL": "Info",
