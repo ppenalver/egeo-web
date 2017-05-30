@@ -17,7 +17,7 @@ export class TableComponent {
    // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
       title: 'Table',
-      description: 'Table component has been designed in order to be able to display any content in its rows',
+      description: 'The table component has been designed to display any content like images, text, graphs, etc.',
       haveModel: false,  // True for show label False for hide
       apiSection: {
          inputs: [
@@ -25,7 +25,7 @@ export class TableComponent {
                paramName: 'fields',
                type: 'Array<StTableHeader>',
                required: true,
-               details: 'List of field displayed in its header'
+               details: 'List of field displayed in the header'
             },
             {
                paramName: 'qaTag',
@@ -43,7 +43,7 @@ export class TableComponent {
                paramName: 'sortable',
                type: TYPES.BOOL,
                required: false,
-               details: 'Boolean to enable or disable to sort table data'
+               details: 'Boolean to make sortable the table'
             }
          ],
          outputs: [
