@@ -17,6 +17,7 @@ export interface ApiRow {
    paramName: string;
    type: TYPES | string;
    required: boolean;
+   deprecated?: boolean;
    details: string;
 }
 
