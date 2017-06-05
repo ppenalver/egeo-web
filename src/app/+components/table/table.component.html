@@ -1,5 +1,9 @@
 <st-api-doc [doc]="apiDoc">
+   <div class="example-model">
+      <st-load-code file="+components/table/example-code/table-header.model.ts.txt"></st-load-code>
+   </div>
    <div class="example-run">
+
       <section class="container-fluid">
 
          <h3>Simple table</h3>
@@ -35,7 +39,7 @@
          <h3>Compacted table</h3>
          <div style="margin: 10px 10px 25px 10px; width: 100%;">
 
-            <st-table [fields]="fields" [sortable]="true" qaTag="table-qa-tag">
+            <st-table [fields]="fields" [sortable]="false" qaTag="table-qa-tag">
                <tr st-table-row [compacted]="true" *ngFor="let userData of data">
                   <td st-table-cell st-table-row-content>
                      <label>{{userData.id}}</label>
@@ -113,10 +117,8 @@
                      <label>{{userData.completedProfile}}</label>
                   </td>
                   <td st-table-row-hover>
-                     <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16"
-                                leftIcon="icon-circle-check" inputType="button"></st-button>
-                     <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16"
-                                leftIcon="icon-cog" inputType="button"></st-button>
+                     <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16" leftIcon="icon-circle-check" inputType="button"></st-button>
+                     <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16" leftIcon="icon-cog" inputType="button"></st-button>
                   </td>
                </tr>
             </st-table>
@@ -143,12 +145,9 @@
                   <td st-table-cell st-table-row-content>
                      <div style="width: 25px;  height: 25px;">
                         <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
-                           <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="#eee"
-                                 stroke-width="1"
-                                 fill-opacity="0"></path>
-                           <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="rgb(55,181,228)"
-                                 stroke-width="6" fill-opacity="0"
-                                 style="stroke-dasharray: 295.416, 295.416; stroke-dashoffset: 59.0832;"></path>
+                           <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="#eee" stroke-width="1" fill-opacity="0"></path>
+                           <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="rgb(55,181,228)" stroke-width="6" fill-opacity="0"
+                              style="stroke-dasharray: 295.416, 295.416; stroke-dashoffset: 59.0832;"></path>
                         </svg>
                      </div>
                   </td>
@@ -160,12 +159,12 @@
          </div>
 
          <p>
-            Because the table is able to render any content, you are responsible for adding the content to it.
-            Next, we will explain how to build your own table.
+            Because the table is able to render any content, you are responsible for adding the content to it. Next, we will explain
+            how to build your own table.
          </p>
          <p>
-            First of all, you have to call the table component by writing the list of header items.
-            On top of that, you can specify if the header is visible or not and if the rows can be sortable.
+            First of all, you have to call the table component by writing the list of header items. On top of that, you can specify if
+            the header is visible or not and if the rows can be sortable.
          </p>
          <div class="example-code">
             <!--{{code}}-->
@@ -173,21 +172,18 @@
          </div>
 
          <p>
-            Once the table structure is defined, you have to add rows to your table. The rows have to be created using
-            the <strong>tr</strong>
-            tag according to the HTML table specifications.
-            Moreover, the <strong>st-table-row</strong> attribute is needed in order to call our row component.
+            Once the table structure is defined, you have to add rows to your table. The rows have to be created using the <strong>tr</strong>            tag according to the HTML table specifications. Moreover, the <strong>st-table-row</strong> attribute is needed
+            in order to call our row component.
          </p>
          <p>
-            On the other hand, you can specify the content which appears when user puts the mouse over a row. This is
-            specified with the selector <strong>st-table-row-hover</strong>.
+            On the other hand, you can specify the content which appears when user puts the mouse over a row. This is specified with
+            the selector <strong>st-table-row-hover</strong>.
          </p>
 
          <st-load-code file="+components/table/example-code/table-row.html.txt"></st-load-code>
 
          <p>
-            Each created row will be a cell container. Cells are created using the <strong>td</strong> tag and <strong>st-table-cell</strong>
-            attribute.
+            Each created row will be a cell container. Cells are created using the <strong>td</strong> tag and <strong>st-table-cell</strong>            attribute.
          </p>
          <p>
             In order for the row to know where cells have to be displayed in, you have to add
@@ -214,8 +210,7 @@
 
    <div class="example-code">
       <p>
-         Now that you know how to build each piece of our table, you can create your table adding as many rows and cells
-         as you need.
+         Now that you know how to build each piece of our table, you can create your table adding as many rows and cells as you need.
          Next, you can see an example of a simple table with user data.
       </p>
       <!--{{code}}-->
