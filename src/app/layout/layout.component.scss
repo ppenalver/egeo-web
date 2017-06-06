@@ -9,39 +9,15 @@ $web-content---margin: 0 4.5%;
    max-width: $web-content---max-width;
 }
 
-header {
-   position: fixed;
-   top: 0;
+.main-content {
+   min-height: 100vh;
    width: 100%;
+   display: flex;
+   flex-direction: column;
 }
 
 .main-header-stratio {
    z-index: 10;
-}
-
-.header {
-   &-stratio {
-      background-color: egeo-get-color(b2);
-      color: egeo-get-color(n0);
-      padding: 30px 0;
-      text-align: center;
-
-      img {
-         max-height: 120px;
-      }
-   }
-
-   &-title {
-      display: inline-block;
-      font-weight: egeo-get-font-weight(light);
-      text-transform: uppercase;
-
-      &:before {
-         content: '|';
-         display: inline-block;
-         margin:  0 15px;
-      }
-   }
 }
 
 .main-toolbar {
@@ -49,6 +25,7 @@ header {
    border-bottom: 1px solid egeo-get-color(n1);
    color: egeo-get-color(n10);
    padding: 20px 0;
+   z-index: 100;
 }
 
 .version-selector {
@@ -61,23 +38,46 @@ header {
    width: 245px;
 }
 
+.header {
+   width: 100%;
+}
+
+main {
+   display: flex;
+   width: 100%;
+   flex-flow: row wrap;
+}
+
 .sidebar {
    bottom: 0;
-   height: calc(100% - 285px);
    overflow-y: auto;
-   padding: 20px 15px 0 0;
-   position: fixed;
-   top: 185px;
-   width: 260px;
+   height: calc(100vh - 330px);
+   position: relative;
+   padding-right: 42px;
 }
 
-main.web-content {
-   margin-top: 220px;
+.sidebar-withoutfooter {
+   height: calc(100vh - 250px);
 }
+
+.web-content {
+   position: relative;
+   flex: 1;
+}
+
+.menu-content {
+   order: 1;
+   width: 300px;
+   padding: 20px 0 20px 0;
+}
+
 
 .page-content {
-   margin-left: 300px;
-   margin-bottom: 180px;
+   margin-bottom: 40px;
+   padding-top: 15px;
+   padding-left: 42px;
+   order: 2;
+   flex: 2 0px;
 }
 
 
@@ -89,16 +89,16 @@ a {
 }
 
 .main-footer-stratio {
-   bottom: 0;
    background-color: egeo-get-color(a3);
    color: egeo-get-color(n0);
    height: 100px;
    font-size: egeo-get-font-size(body_small);
    font-weight: egeo-get-font-weight(light);
    padding-top: 10px;
-   position: fixed;
+   position: relative;
    text-align: center;
    width: 100%;
+   margin-bottom: 0;
 
    a {
       color: egeo-get-color(n0);
@@ -119,4 +119,21 @@ a {
     max-height: 22px;
     margin: 0 5px;
     vertical-align: bottom;
+}
+
+
+.scrollbar::-webkit-scrollbar-track
+{
+	background-color: egeo-get-color(n3) ;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: egeo-get-color(n5);
 }
