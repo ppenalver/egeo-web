@@ -2,10 +2,8 @@
 
    <egeo-header></egeo-header>
    <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24" sticky>
-      <div class="web-content row">
-         <select class="version-selector" name="version-selector" (change)="onChangeVersion($event.target.value)">
-            <option *ngFor="let version of versions" [value]="version">{{version}}</option>
-         </select>
+      <div class="web-content row" *ngIf="itemsVersion.length">
+         <st-dropdown [items]="itemsVersion" button="Select Version" (change)="onChangeVersion($event)" [firstSelected]="true"></st-dropdown>
       </div>
    </nav>
 

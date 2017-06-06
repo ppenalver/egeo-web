@@ -26,16 +26,12 @@ $web-content---margin: 0 4.5%;
    color: egeo-get-color(n10);
    padding: 20px 0;
    z-index: 100;
-}
 
-.version-selector {
-   background: url('../../assets/images/caret.gif') center right no-repeat egeo-get-color(n1);
-   border-radius: 0;
-   color: egeo-get-color(a3);
-   cursor: pointer;
-   font-size: egeo-get-font-size(body_xsmall);
-   padding: 5px 30px 5px 15px;
-   width: 245px;
+   st-dropdown {
+      width: 240px;
+      margin-left: 10px;
+      display: block;
+   }
 }
 
 .header {
@@ -78,6 +74,7 @@ main {
    padding-left: 42px;
    order: 2;
    flex: 2 0px;
+   max-width: 800px;
 }
 
 

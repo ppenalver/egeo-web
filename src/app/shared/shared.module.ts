@@ -6,6 +6,7 @@ import { EgeoModule } from '@stratio/egeo';
 import { ApiDocComponent, ParametersTableComponent } from './api-doc';
 import { LoadCodeComponent } from './load-code';
 import { DemoCodeComponent } from './tab-demo-code/demo-code.component';
+import { TitleComponent } from './title/title.component';
 import { StickyDirective } from './sticky';
 
 @NgModule({
@@ -15,8 +16,17 @@ import { StickyDirective } from './sticky';
       ApiDocComponent,
       ParametersTableComponent,
       DemoCodeComponent,
-      StickyDirective
+      StickyDirective,
+      TitleComponent
    ],
-   exports: [CommonModule, LoadCodeComponent, ApiDocComponent, EgeoModule, StickyDirective, TranslateModule]
+   exports: [
+      CommonModule,
+      LoadCodeComponent,
+      ApiDocComponent,
+      EgeoModule,
+      StickyDirective,
+      TranslateModule,
+      TitleComponent
+   ]
 })
-export class SharedModule { }
+export class SharedModule {}
