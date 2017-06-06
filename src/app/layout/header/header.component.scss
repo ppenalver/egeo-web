@@ -1,0 +1,30 @@
+@import '~@stratio/egeo-ui-base/utils/typography';
+@import '~@stratio/egeo-ui-base/utils/colors';
+
+
+.header {
+   &-stratio {
+      background-color: egeo-get-color(b2);
+      color: egeo-get-color(n0);
+      padding: 30px 0;
+      text-align: center;
+
+      img {
+         max-height: 120px;
+      }
+   }
+
+   &-title {
+      display: inline-block;
+      font-weight: egeo-get-font-weight(light);
+      text-transform: uppercase;
+
+      &:before {
+         content: '|';
+         display: inline-block;
+         margin:  0 15px;
+      }
+   }
+}
+
+
