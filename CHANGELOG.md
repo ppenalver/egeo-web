@@ -10,6 +10,7 @@
 * Fix #84: Apply new colors, font-sizes and separations to titles
 * Fix #82: Use the same blue marker to show active item on sidebar menu
 * Add footer
+* Fix translation mistakes in table example
 
 ## 1.3.0 (Abril 4, 2017)
 
