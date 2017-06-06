@@ -160,13 +160,12 @@
          </div>
 
          <p>
-            Because table is able to render any content in its cells, you are responsible for adding content to it
-            from your view component.
-            Next, we explain you how to build your own table.
+            Because the table is able to render any content, you are responsible for adding the content to it.
+            Next, we will explain how to build your own table.
          </p>
          <p>
-            First of all, you have to call to the table component introducing the list of header names.
-            Moreover, you can specify if header is visible or not and if rows can be sortable.
+            First of all, you have to call the table component by writing the list of header items.
+            On top of that, you can specify if the header is visible or not and if the rows can be sortable.
          </p>
          <div class="example-code">
             <!--{{code}}-->
@@ -174,26 +173,28 @@
          </div>
 
          <p>
-            Once table structure is defined, you have to add rows to your table. Rows have to be created using <strong>tr</strong>
+            Once the table structure is defined, you have to add rows to your table. The rows have to be created using
+            the <strong>tr</strong>
             tag according to the HTML table specifications.
-            Moreover, <strong>st-table-row</strong> attribute is needed in order to call to our row component.
+            Moreover, the <strong>st-table-row</strong> attribute is needed in order to call our row component.
          </p>
          <p>
-            On the other hand, you can specify the content to show when user puts the mouse over a row. This is
-            specified
-            with the selector <strong>st-table-row-hover</strong>.
+            On the other hand, you can specify the content which appears when user puts the mouse over a row. This is
+            specified with the selector <strong>st-table-row-hover</strong>.
          </p>
 
          <st-load-code file="+components/table/example-code/table-row.html.txt"></st-load-code>
 
          <p>
-            Each created row will be a cell container. Cells are created using <strong>td</strong> tag and <strong>st-table-cell</strong>
+            Each created row will be a cell container. Cells are created using the <strong>td</strong> tag and <strong>st-table-cell</strong>
             attribute.
          </p>
          <p>
-            In order to row knows where cells have to be rendered at, you have to add:
-            <strong>st-table-row-content</strong> if you want to add a normal cell or
-            <strong>st-table-row-hover</strong> if you want to show cell when user puts mouse over the row.
+            In order for the row to know where cells have to be displayed in, you have to add
+
+            <strong>st-table-row-content</strong> -if you want to add a normal cell- or
+            <strong>st-table-row-hover</strong> -if you want to show cell when user puts mouse over the row-.
+
          </p>
          <p>
             Moreover, you can specify if row is displayed <strong>compacted</strong> or not.

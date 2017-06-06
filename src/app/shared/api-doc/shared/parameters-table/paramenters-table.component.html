@@ -6,7 +6,11 @@
 
    <div class="col-md-24">
       <p *ngFor="let row of data" class="param-line">
-         <span class="param-name">{{row.paramName}}</span> <span class="param-type">{{getType(row.type)}}</span> <span *ngIf="row.required" class="required"> <i class="icon-alert"></i> Required</span> {{row.details}}
+         <span class="param-name">{{row.paramName}}</span>
+         <span class="param-type">{{getType(row.type)}}</span>
+         <span *ngIf="row.required" class="required"> <i class="icon-alert"></i> Required</span>
+         <span *ngIf="row.deprecated" class="deprecated"> <i class="icon-alert"></i> Deprecated</span>
+         {{row.details}}
       </p>
    </div>
 </div>
