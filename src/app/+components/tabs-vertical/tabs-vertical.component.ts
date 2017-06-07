@@ -13,7 +13,7 @@ export class TabsVerticalComponent {
    // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
       title: 'Vertical tabs',
-      description: 'The vertical tabs is a component used for navigation purposes. It shows a set of links stacked like a vertical tabs that can be used to put content at a side.',
+      description: 'The vertical tabs component is used for navigation purposes. It shows a set of tabs stacked in a column which user can interacts with and the current tab is highlighted.',
       haveModel: false,
       apiSection: {
          inputs: [
@@ -22,7 +22,7 @@ export class TabsVerticalComponent {
             { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Prefix used to generate the id values for qa tests' }
          ],
          outputs: [
-            { paramName: 'changedOption', type: 'any', required: true, details: 'This event is emitted when active option has changed. It has the active option name as param' }
+            { paramName: 'changedOption', type: 'any', required: true, details: 'This event is emitted when the active option has changed. It has the active option name as param' }
          ]
       },
       exampleDesc: `Next, you can see an example of vertical tabs with three options.`

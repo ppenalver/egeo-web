@@ -18,11 +18,11 @@ export class BreadCrumsComponent implements OnInit {
    // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
       title: 'BreadCrumbs',
-      description: 'This is a kind of navigation component, Is normally used to help the user to go back in a navigation by steps ',
+      description: 'This is a kind of navigation component. This is used to help the user to go back in a navigation by steps.',
       haveModel: false,
       apiSection: {
          inputs: [
-            { paramName: 'options', type: TYPES.STR, required: true, details: 'An array of String that defines the links that will be displayed' }
+            { paramName: 'options', type: TYPES.STR, required: true, details: 'An array of String that defines the displayed links' }
          ],
          outputs: [
             { paramName: 'changedOption', type: 'string', required: true, details: 'This event is emitted when active option has changed. It has the active option index as param' }

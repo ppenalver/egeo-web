@@ -11,7 +11,7 @@ export class InfoBoxComponent {
 
    public apiDoc: ApiDoc = {
       title: 'Info Box',
-      description: 'Info box component is used to content any kind of information like graphs, summary lists or texts',
+      description: 'The info box component can display any kind of information like graphs, summary lists or texts',
       haveModel: false,
       apiSection: {
          inputs: [

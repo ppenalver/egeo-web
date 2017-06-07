@@ -20,7 +20,7 @@ export class SwitchComponent {
       this.loading = true;
       this.apiDoc = {
          title: 'Switch',
-         description: 'Component designed to enable or disable whatever you need. Switch component can be used in a form or any part of your web.',
+         description: 'Component designed to enable or disable whatever you need. Switch component can be used in a form or in any part of your web.',
          haveModel: false,
          apiSection: {
             inputs: [

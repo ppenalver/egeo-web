@@ -64,8 +64,8 @@
             "PAGINATION": "Pagination",
             "RADIO_MENU": "Radio menu",
             "TABS_BOX": "Tab box",
-            "TABS_HORIZONTAL": "Tabs horizontal",
-            "TABS_VERTICAL": "Tabs vertical"
+            "TABS_HORIZONTAL": "Horizontal tabs",
+            "TABS_VERTICAL": "Vertical tabs"
          },
          "TOOLTIP": "Tooltip",
          "TWO_LIST": "Two List",
