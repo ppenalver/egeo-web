@@ -1,33 +1,36 @@
-<header class="row main-header-stratio">
-   <div class="header-stratio col-xs-24 col-sm-24 col-md-24 col-lg-24">
-      <div class="web-content">
-         <a routerLink="/"><img src="assets/images/egeo_logo.png"></a>
-         <h1 class="header-title">Stratio's open framework for UI development</h1>
-      </div>
-   </div>
+<div class="main-content" data-sticky-container>
 
-   <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24">
-      <div class="web-content row">
-         <select class="version-selector" name="version-selector" (change)="onChangeVersion($event.target.value)">
-            <option *ngFor="let version of versions" [value]="version">{{version}}</option>
-         </select>
+   <egeo-header></egeo-header>
+   <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24" sticky>
+      <div class="web-content row" *ngIf="itemsVersion.length">
+         <st-dropdown [items]="itemsVersion" button="Select Version" (change)="onChangeVersion($event)" [firstSelected]="true"></st-dropdown>
       </div>
    </nav>
-</header>
 
-<main class="web-content row">
-   <aside class="sidebar">
-      <nav class="menu">
-         <layout-menu [menuList]="(mainMenu | async) || []" [activeRoute]="activeRoute"></layout-menu>
-      </nav>
-   </aside>
+   <main class="web-content row">
 
-   <section class="page-content" #mainContent>
-      <router-outlet></router-outlet>
-   </section>
-</main>
+      <div class="menu-content">
+         <div sticky data-margin-top="90" data-sticky-class="sidedar-withoutfooter">
+            <aside class="sidebar scrollbar">
+               <nav class="menu">
+                  <layout-menu [menuList]="(mainMenu | async) || []" [activeRoute]="activeRoute"></layout-menu>
+               </nav>
+            </aside>
+         </div>
+      </div>
 
-<footer class="main-footer-stratio">
-   <p>Egeo is an Open Source component library developed by <a href="http://www.stratio.com">Stratio</a>. Fork and rate it on <a href="https://github.com/Stratio/egeo">GitHub</a> <i class="icon-github"></i></p>
-   <p><img class="inline-image" src="../../assets/images/logos-stratio/logo_stratio_neg.png">© 2017 Stratio Big Data, Inc. All Rights Reserved. <a href="http://www.stratio.com/people-culture/#workwithus">Work with us</a>.</p>
-</footer>
+      <section class="page-content" #mainContent>
+         <router-outlet></router-outlet>
+      </section>
+   </main>
+
+
+   <footer class="main-footer-stratio">
+      <p>Egeo is an Open Source component library developed by <a href="http://www.stratio.com">Stratio</a>. Fork and rate it
+         on
+         <a href="https://github.com/Stratio/egeo">GitHub</a> <i class="icon-github"></i></p>
+      <p><img class="inline-image" src="../../assets/images/logos-stratio/logo_stratio_neg.png">© 2017 Stratio Big Data, Inc.
+         All Rights Reserved. <a href="http://www.stratio.com/people-culture/#workwithus">Work with us</a>.</p>
+   </footer>
+
+</div>
