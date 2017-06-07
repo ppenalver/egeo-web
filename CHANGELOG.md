@@ -12,7 +12,9 @@
 * Add footer
 * Fix translation mistakes in table example
 * Add deprecated tag for inputs
-* Update table coponent documentation
+* Update table component documentation
+* Fix some translations
+
 
 ## 1.3.0 (Abril 4, 2017)
 
