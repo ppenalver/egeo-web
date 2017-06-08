@@ -11,6 +11,8 @@
 * Fix #82: Use the same blue marker to show active item on sidebar menu
 * Add footer
 * Fix translation mistakes in table example
+* Add deprecated tag for inputs
+* Update table coponent documentation
 
 ## 1.3.0 (Abril 4, 2017)
 

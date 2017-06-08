@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiDoc, TYPES } from "../../shared/api-doc/shared/api-doc.model";
+import { ApiDoc, TYPES } from '../../shared/api-doc/shared/api-doc.model';
 import { StTableHeader }  from '@stratio/egeo';
 @Component({
    selector: 'st-table-example',
@@ -8,9 +8,9 @@ import { StTableHeader }  from '@stratio/egeo';
 
 export class TableComponent {
    public fields: StTableHeader[] = [
-      { id: 'id', label: 'Id' }, { id: 'name', label: 'Name' }, { id: 'lastName', label: 'Last Name' },
+      { id: 'id', label: 'Id',  sortable: true}, { id: 'name', label: 'Name' }, { id: 'lastName', label: 'Last Name' },
       { id: 'phone', label: 'Phone' }, { id: 'company', label: 'Company' },
-      { id: 'completedProfile', label: 'Completed profile' }];
+      { id: 'completedProfile', label: 'Completed profile', sortable: false }];
 
    public header: boolean = true;
 
@@ -18,7 +18,7 @@ export class TableComponent {
    public apiDoc: ApiDoc = {
       title: 'Table',
       description: 'The table component has been designed to display any content like images, text, graphs, etc.',
-      haveModel: false,  // True for show label False for hide
+      haveModel: true,  // True for show label False for hide
       apiSection: {
          inputs: [
             {
@@ -30,7 +30,7 @@ export class TableComponent {
             {
                paramName: 'qaTag',
                type: TYPES.STR,
-               required: true,
+               required: false,
                details: 'Prefix used to generate the id values for qa tests'
             },
             {
@@ -43,7 +43,8 @@ export class TableComponent {
                paramName: 'sortable',
                type: TYPES.BOOL,
                required: false,
-               details: 'Boolean to make sortable the table'
+               deprecated: true,
+               details: 'Boolean to make sortable the table, To enable sorting of columns use the new "sortable" field inside stTableHEader model'
             }
          ],
          outputs: [
