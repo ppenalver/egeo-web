@@ -29,12 +29,12 @@ export class ToggleButtonsComponent {
       // tslint:disable:max-line-length
       this.apiDoc = {
          title: 'Toggle buttons',
-         description: 'Toggle buttons component is used to apply a specific filter according the selected tab. Each tab displays a number to indicate how many content fulfils its filter.',
+         description: 'The toggle button component is used to apply a specific filter according the selected tab. Each tab displays a number to indicate how many content fulfils its filter.',
          haveModel: true,
          apiSection: {
             inputs: [
-               { paramName: 'tabs', type: 'Array<StToggleButton>', required: true, details: 'List of tabs with a label, number and status (active or not active)' },
-               { paramName: 'description', type: TYPES.STR, required: false, details: 'Title displayed just before tabs to introduce them' },
+               { paramName: 'tabs', type: 'Array<StToggleButton>', required: true, details: 'A list of tabs with a label, number and status (active or not active)' },
+               { paramName: 'description', type: TYPES.STR, required: false, details: 'A title displayed just before tabs to introduce them' },
                { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id for qa search in automated test' }
             ],
             outputs: [
