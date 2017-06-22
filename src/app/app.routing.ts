@@ -20,7 +20,7 @@ export const routes: Routes = [
          // redirection of components
          { path: 'components/buttons', redirectTo: 'components/buttons/button', pathMatch: 'full' },
          { path: 'components/feedback', redirectTo: 'components/feedback/spinner', pathMatch: 'full' },
-         { path: 'components/forms', redirectTo: 'components/forms/input', pathMatch: 'full' },
+         { path: 'components/forms', redirectTo: 'components/forms/checkbox', pathMatch: 'full' },
          { path: 'components/info', redirectTo: 'components/info/box', pathMatch: 'full' },
          { path: 'components/navigation', redirectTo: 'components/navigation/breadcrumbs', pathMatch: 'full' },
 
@@ -45,9 +45,10 @@ export const routes: Routes = [
          // **** feedback
          { path: 'components/feedback/spinner', loadChildren: './+components/spinner/spinner.module#SpinnerModule' },
          // **** form
+         { path: 'components/forms/checkbox', loadChildren: './+components/checkbox/checkbox.module#CheckboxModule' },
+         { path: 'components/forms/combobox', loadChildren: './+components/combobox/combobox.module#ComboboxModule' },
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
-         { path: 'components/forms/checkbox', loadChildren: './+components/checkbox/checkbox.module#CheckboxModule' },
          { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
          { path: 'components/forms/textarea', loadChildren: './+components/textarea/textarea.module#TextareaModule' },
          // **** info

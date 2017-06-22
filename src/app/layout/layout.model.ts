@@ -103,16 +103,20 @@ export const MENU: Array<EgeoMenuSchema> = [
             link: '/components/forms',
             submenu: [
                {
+                  label: { key: 'MENU.COMPONENTS.FORMS.CHECKBOX', translate: true },
+                  link: '/components/forms/checkbox'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.FORMS.COMBOBOX', translate: true },
+                  link: '/components/forms/combobox'
+               },
+               {
                   label: { key: 'MENU.COMPONENTS.FORMS.INPUT', translate: true },
                   link: '/components/forms/input'
                },
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.RADIO', translate: true },
                   link: '/components/forms/radio'
-               },
-               {
-                  label: { key: 'MENU.COMPONENTS.FORMS.CHECKBOX', translate: true },
-                  link: '/components/forms/checkbox'
                },
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.SWITCH', translate: true },
