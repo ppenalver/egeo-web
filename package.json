@@ -39,7 +39,7 @@
       "@angular/router": "4.1.3",
       "@ngx-translate/core": "6.0.1",
       "@ngx-translate/http-loader": "0.0.3",
-      "@stratio/egeo": "2.3.1",
+      "@stratio/egeo": "2.3.2",
       "@stratio/egeo-theme": "0.11.0",
       "core-js": "2.4.1",
       "lodash": "4.17.4",
