@@ -14,6 +14,7 @@
 * Add deprecated tag for inputs
 * Update table component documentation
 * Fix some translations
+* Update st-page-title doc
 
 
 ## 1.3.0 (Abril 4, 2017)
