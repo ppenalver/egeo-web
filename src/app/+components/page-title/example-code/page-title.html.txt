@@ -2,8 +2,15 @@
    [title]="title"
    preTitle="Project"
    leftButton="icon-reply"
+   qaTag="page-title"
+   [editable]="true"
+   placeholder="Page Title Editable"
+   [maxlength]="20"
+   [minlength]="1"
+   [error]="error"
+   [errorMessage]="errorMsg"
    (clickButton)="onClickButton"
-   qaTag="page-title">
+   (edit)=editTitle($event)>
 
    <!-- RIGHT CONTENT -->
 
