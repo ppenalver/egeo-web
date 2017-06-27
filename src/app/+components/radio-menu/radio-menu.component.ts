@@ -44,6 +44,12 @@ export class RadioMenuComponent {
                   type: TYPES.STR,
                   required: true,
                   details: 'Identifier to generate a qa tag for each option'
+               },
+               {
+                  paramName: 'theme',
+                  type: TYPES.STR,
+                  required: false,
+                  details: 'String representing the theme (css class) to be applied to the radio menu component. Possible values are theme-gray-1 / theme-gray-2'
                }
             ],
             outputs: [
