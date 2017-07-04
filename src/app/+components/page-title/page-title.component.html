@@ -24,6 +24,39 @@
             </div>
          </st-page-title>
       </section>
+
+      <section class="page-container col-md-24">
+         <h3>Title editable:</h3>
+         <st-page-title
+            [title]="title"
+            qaTag="page-title-editable"
+            [editable]="true"
+            placeholder="Page Title Editable"
+            [maxlength]="20"
+            [minlength]="1">
+            <div class="right-content">
+               <st-button leftIcon="icon-circle-plus" text="Create"></st-button>
+            </div>
+         </st-page-title>
+      </section>
+
+      <section class="page-container col-md-24">
+         <h3>Title editable with errors:</h3>
+         <st-page-title
+            [title]="title"
+            qaTag="page-title-editable"
+            [editable]="true"
+            placeholder="Page Title Editable"
+            [maxlength]="maxlength"
+            [minlength]="minlength"
+            [error]="error"
+            [errorMessage]="errorMsg"
+            (edit)=editTitle($event)>
+            <div class="right-content">
+               <st-button leftIcon="icon-circle-plus" text="Create"></st-button>
+            </div>
+         </st-page-title>
+      </section>
    </div>
    <div class="example-code">
       <!--{{code}}-->
