@@ -1,0 +1,5 @@
+<st-help
+   qaTag="help-demo-horizontal"
+   textPosition="horizontal"
+   [text]="text">
+</st-help>

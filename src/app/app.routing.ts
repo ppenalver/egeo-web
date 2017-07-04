@@ -21,6 +21,7 @@ export const routes: Routes = [
          { path: 'components/buttons', redirectTo: 'components/buttons/button', pathMatch: 'full' },
          { path: 'components/feedback', redirectTo: 'components/feedback/spinner', pathMatch: 'full' },
          { path: 'components/forms', redirectTo: 'components/forms/checkbox', pathMatch: 'full' },
+         { path: 'components/help', redirectTo: 'components/help/help', pathMatch: 'full' },
          { path: 'components/info', redirectTo: 'components/info/box', pathMatch: 'full' },
          { path: 'components/navigation', redirectTo: 'components/navigation/breadcrumbs', pathMatch: 'full' },
 
@@ -51,6 +52,8 @@ export const routes: Routes = [
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
          { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },
          { path: 'components/forms/textarea', loadChildren: './+components/textarea/textarea.module#TextareaModule' },
+         // **** help
+         { path: 'components/help/help', loadChildren: './+components/help/help.module#HelpModule' },
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },

@@ -48,6 +48,10 @@
             "SWITCH": "Switch",
             "TEXTAREA": "Textarea"
          },
+         "HELP": {
+            "LABEL": "Help",
+            "HELP": "Help"
+         },
          "INFO": {
             "LABEL": "Info",
             "BOX": "Box",
