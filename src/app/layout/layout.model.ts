@@ -129,6 +129,16 @@ export const MENU: Array<EgeoMenuSchema> = [
             ]
          },
          {
+            label: { key: 'MENU.COMPONENTS.HELP.LABEL', translate: true },
+            link: '/components/help',
+            submenu: [
+               {
+                  label: { key: 'MENU.COMPONENTS.HELP.HELP', translate: true },
+                  link: '/components/help/help'
+               }
+            ]
+         },
+         {
             label: { key: 'MENU.COMPONENTS.INFO.LABEL', translate: true },
             link: '/components/info',
             submenu: [
