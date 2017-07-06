@@ -17,6 +17,7 @@
 * Update st-page-title doc
 * Update radio menu component documentation
 * Create help component documentation
+* Create tip component documentation
 
 
 ## 1.3.0 (Abril 4, 2017)

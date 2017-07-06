@@ -50,7 +50,9 @@
          },
          "HELP": {
             "LABEL": "Help",
-            "HELP": "Help"
+            "HELP": "Help",
+            "TIP": "Tip",
+            "TOOLTIP": "Tooltip"
          },
          "INFO": {
             "LABEL": "Info",
@@ -72,7 +74,6 @@
             "TABS_HORIZONTAL": "Horizontal tabs",
             "TABS_VERTICAL": "Vertical tabs"
          },
-         "TOOLTIP": "Tooltip",
          "TWO_LIST": "Two List",
          "SEARCH": "Search"
       },

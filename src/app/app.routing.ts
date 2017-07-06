@@ -54,6 +54,8 @@ export const routes: Routes = [
          { path: 'components/forms/textarea', loadChildren: './+components/textarea/textarea.module#TextareaModule' },
          // **** help
          { path: 'components/help/help', loadChildren: './+components/help/help.module#HelpModule' },
+         { path: 'components/help/tip', loadChildren: './+components/tip/tip.module#TipModule' },
+         { path: 'components/help/tooltip', loadChildren: './+components/tooltip/tooltip.module#TooltipModule' },
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },
@@ -71,10 +73,8 @@ export const routes: Routes = [
          { path: 'components/navigation/tab-box', loadChildren: './+components/tab-box/tab-box.module#TabBoxModule' },
          { path: 'components/navigation/tabs-horizontal', loadChildren: './+components/tabs-horizontal/tabs-horizontal.module#TabsHorizontalModule' },
          { path: 'components/navigation/tabs-vertical', loadChildren: './+components/tabs-vertical/tabs-vertical.module#TabsVerticalModule' },
-         // **** Table
+         // **** table
          { path: 'components/table', loadChildren: './+components/table/table.module#TableModule' },
-         // **** tooltip
-         { path: 'components/tooltip', loadChildren: './+components/tooltip/tooltip.module#TooltipModule' },
          // **** two-list-selection
          { path: 'components/two-list', loadChildren: './+components/two-list-selection/two-list-selection.module#TwoListSelectionModule' },
          // **** search
