@@ -135,6 +135,14 @@ export const MENU: Array<EgeoMenuSchema> = [
                {
                   label: { key: 'MENU.COMPONENTS.HELP.HELP', translate: true },
                   link: '/components/help/help'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.HELP.TIP', translate: true },
+                  link: '/components/help/tip'
+               },
+               {
+                  label: { key: 'MENU.COMPONENTS.HELP.TOOLTIP', translate: true },
+                  link: '/components/help/tooltip'
                }
             ]
          },
@@ -209,10 +217,6 @@ export const MENU: Array<EgeoMenuSchema> = [
          {
             label: { key: 'MENU.COMPONENTS.TABLE.LABEL', translate: true },
             link: '/components/table'
-         },
-         {
-            label: { key: 'MENU.COMPONENTS.TOOLTIP', translate: true },
-            link: '/components/tooltip'
          },
          {
             label: { key: 'MENU.COMPONENTS.TWO_LIST', translate: true },

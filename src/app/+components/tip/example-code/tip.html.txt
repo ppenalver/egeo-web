@@ -1,0 +1,5 @@
+<st-tip
+   qaTag="tip-demo"
+   theme="themeA"
+   [text]="text">
+</st-tip>
