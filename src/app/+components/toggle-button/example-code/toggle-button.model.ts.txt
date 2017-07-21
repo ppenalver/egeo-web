@@ -1,5 +1,6 @@
 export interface StToggleButton {
    label: string;
+   id?: string;
    number?: number;
    active?: boolean;
 }
