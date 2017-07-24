@@ -12,15 +12,15 @@ export class IconsService {
    constructor(private http: Http) { }
 
    getIconList(): Observable<IconModel[]> {
-      return this.http.get(location.pathname + 'assets/theme-stratio.css')
+      return this.http.get(location.pathname + 'assets/egeo-theme-stratio.css')
          .map(response => response.text())
          .map(text => this.getIconClasses(text));
    }
 
    private getIconClasses(text: string): IconModel[] {
-      let result: IconModel[] = [];
+      const result: IconModel[] = [];
       let execResult: RegExpExecArray;
-      let regex = /.icon-(.*?)\:before {[\n].*?content: \"(.*?)"/gm;
+      const regex = /.icon-(.*?)\:before {[\n].*?content: \"(.*?)"/gm;
 
       do {
          execResult = regex.exec(text);

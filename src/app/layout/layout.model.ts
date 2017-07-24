@@ -1,6 +1,6 @@
 import { TranslateableElement } from '@stratio/egeo';
 
-export interface EgeoMenu {
+export class EgeoMenu {
    label: string;
    link: string;
    submenu?: Array<EgeoMenu>;

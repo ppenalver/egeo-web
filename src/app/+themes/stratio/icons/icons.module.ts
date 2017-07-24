@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../../shared';
 import { IconsComponent } from './icons.component';
 import { IconComponent } from './icon/icon.component';
 import { IconsService } from './icons.service';

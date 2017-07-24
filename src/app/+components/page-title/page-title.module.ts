@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../shared';
 import { PageTitleComponent } from './page-title.component';
 import { routing } from './page-title.routing';
 

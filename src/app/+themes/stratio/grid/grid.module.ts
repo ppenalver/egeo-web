@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../../shared';
 import { GridComponent } from './grid.component';
 import { routing } from './grid.routing';
 

@@ -12,8 +12,9 @@ import { LayoutMenuItemComponent } from './layout/menu-item/menu-item.component'
 import { LayoutMenuComponent } from './layout/menu/menu.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { Error404Component } from './errors/error.404.component';
-import { routing } from './app.routing';
-import { SharedModule } from 'shared';
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared';
+import { LoadCodeService } from './shared/load-code';
 import { VersionService } from './layout/layout.service';
 import { ModalTestComponent } from './+components/modal/modal-test.component';
 import { HeaderDemoModule } from './header-demo/header-demo.module';
@@ -23,24 +24,12 @@ import { GridDemoModule } from './grid-demo/grid-demo.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { EgeoModule, StModalModule } from '@stratio/egeo';
 
-// Hot Loader
-import { AppStore, State } from './app.store';
-import {
-   removeNgStyles,
-   createNewHosts,
-   createInputTransfer
-} from '@angularclass/hmr';
-
-// Libs and external dependencies
-import 'rxjs';
-import '../styles/global.scss';
-
 @NgModule({
    imports: [
       BrowserModule,
       HttpModule,
       EgeoModule.forRoot(),
-      routing,
+      AppRoutingModule,
       TranslateModule.forRoot(APP_LANGUAGE_PROVIDERS_OBJECT),
       StModalModule.withComponents([ModalTestComponent]),
       HeaderDemoModule,
@@ -56,41 +45,7 @@ import '../styles/global.scss';
       ModalTestComponent,
       HeaderComponent
    ],
-   providers: [AppStore, VersionService],
+   providers: [VersionService, LoadCodeService],
    bootstrap: [AppComponent]
 })
-export class AppModule {
-   constructor(public appRef: ApplicationRef, public appStore: AppStore) {}
-   hmrOnInit(store: any): void {
-      if (!store || !store.state) {
-         return;
-      }
-      console.log('HMR store', JSON.stringify(store, undefined, 2));
-      // restore state
-      this.appStore.setState(store.state);
-      // restore input values
-      if ('restoreInputValues' in store) {
-         store.restoreInputValues();
-      }
-      this.appRef.tick();
-      Object.keys(store).forEach(prop => delete store[prop]);
-   }
-   hmrOnDestroy(store: any): void {
-      const cmpLocation = this.appRef.components.map(
-         cmp => cmp.location.nativeElement
-      );
-      const currentState = this.appStore.getState();
-      store.state = currentState;
-      // recreate elements
-      store.disposeOldHosts = createNewHosts(cmpLocation);
-      // save input values
-      store.restoreInputValues = createInputTransfer();
-      // remove styles
-      removeNgStyles();
-   }
-   hmrAfterDestroy(store: any): void {
-      // display new elements
-      store.disposeOldHosts();
-      delete store.disposeOldHosts;
-   }
-}
+export class AppModule { }

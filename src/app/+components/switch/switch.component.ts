@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiDoc, TYPES } from 'shared';
-import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { ApiDoc, TYPES } from '../../shared';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
    selector: 'switch-example',
@@ -15,7 +15,7 @@ export class SwitchComponent {
    public form: FormGroup;
    public disabled: boolean;
    public apiDoc: ApiDoc;
-   
+
    constructor() {
       this.loading = true;
       this.apiDoc = {
@@ -56,7 +56,7 @@ export class SwitchComponent {
       };
 
       this.form = new FormGroup({
-         switch: new FormControl({ value: this.model, disabled: false }, Validators.required),
+         switch: new FormControl({ value: this.model, disabled: false }, Validators.required)
       });
    }
 

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'tabs-vertical-example',

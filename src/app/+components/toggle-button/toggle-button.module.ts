@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../shared';
 import { ToggleButtonsComponent } from './toggle-button.component';
 import { routing } from './toggle-button.routing';
 

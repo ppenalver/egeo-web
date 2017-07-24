@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { StInputError } from '@stratio/egeo'; // For declare messages in case of error.
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 
 @Component({

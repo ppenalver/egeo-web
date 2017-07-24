@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { StRegEx, StInputError } from '@stratio/egeo';
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'regexp-example',

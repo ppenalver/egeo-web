@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-import {ApiDoc, TYPES} from 'shared';
+import {ApiDoc, TYPES} from '../../shared';
 import {StRadioMenuOption} from '@stratio/egeo';
 
 @Component({
@@ -18,6 +18,7 @@ export class RadioMenuComponent {
 
       this.options = [{label: 'Service', value: 'service'}, {label: 'Nodes', value: 'nodes'}, {label: 'Casandra', value: 'cassandra'}];
 
+      // tslint:disable:max-line-length
       this.apiDoc = {
          title: 'Radio Menu',
          description: 'The Radio Menu is composed of options with radios. Generally, It is used in forms in order to change' +
@@ -63,5 +64,6 @@ export class RadioMenuComponent {
          },
          exampleDesc: `Next, you can see an example of radio menu in gray-1 and gray-2 themes.`
       };
+      // tslint:enable
    }
 }

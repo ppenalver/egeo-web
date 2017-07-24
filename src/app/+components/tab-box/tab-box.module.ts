@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../shared';
 import { TabBoxComponent } from './tab-box.component';
 import { routing } from './tab-box.routing';
 

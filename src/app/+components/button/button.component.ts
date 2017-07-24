@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'button-example',

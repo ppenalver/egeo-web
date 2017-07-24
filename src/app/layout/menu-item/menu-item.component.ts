@@ -4,7 +4,7 @@ import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/cor
 import { MENU, EgeoMenu } from '../layout.model';
 
 @Component({
-   selector: 'layout-menu-item',
+   selector: 'app-layout-menu-item',
    templateUrl: 'menu-item.component.html',
    styleUrls: ['menu-item.component.scss']
 })
@@ -27,7 +27,7 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
    }
 
    ngOnChanges(changes: SimpleChanges): void {
-      let routeParam: string = 'activeRoute';
+      const routeParam: string = 'activeRoute';
 
       if (changes[routeParam]) {
          if (changes[routeParam].currentValue.includes(this.menu.link)) {
@@ -45,7 +45,7 @@ export class LayoutMenuItemComponent implements OnChanges, OnInit {
    }
 
    getTypeClass(): string {
-      let initialClass: string = this.isActive();
+      const initialClass: string = this.isActive();
       let returnedClass: string = initialClass + ' menu-item';
 
       if (this.menu.isMainMenu) {

@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { MENU, EgeoMenu } from '../layout.model';
 
 @Component({
-   selector: 'layout-menu',
+   selector: 'app-layout-menu',
    templateUrl: 'menu.component.html',
    styleUrls: ['menu.component.scss']
 })

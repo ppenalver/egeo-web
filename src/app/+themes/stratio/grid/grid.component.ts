@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../../shared';
 
 @Component({
   selector: 'grid',
