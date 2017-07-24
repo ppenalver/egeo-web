@@ -18,6 +18,7 @@
                   qaTag="name-input"
                   required
                   [minlength]="minLength"
+                  [maxlength]="maxLength"
                   [(ngModel)]="model.name"
                   [pattern]="textWithoutSpaces"
                   contextualHelp="This is the contextual help of the name"
@@ -32,6 +33,8 @@
                   fieldType="number"
                   qaTag="components-input-template"
                   required
+                  [min]="min"
+                  [max]="max"
                   [(ngModel)]="model.components"
                   contextualHelp="This is the contextual help of the components"
                ></st-input>
@@ -67,6 +70,7 @@
                   placeholder="Number of components"
                   [forceValidations]="forceValidations"
                   [errors]="errors"
+                  fieldType="number"
                   name="components-reactive"
                   qaTag="components-input-reactive"
                   contextualHelp="This is the contextual help of the components"

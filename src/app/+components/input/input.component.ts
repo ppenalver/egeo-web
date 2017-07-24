@@ -22,6 +22,10 @@ export class InputComponent implements OnInit {
    public textWithoutSpaces: string = '[a-z]*';
    public disabledPlaceholder: string = 'Field disabled';
    public minLength: number = 3;
+   public maxLength: number = 10;
+   public min: number = 10;
+   public max: number = 20;
+
    public isDisabled: boolean = false;
 
    public forceValidations: boolean = false;
@@ -30,6 +34,9 @@ export class InputComponent implements OnInit {
       generic: 'Error',
       required: 'This field is required',
       minLength: 'The field min length is: ' + this.minLength,
+      maxLength: 'The field max length is: ' + this.maxLength,
+      min: 'The number has to be higher than: ' + this.min,
+      max: 'The number has to be minor than: ' + this.max,
       pattern: 'Invalid value'
    };
 
@@ -38,11 +45,11 @@ export class InputComponent implements OnInit {
    // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
       title: 'Input',
-      description: 'The input component is for use normaly inside a form, you can use too outside a form like a template driven form.',
+      description: 'The input component is for use usually inside a form, you can use too outside a form like a template driven form.',
       haveModel: true,
       apiSection: {
          inputs: [
-            { paramName: 'placeholder', type: TYPES.STR, required: false, details: 'The text that appera as placeholder of the input, default empty' },
+            { paramName: 'placeholder', type: TYPES.STR, required: false, details: 'The text that appears as placeholder of the input, default empty' },
             { paramName: 'name', type: TYPES.STR, required: true, details: 'Name of the input' },
             { paramName: 'isFocused', type: TYPES.BOOL, required: false, details: 'If true, the input will be focused on view init.' },
             { paramName: 'label', type: TYPES.STR, required: false, details: 'Label to show over the input, default empty' },
@@ -64,6 +71,7 @@ export class InputComponent implements OnInit {
 
    onSubmitTemplateBased(): void {
       console.log('submit value: ', JSON.stringify(this.model));
+      console.log('submit form : ', this.templateDrivenForm);
    }
 
    forceValidation(): void {
@@ -92,9 +100,10 @@ export class InputComponent implements OnInit {
       this.reactiveForm = this._fb.group({
          'description': [
                this.model.description,
-               [Validators.required, Validators.minLength(this.minLength), Validators.pattern(this.textWithoutSpaces)]
+               [Validators.required, Validators.minLength(this.minLength), Validators.maxLength(this.minLength),
+                  Validators.pattern(this.textWithoutSpaces)]
             ],
-         'components': [this.model.components, [Validators.required]]
+         'components': [this.model.components, [Validators.min(this.min), Validators.max(this.max)]]
       });
    }
 }
