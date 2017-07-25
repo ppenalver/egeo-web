@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import Sticky from 'sticky-js';
 
-let uniqueSelector = 'sticky';
+const uniqueSelector = 'sticky';
 
 @Directive({ selector: '[sticky]' })
 export class StickyDirective implements OnDestroy, AfterViewInit {
@@ -16,11 +16,13 @@ export class StickyDirective implements OnDestroy, AfterViewInit {
    constructor(private el: ElementRef) {}
 
    ngOnDestroy(): void {
-      if (this.sticky) this.sticky.destroy();
+      if (this.sticky) {
+         this.sticky.destroy();
+      }
    }
 
    ngAfterViewInit(): void {
-      let idUnique = 'sticky' + new Date().getUTCMilliseconds();
+      const idUnique = 'sticky' + new Date().getUTCMilliseconds();
       this.el.nativeElement.id = idUnique;
       this.sticky = new Sticky('#' + idUnique);
    }

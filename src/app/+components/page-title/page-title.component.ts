@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'page-title-example',
@@ -16,6 +16,7 @@ export class PageTitleComponent {
    public maxlength: number = 20;
 
    constructor() {
+      // tslint:disable:max-line-length
       this.apiDoc = {
          title: 'Page title',
          description: 'Page title component is think for use in headers of pages.',
@@ -43,6 +44,7 @@ export class PageTitleComponent {
          exampleDesc: `Next, we can see an example of Page title component showing a title and two elements in the right side.
          The right side content must be surrounded by page-title tags as you can see in html code below`
       };
+      // tslint:enable:max-line-length
    }
 
    public editTitle(value: string) {

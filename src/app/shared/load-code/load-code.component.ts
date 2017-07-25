@@ -4,54 +4,55 @@ import {
    languages as _languages,
    plugins as _plugins
 } from 'prismjs';
+import { Observable } from 'rxjs/Observable';
 
 import 'prismjs/components/prism-typescript.min';
 import 'prismjs/components/prism-json.min';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.min';
 
+import { LoadCodeService } from './load-code.service';
+
 @Component({
    selector: 'st-load-code',
    templateUrl: './load-code.component.html'
 })
-export class LoadCodeComponent implements OnInit, AfterViewChecked {
+export class LoadCodeComponent implements OnInit {
    @Input() file: string;
 
    @ViewChild('preCode') preCode: ElementRef;
 
-   code: string = '';
    private type: string = 'typescript';
 
-   constructor(private _renderer: Renderer) { }
+   constructor(private _renderer: Renderer, private _service: LoadCodeService) { }
 
    ngOnInit(): void {
-      this.code = this.getCodeAsText(this.file);
       if (this.file && this.file !== '') {
-         let parts = this.file.split('.');
-         let extension: string = parts[parts.length - 2];
-         if (extension === 'model') {
-            extension = 'typescript';
-         }
-         this.checkExtension(extension);
-         if (extension === 'html') {
-            this.code = this.replaceTags(this.code);
-         }
+         this.getCodeAsText(this.file).subscribe((fileContent) => {
+            const parts = this.file.split('.');
+            let code: string = fileContent;
+            let extension: string = parts[parts.length - 2];
+            if (extension === 'model') {
+               extension = 'typescript';
+            }
+            this.checkExtension(extension);
+            if (extension === 'html') {
+               code = this.replaceTags(fileContent);
+            }
+            this.insertCode(code);
+            this.highlight();
+         });
       }
-   }
-
-   ngAfterViewChecked(): void {
-      this.insertCode();
-      this.highlight();
    }
 
    highlight(): void {
       _highlightElement(this.preCode.nativeElement.querySelector('code'), false, null);
    }
 
-   insertCode(): void {
+   insertCode(code): void {
       this._renderer.setElementProperty(
          this.preCode.nativeElement,
          'innerHTML',
-         `<code class="${this.getClass()}">${this.code}</code>`
+         `<code class="${this.getClass()}">${code}</code>`
       );
    }
 
@@ -59,12 +60,14 @@ export class LoadCodeComponent implements OnInit, AfterViewChecked {
       return `${this.type} language-${this.type}`;
    }
 
-   private getCodeAsText(path: string): string {
-      return require(`!!raw-loader!../../${path}`);
+   private getCodeAsText(fileName: string): Observable<string> {
+      return this._service.getExampleFile(fileName);
+      // return require(`!!raw-loader!../../${path}`);
+      // return '';
    }
 
    private getLanguaje(languaje: string): PrismJS.LanguageDefinition {
-      let defaultLanguaje: string = 'html';
+      const defaultLanguaje = 'html';
       let result: PrismJS.LanguageDefinition | undefined;
       result = _languages[languaje];
       if (result) {

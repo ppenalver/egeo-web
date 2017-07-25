@@ -1,12 +1,13 @@
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { Error404Component } from './errors/error.404.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AppComponent } from './app.component';
 
-import { HeaderDemoComponent } from './header-demo';
+import { HeaderDemoComponent } from './header-demo/header-demo.component';
 
-export const routes: Routes = [
+const routes: Routes = [
    {
       path: '', component: LayoutComponent, children: [
          // Main redirection
@@ -86,4 +87,8 @@ export const routes: Routes = [
    { path: '**', component: Error404Component }
 ];
 
-export const routing = RouterModule.forRoot(routes, { useHash: true });
+@NgModule({
+   imports: [RouterModule.forRoot(routes, { useHash: true })],
+   exports: [RouterModule]
+})
+export class AppRoutingModule { }

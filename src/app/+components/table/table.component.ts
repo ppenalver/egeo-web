@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiDoc, TYPES } from '../../shared/api-doc/shared/api-doc.model';
-import { StTableHeader }  from '@stratio/egeo';
+import { StTableHeader } from '@stratio/egeo';
 @Component({
    selector: 'st-table-example',
    templateUrl: './table.component.html'

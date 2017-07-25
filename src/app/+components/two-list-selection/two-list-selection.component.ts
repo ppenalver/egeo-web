@@ -12,7 +12,7 @@ import {
 } from '@stratio/egeo';
 
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'two-list-selection-example',
@@ -126,7 +126,9 @@ export class TwoListSelectionComponent {
             id: i,
             name: `User-${i}`
          });
-         if (i % 4 === 0) this.selectedUserList.push(_.clone(this.completeUserList[i]));
+         if (i % 4 === 0) {
+            this.selectedUserList.push(_.clone(this.completeUserList[i]));
+         }
       }
    }
 }

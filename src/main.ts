@@ -1,14 +1,11 @@
+import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { decorateModuleRef } from './app/environment';
-import { bootloader } from '@angularclass/hmr';
 
-import { AppModule } from './app';
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-export function main(): Promise<any> {
-  return platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .then(decorateModuleRef)
-    .catch((err) => console.error(err));
+if (environment.production) {
+  enableProdMode();
 }
 
-bootloader(main);
+platformBrowserDynamic().bootstrapModule(AppModule);

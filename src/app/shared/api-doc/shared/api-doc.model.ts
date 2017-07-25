@@ -1,4 +1,4 @@
-export interface ApiDoc {
+export class ApiDoc {
    title: string;
    description: string;
    apiSection: Api;

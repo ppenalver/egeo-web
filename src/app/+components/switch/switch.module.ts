@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../shared';
 import { SwitchComponent } from './switch.component';
 import { routing } from './switch.routing';
 

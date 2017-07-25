@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { cloneDeep as _cloneDeep } from 'lodash'
+import { cloneDeep as _cloneDeep } from 'lodash';
 import { StDropDownMenuItem } from '@stratio/egeo';
 
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'search-example',

@@ -8,7 +8,7 @@ import { MENU, EgeoMenu } from './layout.model';
 import { VersionService } from './layout.service';
 
 @Component({
-   selector: 'layout',
+   selector: 'app-layout',
    templateUrl: 'layout.component.html',
    styleUrls: ['layout.component.scss']
 })

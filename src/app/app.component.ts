@@ -3,9 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { StModalService } from '@stratio/egeo';
 
 @Component({
-   selector: 'app',
+   selector: 'app-root',
    templateUrl: './app.component.html',
-   styleUrls: ['app.component.scss'],
+   styleUrls: ['./app.component.scss'],
    encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {

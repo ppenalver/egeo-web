@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'tip-example',
@@ -26,6 +26,7 @@ export class TipComponent {
          Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
          nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
          Nulla consequat massa quis enim.`;
+      // tslint:disable:max-line-length
       this.apiDoc = {
          title: 'Tip',
          description: 'Tip is a component that offers to the user extra information about a given element',
@@ -40,5 +41,6 @@ export class TipComponent {
          },
          exampleDesc: `Next, we can see an example of tip that is displayed`
       };
+      // tslint:enable
    }
 }

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observer } from 'rxjs/Observer';
 
 import { VersionComparationOptions } from './layout.model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class VersionService {
@@ -17,7 +18,7 @@ export class VersionService {
    }
 
    getVersions(): Observable<string[]> {
-      if (ENV === 'development') {
+      if (!environment.production) {
          return Observable.create((observer: Observer<string[]>) => {
             observer.next(['development']);
             observer.complete();
@@ -29,8 +30,7 @@ export class VersionService {
    }
 
    private parseJson(pack: { [key: string]: any }): string {
-      let key: string = 'version';
-      return pack[key];
+      return pack.key;
    }
 
    private parseVersionResponse(versions: any[]): string[] {
@@ -48,10 +48,10 @@ export class VersionService {
    }
 
    private versionCompare(v1: string, v2: string, options?: VersionComparationOptions): number {
-      let lexicographical: boolean = options && options.lexicographical;
-      let zeroExtend: boolean = options && options.zeroExtend;
-      let v1parts: string[] = v1.split('.');
-      let v2parts: string[] = v2.split('.');
+      const lexicographical: boolean = options && options.lexicographical;
+      const zeroExtend: boolean = options && options.zeroExtend;
+      const v1parts: string[] = v1.split('.');
+      const v2parts: string[] = v2.split('.');
 
       let v1PartsNumeric: number[];
       let v2PartsNumeric: number[];
@@ -61,32 +61,37 @@ export class VersionService {
       }
 
       if (zeroExtend) {
-         while (v1parts.length < v2parts.length) v1parts.push('0');
-         while (v2parts.length < v1parts.length) v2parts.push('0');
-      }
-
-      if (!lexicographical) {
-         v1PartsNumeric = v1parts.map(Number);
-         v2PartsNumeric = v2parts.map(Number);
-      }
-
-      for (let i = 0; i < v1parts.length; ++i) {
-         if (v2parts.length === i) {
-            return 1;
+         while (v1parts.length < v2parts.length) {
+            v1parts.push('0');
          }
 
-         if (v1parts[i] === v2parts[i]) {
-            continue;
-         } else if (v1parts[i] > v2parts[i]) {
-            return 1;
-         } else {
+         while (v2parts.length < v1parts.length) {
+            v2parts.push('0');
+         }
+
+         if (!lexicographical) {
+            v1PartsNumeric = v1parts.map(Number);
+            v2PartsNumeric = v2parts.map(Number);
+         }
+
+         for (let i = 0; i < v1parts.length; ++i) {
+            if (v2parts.length === i) {
+               return 1;
+            }
+
+            if (v1parts[i] === v2parts[i]) {
+               continue;
+            } else if (v1parts[i] > v2parts[i]) {
+               return 1;
+            } else {
+               return -1;
+            }
+         }
+
+         if (v1parts.length !== v2parts.length) {
             return -1;
          }
+         return 0;
       }
-
-      if (v1parts.length !== v2parts.length) {
-         return -1;
-      }
-      return 0;
    }
 }

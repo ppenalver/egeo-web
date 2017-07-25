@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MarkdownToHtmlModule } from 'markdown-to-html-pipe';
 
-import { SharedModule } from 'shared';
+import { SharedModule } from '../../shared';
 import { ChangelogComponent } from './changelog.component';
 import { ChangelogService } from './changelog.service';
 import { routing } from './changelog.routing';

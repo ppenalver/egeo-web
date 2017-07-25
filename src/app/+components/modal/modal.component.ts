@@ -9,7 +9,7 @@ import {
    StModalResponse
 } from '@stratio/egeo';
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 import { ModalTestComponent } from './modal-test.component';
 
 @Component({
@@ -47,7 +47,7 @@ export class ModalComponent {
 
    showModal(): void {
 
-      let message: string = 'Are you sure of delete this?';
+      const message: string = 'Are you sure of delete this?';
 
       this._modalService.show({
          qaTag: 'tag-message',
@@ -60,7 +60,7 @@ export class ModalComponent {
    }
 
    showModalWithHtml(): void {
-      let html: string = `
+      const html: string = `
       <h1 class="st-modal-example-test-class-h1">Main title<h1>
       <br>
       <p>paragraph of some text between p html tags, and now a list:</p>
@@ -110,7 +110,7 @@ export class ModalComponent {
          width = StModalWidth.LARGE;
       }
 
-      let message: string = 'Are you sure of delete this?';
+      const message: string = 'Are you sure of delete this?';
 
       this._modalService.show({
          qaTag: 'tag-' + size,

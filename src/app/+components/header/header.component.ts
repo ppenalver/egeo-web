@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { StHeaderModel, StHeaderUserMenuModel, EgeoResolveService } from '@stratio/egeo';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'header-example',

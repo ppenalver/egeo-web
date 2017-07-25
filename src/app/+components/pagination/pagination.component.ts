@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiDoc, TYPES } from 'shared';
+import { ApiDoc, TYPES } from '../../shared';
 
 
 @Component({
@@ -52,7 +52,7 @@ export class PaginationComponent implements OnInit {
    }
 
    generateItems(n: number): Array<any> {
-      let items: Array<any> = [];
+      const items: Array<any> = [];
 
       for (let i = 1; i <= n; i++) {
          items.push({
@@ -64,7 +64,7 @@ export class PaginationComponent implements OnInit {
       return items;
    }
 
-   onChangePage($event: any): void {;
+   onChangePage($event: any): void {
       this.perPage = $event.perPage;
       this.page = $event.currentPage;
    }
