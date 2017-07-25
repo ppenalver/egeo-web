@@ -76,6 +76,8 @@ const routes: Routes = [
          { path: 'components/navigation/tabs-vertical', loadChildren: './+components/tabs-vertical/tabs-vertical.module#TabsVerticalModule' },
          // **** table
          { path: 'components/table', loadChildren: './+components/table/table.module#TableModule' },
+         // **** tree
+         {path: 'components/tree', loadChildren: './+components/tree/tree.module#StTreeDocModule'},
          // **** two-list-selection
          { path: 'components/two-list', loadChildren: './+components/two-list-selection/two-list-selection.module#TwoListSelectionModule' },
          // **** search
