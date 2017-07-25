@@ -18,6 +18,7 @@
 * Update radio menu component documentation
 * Create help component documentation
 * Create tip component documentation
+* Add an optional id to the st-toggle-button interface
 
 
 ## 1.3.0 (Abril 4, 2017)
