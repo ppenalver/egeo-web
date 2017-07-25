@@ -1,0 +1,9 @@
+<st-tree
+   [tree]="treeA"
+   [maxLevel]="treeModel.max"
+   [isRoot]="true"
+   [changeStreamNotification]="notificationChangeStream"
+   (toogleNode)="onToogleNode($event, treeA)"
+   (selectNode)="onSelectNode($event, treeA)"
+   (navigatePrevious)="onNavigatePrevious($event)">
+</st-tree>

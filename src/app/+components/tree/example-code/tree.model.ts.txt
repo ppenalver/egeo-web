@@ -1,0 +1,12 @@
+export class StNodeTree {
+   name: string;
+   icon: string;
+   children?: StNodeTree[];
+   expanded?: boolean;
+   selected?: boolean;
+}
+
+export class StNodeTreeChange {
+   node: StNodeTree;
+   path: string;
+}

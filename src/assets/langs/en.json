@@ -35,6 +35,7 @@
             "LABEL": "Table",
             "TABLE": "Table"
          },
+         "TREE": "Tree",
          "FEEDBACK": {
             "LABEL": "Feedback",
             "SPINNER": "Spinner"

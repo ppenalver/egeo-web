@@ -219,6 +219,10 @@ export const MENU: Array<EgeoMenuSchema> = [
             link: '/components/table'
          },
          {
+            label: {key: 'MENU.COMPONENTS.TREE', translate: true},
+            link: '/components/tree'
+         },
+         {
             label: { key: 'MENU.COMPONENTS.TWO_LIST', translate: true },
             link: '/components/two-list'
          },
