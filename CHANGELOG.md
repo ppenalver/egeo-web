@@ -19,7 +19,7 @@
 * Create help component documentation
 * Create tip component documentation
 * Add an optional id to the st-toggle-button interface
-
+* Modify the input example with max and min validations
 
 ## 1.3.0 (Abril 4, 2017)
 
