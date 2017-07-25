@@ -75,6 +75,10 @@ export const MENU: Array<EgeoMenuSchema> = [
       isMainMenu: true,
       submenu: [
          {
+            label: { key: 'MENU.COMPONENTS.ALERTS', translate: true },
+            link: '/components/alerts'
+         },
+         {
             label: { key: 'MENU.COMPONENTS.BUTTONS.LABEL', translate: true },
             link: '/components/buttons',
             submenu: [

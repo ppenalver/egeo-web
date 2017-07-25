@@ -1,0 +1,28 @@
+//...
+constructor(private _alertService: StAlertsService) { }
+
+//...
+
+showWarning(): void {
+   this._alertService.notifyAlert(
+      'Warning',
+      'Internal server Error.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor incididunt ut labore et dolore magna aliqua',
+      STALERT_SEVERITY.WARNING);
+}
+
+showError(): void {
+   this._alertService.notifyAlert(
+      'Error',
+      'Internal server Error.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      STALERT_SEVERITY.ERROR,
+      undefined, 10000);
+}
+
+showSuccess(): void {
+   this._alertService.notifyAlert(
+      'Success',
+      'Internal server Error.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+      STALERT_SEVERITY.SUCCESS);
+}
+
+//...

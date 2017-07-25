@@ -41,6 +41,8 @@ const routes: Routes = [
 
 
          // Components modules
+         // **** alerts
+         {path: 'components/alerts', loadChildren: './+components/alerts/alerts.module#StAlertsDocModule'},
          // **** buttons
          { path: 'components/buttons/button', loadChildren: './+components/button/button.module#ButtonModule' },
          { path: 'components/buttons/toggle', loadChildren: './+components/toggle-button/toggle-button.module#ToggleButtonModule' },
