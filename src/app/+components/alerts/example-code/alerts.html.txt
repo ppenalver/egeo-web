@@ -1,0 +1,1 @@
+<st-alerts [showInConsole]="true"></st-alerts>
