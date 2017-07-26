@@ -62,6 +62,8 @@ const routes: Routes = [
          // **** info
          { path: 'components/info/box', loadChildren: './+components/info-box/info-box.module#InfoBoxModule' },
          { path: 'components/info/card', loadChildren: './+components/info-card/info-card.module#InfoCardModule' },
+         // **** item-list
+         {path: 'components/item-list', loadChildren: './+components/item-list/item-list.module#StItemListDocModule'},
          // **** modals
          { path: 'components/modal', loadChildren: './+components/modal/modal.module#ModalModule' },
          // **** navigation
