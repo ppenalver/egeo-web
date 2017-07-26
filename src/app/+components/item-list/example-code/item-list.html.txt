@@ -1,0 +1,7 @@
+ <st-item-list
+   [list]="listLong"
+   [config]="configTitle"
+   [qaTag]="qaTag"
+   [theme]="themeA"
+   (selectItem)="onSelectItem($event)">
+</st-item-list>

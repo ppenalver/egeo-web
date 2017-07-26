@@ -165,6 +165,10 @@ export const MENU: Array<EgeoMenuSchema> = [
             ]
          },
          {
+            label: { key: 'MENU.COMPONENTS.ITEM_LIST', translate: true },
+            link: '/components/item-list'
+         },
+         {
             label: { key: 'MENU.COMPONENTS.MODAL', translate: true },
             link: '/components/modal'
          },

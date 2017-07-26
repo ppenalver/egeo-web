@@ -27,6 +27,7 @@
       "COMPONENTS": {
          "LABEL": "Components",
          "ALERTS": "Alerts",
+         "ITEM_LIST": "Item list",
          "BUTTONS": {
             "LABEL": "Buttons",
             "BUTTON": "Button",
