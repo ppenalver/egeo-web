@@ -19,6 +19,7 @@ import { VersionService } from './layout/layout.service';
 import { ModalTestComponent } from './+components/modal/modal-test.component';
 import { HeaderDemoModule } from './header-demo/header-demo.module';
 import { GridDemoModule } from './grid-demo/grid-demo.module';
+import { AutomaticDocService } from './shared/automatic-doc/automatic-doc.service';
 
 /* External libs */
 import { TranslateModule } from '@ngx-translate/core';
@@ -45,7 +46,7 @@ import { EgeoModule, StModalModule } from '@stratio/egeo';
       ModalTestComponent,
       HeaderComponent
    ],
-   providers: [VersionService, LoadCodeService],
+   providers: [VersionService, LoadCodeService, AutomaticDocService],
    bootstrap: [AppComponent]
 })
 export class AppModule { }

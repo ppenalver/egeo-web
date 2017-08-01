@@ -1,4 +1,14 @@
-import { Component, Input, OnInit, ViewChild, ElementRef, Renderer, AfterViewChecked } from '@angular/core';
+import {
+   Component,
+   Input,
+   OnInit,
+   ViewChild,
+   ElementRef,
+   Renderer,
+   AfterViewChecked,
+   OnChanges,
+   SimpleChanges
+} from '@angular/core';
 import {
    highlightElement as _highlightElement,
    languages as _languages,
@@ -16,8 +26,9 @@ import { LoadCodeService } from './load-code.service';
    selector: 'st-load-code',
    templateUrl: './load-code.component.html'
 })
-export class LoadCodeComponent implements OnInit {
+export class LoadCodeComponent implements OnInit, OnChanges {
    @Input() file: string;
+   @Input() code: string;
 
    @ViewChild('preCode') preCode: ElementRef;
 
@@ -29,18 +40,22 @@ export class LoadCodeComponent implements OnInit {
       if (this.file && this.file !== '') {
          this.getCodeAsText(this.file).subscribe((fileContent) => {
             const parts = this.file.split('.');
-            let code: string = fileContent;
-            let extension: string = parts[parts.length - 2];
-            if (extension === 'model') {
-               extension = 'typescript';
-            }
-            this.checkExtension(extension);
-            if (extension === 'html') {
-               code = this.replaceTags(fileContent);
-            }
-            this.insertCode(code);
-            this.highlight();
+            this.onLoadCode(fileContent, parts[parts.length - 2]);
          });
+      } else if (this.code) {
+         this.onLoadCode(this.code, 'html');
+      }
+   }
+
+   ngOnChanges(changes: SimpleChanges): void {
+      if (changes && changes.file) {
+         this.getCodeAsText(changes.file.currentValue).subscribe((fileContent) => {
+            const parts = changes.file.currentValue.split('.');
+            this.onLoadCode(fileContent, parts[parts.length - 2]);
+         });
+      }
+      if (changes && changes.code) {
+         this.onLoadCode(changes.code.currentValue, 'html');
       }
    }
 
@@ -60,10 +75,17 @@ export class LoadCodeComponent implements OnInit {
       return `${this.type} language-${this.type}`;
    }
 
+   private onLoadCode(code: string, filetype: string): void {
+      this.checkExtension(filetype);
+      if (filetype === 'html') {
+         code = this.replaceTags(code);
+      }
+      this.insertCode(code);
+      this.highlight();
+   }
+
    private getCodeAsText(fileName: string): Observable<string> {
       return this._service.getExampleFile(fileName);
-      // return require(`!!raw-loader!../../${path}`);
-      // return '';
    }
 
    private getLanguaje(languaje: string): PrismJS.LanguageDefinition {
@@ -83,6 +105,7 @@ export class LoadCodeComponent implements OnInit {
 
    private checkExtension(extension: string): void {
       switch (extension) {
+         case 'mode':
          case 'ts':
             this.type = 'typescript';
             break;
