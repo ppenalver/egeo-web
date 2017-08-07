@@ -4,7 +4,15 @@ export class Documentation {
    type: string;
    description: string;
    api: DocumentationApi;
-   example: string;
+   example: CodeApi[];
+   model: CodeApi[];
+}
+
+export class CodeApi {
+   type: string;
+   code: string;
+   title: string;
+   desc: string;
 }
 
 export class DocumentationApi {

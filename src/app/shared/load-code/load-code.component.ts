@@ -28,11 +28,13 @@ import { LoadCodeService } from './load-code.service';
 })
 export class LoadCodeComponent implements OnInit, OnChanges {
    @Input() file: string;
+
    @Input() code: string;
+   @Input() type: string;
 
    @ViewChild('preCode') preCode: ElementRef;
 
-   private type: string = 'typescript';
+   private internalType: string = 'typescript';
 
    constructor(private _renderer: Renderer, private _service: LoadCodeService) { }
 
@@ -42,8 +44,10 @@ export class LoadCodeComponent implements OnInit, OnChanges {
             const parts = this.file.split('.');
             this.onLoadCode(fileContent, parts[parts.length - 2]);
          });
-      } else if (this.code) {
-         this.onLoadCode(this.code, 'html');
+      } else if (this.code && this.type) {
+         this.onLoadCode(this.code, this.type);
+      } else {
+         throw new Error('Incorrect use, you need to pass file full path or a code as string and type of code (Example: typescript)');
       }
    }
 
@@ -72,7 +76,7 @@ export class LoadCodeComponent implements OnInit, OnChanges {
    }
 
    getClass(): string {
-      return `${this.type} language-${this.type}`;
+      return `${this.internalType} language-${this.internalType}`;
    }
 
    private onLoadCode(code: string, filetype: string): void {
@@ -107,16 +111,16 @@ export class LoadCodeComponent implements OnInit, OnChanges {
       switch (extension) {
          case 'mode':
          case 'ts':
-            this.type = 'typescript';
+            this.internalType = 'typescript';
             break;
          case 'html':
-            this.type = 'markup';
+            this.internalType = 'markup';
             break;
          case 'json':
-            this.type = 'json';
+            this.internalType = 'json';
             break;
          default:
-            this.type = 'typescript';
+            this.internalType = 'typescript';
             break;
       }
    }

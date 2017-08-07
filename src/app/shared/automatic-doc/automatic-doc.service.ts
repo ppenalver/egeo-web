@@ -6,11 +6,12 @@ import 'rxjs/add/operator/zip';
 import 'rxjs/add/operator/switch';
 import {
    startsWith as _startsWith,
-   defaultTo as _defaultTo
+   defaultTo as _defaultTo,
+   unescape as _unescape
 } from 'lodash';
 import { html_beautify } from 'js-beautify';
 
-import { Documentation, DocumentationApi, DocumentationApiProperty } from './automatic-doc.model';
+import { Documentation, DocumentationApi, DocumentationApiProperty, CodeApi } from './automatic-doc.model';
 
 @Injectable()
 export class AutomaticDocService {
@@ -22,7 +23,7 @@ export class AutomaticDocService {
    }
 
    getDocumentation(doc: string): Observable<Documentation> {
-      return this.getDocumentationList().map(docList => docList.find(_ =>  _.id === doc));
+      return this.getDocumentationList().map(docList => docList.find(_ => _.id === doc));
    }
 
    getDocumentationList(): Observable<Documentation[]> {
@@ -50,7 +51,7 @@ export class AutomaticDocService {
 
    private getDoc(docName: string): Observable<Documentation> {
       return this.http.get(location.pathname + `assets/docs/md/${docName}`)
-         .map(response => this.parseTextToDocumentation(response.text(), docName));
+         .map(response => this.parseTextToDocumentation(_unescape(response.text()), docName));
    }
 
    private getIndex(text: string): string[] {
@@ -64,19 +65,8 @@ export class AutomaticDocService {
       return docs;
    }
 
-   private getMdParts(text: string): string[] {
-      const regexp = new RegExp(/#*?((.|[\r\n])+?)(#|$)/g);
-      let result: RegExpMatchArray | null;
-      const mdParts: string[] = [];
-      while ((result = regexp.exec(text)) !== null) {
-         mdParts.push(result[1]);
-         result = /\((.*?)\)/igm.exec(text);
-      }
-      return mdParts;
-   }
-
    private parseTextToDocumentation(text: string, id: string): Documentation {
-      const sections: string[] = this.getMdParts(text);
+      const sections: string[] = this.getAllResults(text, /#*?((.|[\r\n])+?)(#|$)/g, 1)
       const finalDoc: Documentation = new Documentation();
       finalDoc.id = id;
       return sections.reduce((doc, section) => {
@@ -85,7 +75,9 @@ export class AutomaticDocService {
             // Parse input/output table
             this.parseTable(doc, section);
          } else if (_startsWith(section, 'Example')) {
-            doc.example = html_beautify(this.parseExample(section), { wrap_attributes: 'force', wrap_attributes_indent_size: 6 });
+            doc.example = [...this.parseExample(this.normalizeText(section.replace('Example', '')))];
+         } else if (_startsWith(section, 'Models')) {
+            doc.model = [...this.parseModels(this.normalizeText(section.replace('Models', '')))];
          } else {
             // Parse main description and title
             this.parseMain(doc, section);
@@ -95,38 +87,80 @@ export class AutomaticDocService {
    }
 
    private parseTable(doc: Documentation, text: string): Documentation {
+      const isInput: boolean = _startsWith(text, 'Inputs');
+      const isOutput: boolean = _startsWith(text, 'Outputs');
       if (!doc.api) {
          doc.api = new DocumentationApi();
       }
       const lines: string[] = text.split(/[\r\n]/).slice(3);
       let docProperties: DocumentationApiProperty[] = [];
-      docProperties = lines.map(line => this.parseApiProperty(line.split(/([^\\]|^)\|/gm)));
+      docProperties = lines.map(line => this.parseApiProperty(this.getPropertyCols(line), isInput));
 
-      if (_startsWith(text, 'Inputs')) {
+      if (isInput) {
          doc.api.inputs = docProperties;
-      } else if (_startsWith(text, 'Outputs')) {
+      } else if (isOutput) {
          doc.api.outputs = docProperties;
       }
       return doc;
    }
 
-   private parseApiProperty(columns: string[]): DocumentationApiProperty {
-      const normalizedCols: string[] = this.normalizeColumnList(columns);
+   private getPropertyCols(line: string): string[] {
+      const replaceValue: string = '~pipeElement~';
+      const internalLine: string = line.substring(1, line.length - 1).replace(/\\\|/g, replaceValue);
+      return internalLine.split(/\|/).map(_ => _.replace(new RegExp(replaceValue, 'g'), '\|'));
+   }
+
+   private parseApiProperty(columns: string[], isInput: boolean): DocumentationApiProperty {
       const docProp: DocumentationApiProperty = new DocumentationApiProperty();
-      docProp.name = normalizedCols[0].trim();
-      docProp.type = normalizedCols[1].trim();
-      docProp.required = normalizedCols[2].trim() === 'True';
-      docProp.description = this.getDescription(normalizedCols[3].trim());
-      docProp.defaultValue = this.getDefaultValue(normalizedCols[3].trim());
+      docProp.name = columns[0].trim();
+      docProp.type = columns[1].trim();
+      if (isInput) {
+         docProp.required = columns[2].trim() === 'True';
+         docProp.description = columns[3].trim();
+         docProp.defaultValue = columns[4].trim();
+      } else {
+         docProp.description = columns[2].trim();
+      }
       return docProp;
    }
 
-   private parseExample(text: string): string {
-      return this.normalizeText(text.split(/[\r\n]/).slice(1).join('\n').replace(/\`\`\`/g, ''));
+   private parseExample(text: string): CodeApi[] {
+      const finalList: CodeApi[] = [];
+      const reg: RegExp = /(\*(.*?)\*)?((.|[\r\n])*?)?```(.*?)\n((.|[\r\n])*?)```/g;
+      let match: RegExpMatchArray | null = null;
+      do {
+         match = reg.exec(text);
+         if (match) {
+            finalList.push(this.extractModelInfo(match[0]));
+         }
+      } while (match);
+      return finalList;
    }
 
-   private normalizeColumnList(columns: string[]): string[] {
-      return columns.reduce((accCols, col) => col.trim().length > 0 ? [...accCols, col.trim()] : accCols, []);
+   private parseModels(text: string): CodeApi[] {
+      const finalList: CodeApi[] = [];
+      const reg: RegExp = /(.|[\r\n])*?```(.|[\r\n])*?```/g;
+      let match: RegExpMatchArray | null = null;
+      do {
+         match = reg.exec(text);
+         if (match) {
+            finalList.push(this.extractModelInfo(match[0]));
+         }
+      } while (match);
+      return finalList;
+   }
+
+   private extractModelInfo(text: string): CodeApi {
+      const internalText: string = this.normalizeText(text);
+      const reg: RegExp = /(\*(.*?)\*)?((.|[\r\n])*?)?```(.*?)\n((.|[\r\n])*?)```/g;
+      let match: RegExpMatchArray | null = null;
+      match = reg.exec(internalText);
+      return {
+         title: match[2],
+         desc: match[3],
+         type: match[5],
+         code: match[6]
+      };
    }
 
    private getDefaultValue(text: string): string {
@@ -173,5 +207,17 @@ export class AutomaticDocService {
          }
       }
       return text.trim();
+   }
+
+   private getAllResults(text: string, reg: RegExp, valueToTake: number): string[] {
+      let match: RegExpMatchArray | null = null;
+      const result: string[] = [];
+      do {
+         match = reg.exec(text);
+         if (match) {
+            result.push(match[valueToTake].trim());
+         }
+      } while (match);
+      return result;
    }
 }

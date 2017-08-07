@@ -1,7 +1,18 @@
 <st-api-doc [doc]="apiDoc">
    <div class="example-run">
    </div>
-   <div class="example-code">
-      <st-load-code [code]="codeExample"></st-load-code>
+   <div class="example-model" *ngIf="models && models.length > 0">
+      <div *ngFor="let model of models">
+         <h1 *ngIf="model.title">{{model.title}}</h1>
+         <p *ngIf="model.desc">{{model.desc}}</p>
+         <st-load-code [code]="model.code" [type]="model.type"></st-load-code>
+      </div>
+   </div>
+   <div class="example-code" *ngIf="examples && examples.length > 0">
+      <div *ngFor="let example of examples">
+         <h1 *ngIf="example.title">{{example.title}}</h1>
+         <p *ngIf="example.desc">{{example.desc}}</p>
+         <st-load-code [code]="example.code" [type]="example.type"></st-load-code>
+      </div>
    </div>
 </st-api-doc>
