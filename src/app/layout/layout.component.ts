@@ -10,6 +10,7 @@
  */
 
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { EgeoResolveService, StDropDownMenuItem } from '@stratio/egeo';
 import { TranslateService } from '@ngx-translate/core';
@@ -42,9 +43,10 @@ export class LayoutComponent {
       private translate: TranslateService,
       private serviceVersion: VersionService,
       private router: Router,
+      private location: Location,
       private _automaticServiceMenu: AutomaticDocService
    ) {
-
+      const currentPath: string = location.prepareExternalUrl(location.path());
       this.mainMenu = this.egeoTranslate.translate(MENU, this.translate);
       this.mainMenu.zip(this._automaticServiceMenu.getDocumentationList(), (mainMenu, automaticMenu) => this.checkAutomatic(mainMenu, automaticMenu));
       this.serviceVersion.getPom().subscribe(xml => this.parseVersion(xml));
@@ -52,7 +54,8 @@ export class LayoutComponent {
          for (let i = 0; i < versionList.length; i++) {
             this.itemsVersion.push({
                label: versionList[i],
-               value: versionList[i]
+               value: versionList[i],
+               selected: currentPath.indexOf(versionList[i]) >= 0
             });
          }
          this.versions = versionList;
