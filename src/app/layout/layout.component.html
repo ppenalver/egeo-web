@@ -13,8 +13,8 @@
 
    <app-egeo-header></app-egeo-header>
    <nav class="main-toolbar col-xs-24 col-sm-24 col-md-24 col-lg-24" sticky>
-      <div class="web-content row" *ngIf="itemsVersion.length">
-         <st-dropdown [items]="itemsVersion" button="Select Version" (change)="onChangeVersion($event)"></st-dropdown>
+      <div class="web-content row">
+         <st-dropdown [items]="(versions | async) || []" button="Select Version" (change)="onChangeVersion($event)"></st-dropdown>
       </div>
    </nav>
 

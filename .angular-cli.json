@@ -10,7 +10,7 @@
       "assets": [
         "assets",
        { "glob": "CHANGELOG.md", "input": "../node_modules/@stratio/egeo", "output": "./assets" },
-       { "glob": "package.json", "input": "../", "output": "./assets" },
+       { "glob": "package.json", "input": "../node_modules/@stratio/egeo", "output": "./assets" },
        { "glob": "egeo-theme-stratio.css", "input": "../node_modules/@stratio/egeo-theme", "output": "./assets" },
        { "glob": "**/*.txt", "input": "./app", "output": "./assets/examples" },
        { "glob": "**/*.md", "input": "../node_modules/@stratio/egeo/docs/md", "output": "./assets/docs/md" }

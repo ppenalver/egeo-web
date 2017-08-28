@@ -11,21 +11,23 @@
 
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { StDropDownMenuItem } from '@stratio/egeo';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import { Observer } from 'rxjs/Observer';
+import 'rxjs/add/operator/map';
 
 import { VersionComparationOptions } from './layout.model';
 import { environment } from '../../environments/environment';
+
 
 @Injectable()
 export class VersionService {
 
    constructor(private http: Http) { }
 
-   getPom(): Observable<string> {
+   getVersion(): Observable<string> {
       return this.http.get(location.pathname + 'assets/package.json')
-         .map(response => this.parseJson(response.json()));
+         .map(response => response.json().version);
    }
 
    getVersions(): Observable<string[]> {
@@ -40,8 +42,10 @@ export class VersionService {
 
    }
 
-   private parseJson(pack: { [key: string]: any }): string {
-      return pack.key;
+   getVersionList(): Observable<StDropDownMenuItem[]> {
+      return this.getVersions().zip(this.getVersion(), (versionList, currentVersion) => versionList.map(
+         version => ({label: version, value: version, selected: version === currentVersion})
+      ));
    }
 
    private parseVersionResponse(versions: any[]): string[] {
@@ -54,55 +58,49 @@ export class VersionService {
       return this.versionCompare(v1, v2) * -1;
    }
 
-   private isValidPart(part: string, lexicographical: boolean): boolean {
-      return (lexicographical ? /^\d+[A-Za-z]*$/ : /^\d+$/).test(part);
+   private isValidPart(part: string): boolean {
+      return /^\d+$/.test(part);
    }
 
-   private versionCompare(v1: string, v2: string, options?: VersionComparationOptions): number {
-      const lexicographical: boolean = options && options.lexicographical;
-      const zeroExtend: boolean = options && options.zeroExtend;
+   private versionCompare(v1: string, v2: string): number {
       const v1parts: string[] = v1.split('.');
       const v2parts: string[] = v2.split('.');
 
       let v1PartsNumeric: number[];
       let v2PartsNumeric: number[];
 
-      if (!v1parts.every((value) => this.isValidPart(value, lexicographical)) || !v2parts.every((value) => this.isValidPart(value, lexicographical))) {
+      if (!v1parts.every((value) => this.isValidPart(value)) || !v2parts.every((value) => this.isValidPart(value))) {
          return NaN;
       }
 
-      if (zeroExtend) {
-         while (v1parts.length < v2parts.length) {
-            v1parts.push('0');
+      while (v1parts.length < v2parts.length) {
+         v1parts.push('0');
+      }
+
+      while (v2parts.length < v1parts.length) {
+         v2parts.push('0');
+      }
+
+      v1PartsNumeric = v1parts.map(Number);
+      v2PartsNumeric = v2parts.map(Number);
+
+      for (let i = 0; i < v1parts.length; ++i) {
+         if (v2parts.length === i) {
+            return 1;
          }
 
-         while (v2parts.length < v1parts.length) {
-            v2parts.push('0');
-         }
-
-         if (!lexicographical) {
-            v1PartsNumeric = v1parts.map(Number);
-            v2PartsNumeric = v2parts.map(Number);
-         }
-
-         for (let i = 0; i < v1parts.length; ++i) {
-            if (v2parts.length === i) {
-               return 1;
-            }
-
-            if (v1parts[i] === v2parts[i]) {
-               continue;
-            } else if (v1parts[i] > v2parts[i]) {
-               return 1;
-            } else {
-               return -1;
-            }
-         }
-
-         if (v1parts.length !== v2parts.length) {
+         if (v1parts[i] === v2parts[i]) {
+            continue;
+         } else if (v1parts[i] > v2parts[i]) {
+            return 1;
+         } else {
             return -1;
          }
-         return 0;
       }
+
+      if (v1parts.length !== v2parts.length) {
+         return -1;
+      }
+      return 0;
    }
 }
