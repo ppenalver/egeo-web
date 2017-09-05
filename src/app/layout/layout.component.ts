@@ -10,7 +10,6 @@
  */
 
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { Location } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { EgeoResolveService, StDropDownMenuItem } from '@stratio/egeo';
 import { TranslateService } from '@ngx-translate/core';
@@ -29,11 +28,8 @@ import { Documentation } from '../shared/automatic-doc/automatic-doc.model';
 })
 export class LayoutComponent {
    public mainMenu: Observable<EgeoMenu>;
-   public version: string = 'undefined';
    public activeRoute: string = '';
-   public itemsVersion: StDropDownMenuItem[] = [];
-
-   public versions: string[] = [];
+   public versions: Observable<StDropDownMenuItem[]>;
 
    @ViewChild('mainContent', { read: ViewContainerRef })
    target: ViewContainerRef;
@@ -43,23 +39,11 @@ export class LayoutComponent {
       private translate: TranslateService,
       private serviceVersion: VersionService,
       private router: Router,
-      private location: Location,
       private _automaticServiceMenu: AutomaticDocService
    ) {
-      const currentPath: string = location.prepareExternalUrl(location.path());
       this.mainMenu = this.egeoTranslate.translate(MENU, this.translate);
       this.mainMenu.zip(this._automaticServiceMenu.getDocumentationList(), (mainMenu, automaticMenu) => this.checkAutomatic(mainMenu, automaticMenu));
-      this.serviceVersion.getPom().subscribe(xml => this.parseVersion(xml));
-      this.serviceVersion.getVersions().subscribe((versionList: any) => {
-         for (let i = 0; i < versionList.length; i++) {
-            this.itemsVersion.push({
-               label: versionList[i],
-               value: versionList[i],
-               selected: currentPath.indexOf(versionList[i]) >= 0
-            });
-         }
-         this.versions = versionList;
-      });
+      this.versions = this.serviceVersion.getVersionList();
       router.events.subscribe(change => this.changeRoute(change));
    }
 
@@ -71,10 +55,6 @@ export class LayoutComponent {
       const internalMenu: EgeoMenu = _cloneDeep(menu);
       // TODO: When we can load egeo-demo, we need to add new menu options for markdown founded.
       return internalMenu;
-   }
-
-   private parseVersion(version: string): void {
-      this.version = version;
    }
 
    private changeRoute(event: any): void {
