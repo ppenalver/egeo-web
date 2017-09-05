@@ -10,12 +10,12 @@
   -->
 
 <div class="row">
-   <div class="col-md-24 title">
+   <div class="col-md-12 title">
       <i [ngClass]="getIconType()"></i>
       <span class="title-text">{{title}}:</span>
    </div>
 
-   <div class="col-md-24">
+   <div class="col-md-12">
       <p *ngFor="let row of data" class="param-line">
          <span class="param-name">{{row.paramName}}</span>
          <span class="param-type">{{getType(row.type)}}</span>
