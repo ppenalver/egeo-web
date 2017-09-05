@@ -29,9 +29,10 @@ export class SwitchComponent {
 
    constructor() {
       this.loading = true;
-      this.apiDoc = {
+      this.apiDoc = <ApiDoc> {
          title: 'Switch',
-         description: 'Component designed to enable or disable whatever you need. Switch component can be used in a form or in any part of your web.',
+         description: 'Component designed to enable or disable whatever you need. Switch component can be used in a ' +
+         'form or in any part of your web.',
          haveModel: false,
          apiSection: {
             inputs: [
@@ -39,14 +40,23 @@ export class SwitchComponent {
                   paramName: 'stModel',
                   type: TYPES.BOOL,
                   required: true,
-                  details: 'This boolean changes when user interacts with switch'
+                  details: 'This boolean changes when the user interacts with switch'
                },
-               { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id value for qa test.' },
+               { paramName: 'qaTag',
+                  type: TYPES.STR,
+                  required: false,
+                  details: 'Id value for qa test.' },
                {
                   paramName: 'label',
                   type: TYPES.STR,
                   required: false,
-                  details: 'This boolean changes when user interacts with switch'
+                  details: 'Label displayed next to the switch'
+               },
+               {
+                  paramName: 'name',
+                  type: TYPES.STR,
+                  required: false,
+                  details: 'Text to identify the switch'
                },
                {
                   paramName: 'labelPosition',
@@ -58,10 +68,22 @@ export class SwitchComponent {
                   paramName: 'contextualHelp',
                   type: TYPES.STR,
                   required: false,
-                  details: 'Tooltip displayed when user clicks on the help button'
+                  details: 'Tooltip displayed when the user clicks on the help button'
+               },
+               {
+                  paramName: 'disabled',
+                  type: TYPES.BOOL,
+                  required: false,
+                  details: 'This boolean indicates if the switch is disabled or not'
                }
             ],
-            outputs: []
+            outputs: [
+               {
+                  paramName: 'change',
+                  type: TYPES.BOOL,
+                  details: 'Boolean emitted when the user interacts with the switch'
+               }
+            ]
          },
          exampleDesc: `Next, you can see how to work a switch with different variations`
       };
