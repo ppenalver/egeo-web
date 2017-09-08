@@ -13,8 +13,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { ComboboxComponent } from './combobox.component';
+import { SelectComponent } from './select.component';
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
-   { path: '', component: ComboboxComponent }
+   { path: '', component: SelectComponent }
 ]);

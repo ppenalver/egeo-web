@@ -12,7 +12,9 @@
 $egeo-sanitize: true;
 @import '~@stratio/egeo-ui-base/vendors/sanitize';
 
+$egeo-grid---cols: 12;
+@import '~@stratio/egeo-theme/src/grid';
+
 @import '~@stratio/egeo-theme/egeo-theme-stratio.css';
-@import '~@stratio/egeo-theme/egeo-grid.css';
 @import '~prismjs/themes/prism-coy.css';
 @import '~prismjs/plugins/line-numbers/prism-line-numbers.css';

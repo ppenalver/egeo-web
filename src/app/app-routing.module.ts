@@ -62,7 +62,7 @@ const routes: Routes = [
          { path: 'components/feedback/spinner', loadChildren: './+components/spinner/spinner.module#SpinnerModule' },
          // **** form
          { path: 'components/forms/checkbox', loadChildren: './+components/checkbox/checkbox.module#CheckboxModule' },
-         { path: 'components/forms/combobox', loadChildren: './+components/combobox/combobox.module#ComboboxModule' },
+         { path: 'components/forms/select', loadChildren: './+components/select/select.module#SelectModule' },
          { path: 'components/forms/input', loadChildren: './+components/input/input.module#InputModule' },
          { path: 'components/forms/radio', loadChildren: './+components/radio/radio.module#RadioModule' },
          { path: 'components/forms/switch', loadChildren: './+components/switch/switch.module#SwitchModule' },

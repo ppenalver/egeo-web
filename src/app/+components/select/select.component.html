@@ -16,12 +16,12 @@
          <form #templateDrivenForm="ngForm" novalidate autocomplete="off" (ngSubmit)="onSubmitTemplateBased()" class="col-md-10">
             <div class="form-group">
 
-               <st-combobox [options]="options" qaTag="combo-option1-template-example" label="Option 1" name="option1-template" contextualHelp="Select option from list"
+               <st-select [options]="options" qaTag="combo-option1-template-example" label="Option 1" name="option1-template" contextualHelp="Select option from list"
                   placeholder="Select option" [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" [(ngModel)]="model.option1"
-                  required></st-combobox>
+                  required></st-select>
                <br>
-               <st-combobox [options]="options" qaTag="combo-option2-template-example" label="Option 2" name="option2-template" placeholder="Select option"
-                  [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" [(ngModel)]="model.option2" required></st-combobox>
+               <st-select [options]="options" qaTag="combo-option2-template-example" label="Option 2" name="option2-template" placeholder="Select option"
+                  [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" [(ngModel)]="model.option2" required></st-select>
 
             </div>
             <br><br>
@@ -41,11 +41,11 @@
          <form [formGroup]="reactiveForm" novalidate autocomplete="off" (ngSubmit)="onSubmitReactiveForm()" class="col-md-10">
             <div class="form-group">
 
-               <st-combobox [options]="options" qaTag="combo-option1-template-example" label="Option 1" name="option1" contextualHelp="Select option from list"
-                  placeholder="Select option" [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" formControlName="option1"></st-combobox>
+               <st-select [options]="options" qaTag="combo-option1-template-example" label="Option 1" name="option1" contextualHelp="Select option from list"
+                  placeholder="Select option" [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" formControlName="option1"></st-select>
                <br>
-               <st-combobox [options]="options" qaTag="combo-option2-template-example" label="Option 2" name="option2" placeholder="Select option"
-                  [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" formControlName="option2"></st-combobox>
+               <st-select [options]="options" qaTag="combo-option2-template-example" label="Option 2" name="option2" placeholder="Select option"
+                  [errorRequiredMessage]="errorMessage" [forceValidations]="forceValidations" formControlName="option2"></st-select>
 
             </div>
             <br><br>
@@ -69,6 +69,6 @@
    </div>
    <div class="example-code">
       <!--{{code}}-->
-      <st-load-code file="+components/combobox/example-code/combobox.html.txt"></st-load-code>
+      <st-load-code file="+components/select/example-code/select.html.txt"></st-load-code>
    </div>
 </st-api-doc>
