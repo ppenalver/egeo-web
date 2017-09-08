@@ -22,6 +22,7 @@
 * Modify the input example with max and min validations
 * Add minor changes to the radio menu example
 * st-switch: Add missing inputs/outputs and fix bad descriptions
+* Refactor grid to 12 columns
 
 ## 1.3.0 (Abril 4, 2017)
 
