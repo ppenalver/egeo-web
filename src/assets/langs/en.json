@@ -47,7 +47,7 @@
             "INPUT": "Input",
             "RADIO": "Radio",
             "CHECKBOX": "Checkbox",
-            "COMBOBOX": "Combobox",
+            "SELECT": "Select",
             "SWITCH": "Switch",
             "TEXTAREA": "Textarea"
          },

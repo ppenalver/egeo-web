@@ -16,12 +16,12 @@ import { StDropDownMenuItem } from '@stratio/egeo';
 import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
-   selector: 'combobox-example',
-   templateUrl: 'combobox.component.html',
-   styleUrls: ['combobox.component.scss']
+   selector: 'select-example',
+   templateUrl: 'select.component.html',
+   styleUrls: ['select.component.scss']
 })
 
-export class ComboboxComponent implements OnInit {
+export class SelectComponent implements OnInit {
    @ViewChild('templateDrivenForm') public templateDrivenForm: NgForm;
 
    public options: StDropDownMenuItem[] = [];
@@ -36,25 +36,25 @@ export class ComboboxComponent implements OnInit {
 
     // tslint:disable:max-line-length
    public apiDoc: ApiDoc = {
-      title: 'Combobox',
-      description: 'The combobox component is for use normaly inside a form, you can use too outside a form like a template driven form.',
+      title: 'select',
+      description: 'The select component is for use normaly inside a form, you can use too outside a form like a template driven form.',
       haveModel: false,
       apiSection: {
          inputs: [
             { paramName: 'qaTag', type: TYPES.STR, required: false, details: 'Id for QA test' },
-            { paramName: 'name', type: TYPES.STR, required: true, details: 'Name of the combobox' },
+            { paramName: 'name', type: TYPES.STR, required: true, details: 'Name of the select' },
             { paramName: 'options', type: 'StDropDownMenuItem[]', required: false, details: 'As dropdown, combo recieve a list of options to show in dropdown menu' },
-            { paramName: 'label', type: TYPES.STR, required: false, details: 'Label to show over the combobox, default empty' },
+            { paramName: 'label', type: TYPES.STR, required: false, details: 'Label to show over the select, default empty' },
             { paramName: 'contextualHelp', type: TYPES.STR, required: false, details: 'Contextual help button, you can see more info about it in tooltip help component' },
-            { paramName: 'placeholder', type: TYPES.STR, required: false, details: 'The text that appera as placeholder of the combobox, default empty' },
-            { paramName: 'disabled', type: TYPES.BOOL, required: false, details: 'For set disable state in combobox' },
+            { paramName: 'placeholder', type: TYPES.STR, required: false, details: 'The text that appera as placeholder of the select, default empty' },
+            { paramName: 'disabled', type: TYPES.BOOL, required: false, details: 'For set disable state in select' },
             { paramName: 'selectedValue', type: 'StDropDownMenuItem', required: false, details: 'Selected element by default' },
             { paramName: 'errorRequiredMessage', type: TYPES.STR, required: false, details: 'Message to show in case of required validation error' },
-            { paramName: 'forceValidations', type: TYPES.BOOL, required: false, details: 'If you provide this, and put a true value the combobox check errors before modify by first time' }
+            { paramName: 'forceValidations', type: TYPES.BOOL, required: false, details: 'If you provide this, and put a true value the select check errors before modify by first time' }
          ],
          outputs: []
       },
-      exampleDesc: `This example have two forms, the first of these use a TEMPLATE DRIVEN FORM aproach, the second example use REACTIVE FORM OR MODEL DRIVEN FORM aproach. If you want to use a combobox outside a form, you can copy the TEMPLATE DRIVEN FORM aproach.`
+      exampleDesc: `This example have two forms, the first of these use a TEMPLATE DRIVEN FORM aproach, the second example use REACTIVE FORM OR MODEL DRIVEN FORM aproach. If you want to use a select outside a form, you can copy the TEMPLATE DRIVEN FORM aproach.`
    };
    // tslint:enable:max-line-length
 

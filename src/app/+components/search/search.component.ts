@@ -63,12 +63,10 @@ export class SearchComponent {
          apiSection: {
             inputs: [
                { paramName: 'debounce', type: TYPES.NUM, required: false, details: 'Inactivity time to wait (milliseconds) before launch search. Default 0' },
-               { paramName: 'hasClearButton', deprecated: true, type: TYPES.BOOL, required: false, details: '(Will be deleted) Turn on or off the clear search button' },
                { paramName: 'liveSearch', type: TYPES.BOOL, required: false, details: 'True for search while user type in search box. When flase the user need to click on button or press enter to search. Default: true' },
                { paramName: 'minLength', type: TYPES.NUM, required: false, details: 'Minimum length to launch search event. Default 0' },
                { paramName: 'placeholder', type: TYPES.STR, required: false, details: 'Text to display as long as the user does not focus on search box, Default: Search' },
                { paramName: 'qaTag', type: TYPES.STR, required: false, details: 'Identifier to apply in search box for QA tests' },
-               { paramName: 'searchOnlyOnClick', deprecated: true, type: TYPES.BOOL, required: false, details: '(Will be deleted) True search only on click on zoom, false search always. Default false' },
                { paramName: 'value', type: TYPES.STR, required: false, details: 'Assign the value from outside to the search field' },
                { paramName: 'disabled', type: TYPES.BOOL, required: false, details: 'Set disable state for search, default: false' },
                { paramName: 'withAutocomplete', type: TYPES.BOOL, required: false, details: 'Show autocomplete menu when search, default: false' },

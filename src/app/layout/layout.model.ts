@@ -122,8 +122,8 @@ export const MENU: Array<EgeoMenuSchema> = [
                   link: '/components/forms/checkbox'
                },
                {
-                  label: { key: 'MENU.COMPONENTS.FORMS.COMBOBOX', translate: true },
-                  link: '/components/forms/combobox'
+                  label: { key: 'MENU.COMPONENTS.FORMS.SELECT', translate: true },
+                  link: '/components/forms/select'
                },
                {
                   label: { key: 'MENU.COMPONENTS.FORMS.INPUT', translate: true },

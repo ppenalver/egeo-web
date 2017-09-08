@@ -23,7 +23,8 @@ import {
 import {
    highlightElement as _highlightElement,
    languages as _languages,
-   plugins as _plugins
+   plugins as _plugins,
+   LanguageDefinition
 } from 'prismjs';
 import { Observable } from 'rxjs/Observable';
 
@@ -103,9 +104,9 @@ export class LoadCodeComponent implements OnInit, OnChanges {
       return this._service.getExampleFile(fileName);
    }
 
-   private getLanguaje(languaje: string): PrismJS.LanguageDefinition {
+   private getLanguaje(languaje: string): LanguageDefinition {
       const defaultLanguaje = 'html';
-      let result: PrismJS.LanguageDefinition | undefined;
+      let result: LanguageDefinition | undefined;
       result = _languages[languaje];
       if (result) {
          return result;
@@ -138,5 +139,5 @@ export class LoadCodeComponent implements OnInit, OnChanges {
 }
 
 interface PrismLanguaje {
-   [key: string]: PrismJS.LanguageDefinition;
+   [key: string]: LanguageDefinition;
 }

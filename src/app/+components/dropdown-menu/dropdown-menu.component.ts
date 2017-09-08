@@ -101,17 +101,14 @@ export class DropdownMenuComponent {
       // tslint:disable:max-line-length
       apiSection: {
          inputs: [
-            {
-               paramName: 'active', type: TYPES.BOOL, required: false, details: 'Allows to enable or disable the dropdown'
-            },
-            {
-               paramName: 'items', type: 'Array<StDropDownMenuItem | StDropDownMenuGroup>', required: true, details: 'Values array that receives the dropdown'
-            }
+            { paramName: 'qaTag', type: TYPES.STR, required: false, details: 'qaTag For set id for tests' },
+            { paramName: 'active', type: TYPES.BOOL, required: false, details: 'Allows to enable or disable the dropdown' },
+            { paramName: 'items', type: 'Array<StDropDownMenuItem | StDropDownMenuGroup>', required: true, details: 'Values array that receives the dropdown' },
+            { paramName: 'placement', type: `'top', 'top-start', 'top-end', 'right', 'right-start', 'right-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end'`, required: false, details: 'Posible possitions of menu with respect element to attach. Default: bottom-start' },
+            { paramName: 'emptyListMessage', type: TYPES.STR, required: false, details: 'Message to show in case of empty list' }
          ],
          outputs: [
-            {
-               paramName: 'change', type: TYPES.BOOL, required: false, details: 'This event fires when the selected value changes in the dropdown, returns the value of the element'
-            }
+            { paramName: 'change', type: TYPES.BOOL, required: false, details: 'This event is fired when the selected value changes in the dropdown, returns the value of the element' }
          ]
       },
       exampleDesc: `You can see below several samples showing different the most common configurations of the dropdown menu component inside a Stratio application.`

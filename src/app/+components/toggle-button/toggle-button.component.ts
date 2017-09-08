@@ -46,7 +46,7 @@ export class ToggleButtonsComponent {
             inputs: [
                { paramName: 'tabs', type: 'Array<StToggleButton>', required: true, details: 'A list of tabs with a label, number and status (active or not active)' },
                { paramName: 'description', type: TYPES.STR, required: false, details: 'A title displayed just before tabs to introduce them' },
-               { paramName: 'qaTag', type: TYPES.STR, required: true, details: 'Id for qa search in automated test' }
+               { paramName: 'qaTag', type: TYPES.STR, required: false, details: 'Id for qa search in automated test' }
             ],
             outputs: [
                { paramName: 'select', type: 'StToggleButton', required: true, details: 'This event is emitted when selected tab has changed. This event has the selected tab as param' }

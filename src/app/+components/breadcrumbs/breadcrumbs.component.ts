@@ -36,7 +36,7 @@ export class BreadCrumsComponent implements OnInit {
             { paramName: 'options', type: TYPES.STR, required: true, details: 'An array of String that defines the displayed links' }
          ],
          outputs: [
-            { paramName: 'changedOption', type: 'string', required: true, details: 'This event is emitted when active option has changed. It has the active option index as param' }
+            { paramName: 'select', type: 'string', required: true, details: 'This event is emitted when active option has changed. It has the active option index as param' }
          ]
       },
       exampleDesc: `Next, you can see two examples of breadcrumbs`

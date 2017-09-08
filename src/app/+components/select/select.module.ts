@@ -14,13 +14,13 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../../shared';
-import { ComboboxComponent } from './combobox.component';
-import { routing } from './combobox.routing';
+import { SelectComponent } from './select.component';
+import { routing } from './select.routing';
 
 
 @NgModule({
    imports: [CommonModule, routing, SharedModule, ReactiveFormsModule, FormsModule],
-   declarations: [ComboboxComponent]
+   declarations: [SelectComponent]
 })
-export class ComboboxModule { }
+export class SelectModule { }
 
