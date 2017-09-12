@@ -28,7 +28,6 @@ import { SharedModule } from './shared';
 import { LoadCodeService } from './shared/load-code';
 import { VersionService } from './layout/layout.service';
 import { ModalTestComponent } from './+components/modal/modal-test.component';
-import { HeaderDemoModule } from './header-demo/header-demo.module';
 import { GridDemoModule } from './grid-demo/grid-demo.module';
 import { AutomaticDocService } from './shared/automatic-doc/automatic-doc.service';
 
@@ -44,7 +43,6 @@ import { EgeoModule, StModalModule } from '@stratio/egeo';
       AppRoutingModule,
       TranslateModule.forRoot(APP_LANGUAGE_PROVIDERS_OBJECT),
       StModalModule.withComponents([ModalTestComponent]),
-      HeaderDemoModule,
       GridDemoModule,
       SharedModule
    ],

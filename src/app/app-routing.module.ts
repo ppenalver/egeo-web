@@ -16,7 +16,6 @@ import { Error404Component } from './errors/error.404.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AppComponent } from './app.component';
 
-import { HeaderDemoComponent } from './header-demo/header-demo.component';
 
 const routes: Routes = [
    {

@@ -77,9 +77,10 @@ export class AutomaticDocService {
    }
 
    private parseTextToDocumentation(text: string, id: string): Documentation {
-      const sections: string[] = this.getAllResults(text, /#*?((.|[\r\n])+?)(#|$)/g, 1)
+      const sections: string[] = this.getAllResults(text, /#*?((.|[\r\n])+?)(#|$)/g, 1);
       const finalDoc: Documentation = new Documentation();
-      finalDoc.id = id;
+      finalDoc.id = id.replace('.md', '');
+      console.log(finalDoc.id);
       return sections.reduce((doc, section) => {
          section = this.removeHash(section);
          if (_startsWith(section, 'Inputs') || _startsWith(section, 'Outputs')) {
