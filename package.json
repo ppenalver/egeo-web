@@ -12,6 +12,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --progress=false",
+    "build:dev": "ng build --progress=false",
     "test": "ng test --sourcemap=false --watch=false",
     "lint": "ng lint",
     "commit": "git-cz"
