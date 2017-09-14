@@ -11,9 +11,458 @@
 
 <st-api-doc [doc]="apiDoc">
    <div class="example-run">
-      <section class="container-liquid">
+      <st-horizontal-tabs [options]="options" qaTag="button-tabs" (changedOption)="onChangeOption($event)"></st-horizontal-tabs>
+      <section class="container-liquid" *ngIf="active === 'NEW WAY'">
+
+         <div class="separator"></div>
+
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-md-12">
+               <h1>MAIN BUTTONS</h1>
+               <p>Squared button type 1:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq1</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-sq1.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq1[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-sq1">
+                  <i class="icon-circle-check"></i>
+                  <span>add rol</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-sq1 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-sq1" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>add rol</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <p>Squared button type 2:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq2</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-sq2.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq2[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-sq2">
+                  <i class="icon-circle-check"></i>
+                  <span>settings</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-sq2 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-sq2" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>settings</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <p>Squared button type 3:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq3</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-sq3.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq3[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-sq3">
+                  <i class="icon-circle-check"></i>
+                  <span>test config</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-sq3 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-sq3" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>test config</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <p>Squared button type 4:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq4</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-sq4.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-sq4[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-sq4">
+                  <i class="icon-circle-check"></i>
+                  <span>check for updates</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-sq4 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-sq4" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>check for updates</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <h1>LINK BUTTONS</h1>
+               <p>Link button type 1:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-lk1</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-lk1.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-lk1[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-lk1">
+                  <i class="icon-circle-check"></i>
+                  <span>Go back</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-lk1 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-lk1" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>Go back</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <p>Link button type 2:</p>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-lk2</i>
+            </div>
+            <div class="col-md-6">
+               <i class="temp1">.button.button-lk2.block</i>
+            </div>
+            <div class="col-md-3">
+               <i class="temp1">.button.button-lk2[disabled]</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-3">
+               <button class="button button-lk2">
+                  <i class="icon-circle-check"></i>
+                  <span>Go back</span>
+               </button>
+            </div>
+
+            <div class="col-md-6">
+               <button class="button button-lk2 block">
+                  <i class="icon-circle-check"></i>
+                  <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+               </button>
+            </div>
+
+            <div class="col-md-3">
+               <button class="button button-lk2" disabled>
+                  <i class="icon-circle-check"></i>
+                  <span>Go back</span>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="box temp2">
+            <div class="row">
+               <div class="col-md-12">
+                  <p>Link button type 3:</p>
+               </div>
+               <div class="col-md-3">
+                  <i class="temp1">.button.button-lk3</i>
+               </div>
+               <div class="col-md-6">
+                  <i class="temp1">.button.button-lk3.block</i>
+               </div>
+               <div class="col-md-3">
+                  <i class="temp1">.button.button-lk3[disabled]</i>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-3">
+                  <button class="button button-lk3">
+                     <i class="icon-circle-check"></i>
+                     <span>Go back</span>
+                  </button>
+               </div>
+
+               <div class="col-md-6">
+                  <button class="button button-lk3 block">
+                     <i class="icon-circle-check"></i>
+                     <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                  </button>
+               </div>
+
+               <div class="col-md-3">
+                  <button class="button button-lk3" disabled>
+                     <i class="icon-circle-check"></i>
+                     <span>Go back</span>
+                  </button>
+               </div>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="row">
+               <div class="col-md-12">
+                  <p>Link button type 4:</p>
+               </div>
+               <div class="col-md-3">
+                  <i class="temp1">.button.button-lk4</i>
+               </div>
+               <div class="col-md-6">
+                  <i class="temp1">.button.button-lk4.block</i>
+               </div>
+               <div class="col-md-3">
+                  <i class="temp1">.button.button-lk4[disabled]</i>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-3">
+                  <button class="button button-lk4">
+                     <i class="icon-circle-check"></i>
+                     <span>Go back</span>
+                  </button>
+               </div>
+
+               <div class="col-md-6">
+                  <button class="button button-lk4 block">
+                     <i class="icon-circle-check"></i>
+                     <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</span>
+                  </button>
+               </div>
+
+               <div class="col-md-3">
+                  <button class="button button-lk4" disabled>
+                     <i class="icon-circle-check"></i>
+                     <span>Go back</span>
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <h1>ROUNDED BUTTONS</h1>
+            </div>
+            <div class="col-md-4">
+               <p>rounded button type 1:</p>
+               <i class="temp1">.button.button-rd1</i>
+            </div>
+            <div class="col-md-4">
+               <p>rounded button type 2:</p>
+               <i class="temp1">.button.button-rd2</i>
+            </div>
+            <div class="col-md-4">
+               <p>rounded button type 3:</p>
+               <i class="temp1">.button.button-rd3</i>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-md-4">
+               <button class="button button-rd1">
+                  <i class="icon-circle-check"></i>
+               </button>
+               <button class="button button-rd1" disabled>
+                  <i class="icon-circle-check"></i>
+               </button>
+            </div>
+
+            <div class="col-md-4">
+               <button class="button button-rd2">
+                  <i class="icon-circle-check"></i>
+               </button>
+               <button class="button button-rd2" disabled>
+                  <i class="icon-circle-check"></i>
+               </button>
+            </div>
+
+            <div class="col-md-4">
+               <button class="button button-rd3">
+                  <i class="icon-circle-check"></i>
+               </button>
+               <button class="button button-rd2" disabled>
+                  <i class="icon-circle-check"></i>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="box temp2">
+            <div class="row">
+               <div class="col-md-4">
+                  <p>rounded button type 4:</p>
+                  <i class="temp1">.button.button-rd4</i>
+               </div>
+               <div class="col-md-4">
+                  <p>rounded button type 5:</p>
+                  <i class="temp1">.button.button-rd5</i>
+               </div>
+               <div class="col-md-4">
+                  <p>rounded button type 6:</p>
+                  <i class="temp1">.button.button-rd6</i>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-md-4">
+                  <button class="button button-rd4">
+                     <i class="icon-circle-check"></i>
+                  </button>
+                  <button class="button button-rd4" disabled>
+                     <i class="icon-circle-check"></i>
+                  </button>
+               </div>
+
+               <div class="col-md-4">
+                  <button class="button button-rd5">
+                     <i class="icon-circle-check"></i>
+                  </button>
+                  <button class="button button-rd5" disabled>
+                     <i class="icon-circle-check"></i>
+                  </button>
+               </div>
+
+               <div class="col-md-4">
+                  <button class="button button-rd6">
+                     <i class="icon-circle-check"></i>
+                  </button>
+                  <button class="button button-rd6" disabled>
+                     <i class="icon-circle-check"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+
+         <div class="row">
+            <div class="col-md-12">
+               <p>rounded button type 7:</p>
+               <i class="temp1">.button.button-rd7</i>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <button class="button button-rd7">
+                  <i class="icon-circle-check"></i>
+               </button>
+               <button class="button button-rd7" disabled>
+                  <i class="icon-circle-check"></i>
+               </button>
+            </div>
+         </div>
+
+         <div class="separator"></div>
+         <div class="separator"></div>
+
+      </section>
+      <section class="container-liquid" *ngIf="active === 'OLD WAY'">
+         <div class="row">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <h1 class="page-title">Icon position inside the button</h1>
                <div style="margin: 20px 0">
                   <p>The right icon should be used to indicate "next step" only.</p>
@@ -23,89 +472,104 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <h1 class="page-title">Disabled buttons</h1>
                <div style="margin: 20px 0">
-                  <st-button text="btnMain Disabled Button" qaTag="button17" rightIcon="icon-arrow-right" inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
-                  <st-button text="btnMain subtype2 Disabled Button" subtypeClass="subtype2" qaTag="button17" rightIcon="icon-arrow-right" inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
-                  <st-button text="btnLink Disabled Button" typeClass="btnLink" qaTag="button17" rightIcon="icon-arrow-right" inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
-                  <st-button text="btnTool Disabled Button" typeClass="btnTool" themeClass="themeB" qaTag="button17" rightIcon="icon-arrow-right" inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
+                  <st-button text="btnMain Disabled Button" qaTag="button17" rightIcon="icon-arrow-right" inputType="button" (onClick)="test2()"
+                     isDisabled="true"></st-button>
+                  <st-button text="btnMain subtype2 Disabled Button" subtypeClass="subtype2" qaTag="button17" rightIcon="icon-arrow-right"
+                     inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
+                  <st-button text="btnLink Disabled Button" typeClass="btnLink" qaTag="button17" rightIcon="icon-arrow-right" inputType="button"
+                     (onClick)="test2()" isDisabled="true"></st-button>
+                  <st-button text="btnTool Disabled Button" typeClass="btnTool" themeClass="themeB" qaTag="button17" rightIcon="icon-arrow-right"
+                     inputType="button" (onClick)="test2()" isDisabled="true"></st-button>
                </div>
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <h1 class="page-title">Main Buttons</h1>
                <div style="margin: 20px 0">
                   <st-button text="btnMain Default or btnMain subtype1" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
-                  <st-button text="btnMain subtype2" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
-                  <st-button text="btnMain subtype3" subtypeClass="subtype3" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test2()"></st-button>
-                  <st-button text="btnMain subtype4" subtypeClass="subtype4" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
+                  <st-button text="btnMain subtype2" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-circle-check" inputType="button"
+                     (onClick)="test1()"></st-button>
+                  <st-button text="btnMain subtype3" subtypeClass="subtype3" qaTag="button16" leftIcon="icon-circle-check" inputType="button"
+                     (onClick)="test2()"></st-button>
+                  <st-button text="btnMain subtype4" subtypeClass="subtype4" qaTag="button16" leftIcon="icon-circle-check" inputType="button"
+                     (onClick)="test1()"></st-button>
                </div>
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <div class="box">
                   <h1 class="page-title">Link Buttons - Theme A</h1>
                   <div style="margin: 20px 0">
-                     <st-button text="btnLink Default or btnLink subtype1" typeClass="btnLink" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
-                     <st-button text="btnLink subtype2" typeClass="btnLink" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
+                     <st-button text="btnLink Default or btnLink subtype1" typeClass="btnLink" qaTag="button16" leftIcon="icon-circle-check" inputType="button"
+                        (onClick)="test1()"></st-button>
+                     <st-button text="btnLink subtype2" typeClass="btnLink" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-circle-check"
+                        inputType="button" (onClick)="test1()"></st-button>
                   </div>
                </div>
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <div class="box">
                   <h1 class="page-title">Link Buttons - Theme B</h1>
                   <div style="background: #f1f1f1; margin: 20px; padding: 20px;">
-                     <st-button text="btnLink Default or btnLink subtype1" typeClass="btnLink" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
-                     <st-button text="btnLink subtype2" typeClass="btnLink" subtypeClass="subtype2" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
+                     <st-button text="btnLink Default or btnLink subtype1" typeClass="btnLink" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check"
+                        inputType="button" (onClick)="test1()"></st-button>
+                     <st-button text="btnLink subtype2" typeClass="btnLink" subtypeClass="subtype2" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check"
+                        inputType="button" (onClick)="test1()"></st-button>
                   </div>
                </div>
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <div class="box">
                   <h1 class="page-title">Tool Buttons - Tema A</h1>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">Default or subtype1</h2>
                         <div class="box">
-                           <div  style="margin: 20px;">
-                              <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
+                           <div style="margin: 20px;">
+                              <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" qaTag="button16" leftIcon="icon-circle-check" inputType="button"
+                                 (onClick)="test1()"></st-button>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">subtype2</h2>
                         <div class="box">
-                           <div  style="margin: 20px;">
-                              <st-button text="Tool subtype2" typeClass="btnTool" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-cog" inputType="button" (onClick)="test2()"></st-button>
+                           <div style="margin: 20px;">
+                              <st-button text="Tool subtype2" typeClass="btnTool" subtypeClass="subtype2" qaTag="button16" leftIcon="icon-cog" inputType="button"
+                                 (onClick)="test2()"></st-button>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">subtype3</h2>
                         <div class="box">
-                           <div  style="margin: 20px;">
-                              <st-button text="Tool subtype3" typeClass="btnTool" subtypeClass="subtype3" qaTag="button16" leftIcon="icon-cog" inputType="button" (onClick)="test2()"></st-button>
+                           <div style="margin: 20px;">
+                              <st-button text="Tool subtype3" typeClass="btnTool" subtypeClass="subtype3" qaTag="button16" leftIcon="icon-cog" inputType="button"
+                                 (onClick)="test2()"></st-button>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">subtype4</h2>
                         <div class="box">
-                           <div  style="margin: 20px;">
-                              <st-button text="Tool subtype4" typeClass="btnTool" subtypeClass="subtype4" qaTag="button16" leftIcon="icon-arrow-right" inputType="button" (onClick)="test2()"></st-button>
+                           <div style="margin: 20px;">
+                              <st-button text="Tool subtype4" typeClass="btnTool" subtypeClass="subtype4" qaTag="button16" leftIcon="icon-arrow-right"
+                                 inputType="button" (onClick)="test2()"></st-button>
                            </div>
                         </div>
                      </div>
@@ -114,35 +578,38 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
+            <div class="col-xs-24 col-md-12 col-lg-24">
                <div class="box">
                   <h1 class="page-title">Tool Buttons - Theme B</h1>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">Default or subtype1</h2>
                         <div class="box">
-                           <div  style="background: #ccc; margin: 20px; padding: 20px;">
-                              <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check" inputType="button" (onClick)="test1()"></st-button>
+                           <div style="background: #ccc; margin: 20px; padding: 20px;">
+                              <st-button text="btnTool Default or btnTool subtype1" typeClass="btnTool" themeClass="themeB" qaTag="button16" leftIcon="icon-circle-check"
+                                 inputType="button" (onClick)="test1()"></st-button>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">subtype2</h2>
                         <div class="box">
-                           <div  style="background: #ccc; margin: 20px; padding: 20px;">
-                              <st-button text="Tool subtype2" typeClass="btnTool" subtypeClass="subtype2" themeClass="themeB" qaTag="button16" leftIcon="icon-cog" inputType="button" (onClick)="test2()"></st-button>
+                           <div style="background: #ccc; margin: 20px; padding: 20px;">
+                              <st-button text="Tool subtype2" typeClass="btnTool" subtypeClass="subtype2" themeClass="themeB" qaTag="button16" leftIcon="icon-cog"
+                                 inputType="button" (onClick)="test2()"></st-button>
                            </div>
                         </div>
                      </div>
                   </div>
                   <div class="row">
-                     <div class="col-xs-12 col-md-12 col-lg-12">
+                     <div class="col-xs-24 col-md-12 col-lg-24">
                         <h2 class="title4">subtype3</h2>
                         <div class="box">
-                           <div  style="background: #ccc; margin: 20px; padding: 20px;">
-                              <st-button text="Tool subtype3" typeClass="btnTool" subtypeClass="subtype3" themeClass="themeB" qaTag="button16" leftIcon="icon-cog" inputType="button" (onClick)="test2()"></st-button>
+                           <div style="background: #ccc; margin: 20px; padding: 20px;">
+                              <st-button text="Tool subtype3" typeClass="btnTool" subtypeClass="subtype3" themeClass="themeB" qaTag="button16" leftIcon="icon-cog"
+                                 inputType="button" (onClick)="test2()"></st-button>
                            </div>
                         </div>
                      </div>
