@@ -10,15 +10,24 @@
  */
 
 import { Component } from '@angular/core';
+import { StHorizontalTab } from '@stratio/egeo';
 
 import { ApiDoc, TYPES } from '../../shared';
 
 @Component({
    selector: 'button-example',
-   templateUrl: './button.component.html'
+   templateUrl: './button.component.html',
+   styleUrls: ['./button.component.scss']
 })
 
 export class ButtonComponent {
+   public active: string = 'NEW WAY';
+   public options: StHorizontalTab[] = [
+      { text: 'NEW WAY', isDisabled: false },
+      { text: 'OLD WAY', isDisabled: false }
+   ];
+
+
    public apiDoc: ApiDoc = {
       title: 'Button',
       description: 'The button component represents a clickable button.',
@@ -43,6 +52,11 @@ export class ButtonComponent {
       exampleDesc: `You can see below several samples showing different the most common configurations of the button component inside a Stratio application.`
    };
    // tslint:enable:max-line-length
+
+
+      public onChangeOption(option: string): void {
+         this.active = option;
+      }
 
    test1(): void {
       console.log('You clicked the button 1!');
